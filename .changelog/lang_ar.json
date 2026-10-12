@@ -1,0 +1,24 @@
+{
+  "changelog_label_hint": "تنبيه",
+  "changelog_label_feature": "ميزة",
+  "changelog_label_fix": "إصلاح",
+  "changelog_label_improvement": "تحسين",
+  "changelog_label_dependency": "اعتماد",
+  "$data": {
+    "v1.0.0": {
+      "released_date": "2026/10/12",
+      "hint": [
+        "يعكس الإصدار الأول AutoJs4 تماما بما في ذلك مكتباته الأصلية ذات 32 بت فقط, لذا لا يمكن تثبيت الإضافة على الأجهزة التي تدعم 64 بت فقط"
+      ],
+      "feature": [
+        "تشغيل ملفات `.js` وتسجيلات `.auto` ومجلدات المشاريع من مدير ملفات AutoJs6 بمحرك AutoJs4 {{ autojs4_version }} المضمّن (Rhino {{ rhino_version }}, OpenCV 3.4.3) عبر عنصر القائمة `تشغيل باستخدام AutoJs4`",
+        "خدمة تشغيل محمية بعقد AIDL ذي إصدار `autojs4-runtime-api`: طلبات بمسار الملف, وأسطر وحدة تحكم مُبثّة, وأحداث البدء والإنهاء, والإلغاء, والتنفيذ المتزامن",
+        "صفحة إعدادات للإضافة تعرض خدمة إمكانية الوصول والعرض فوق التطبيقات الأخرى والوصول إلى وحدة التخزين وتحسين البطارية وحالة root, إضافة إلى مفتاح `إظهار نافذة وحدة تحكم AutoJs4`",
+        "توفير ملفات APK بمعماريات `armeabi-v7a` و `x86` و `universal`, وتنشيط Wake, وبيانات PluginInfo الوصفية الكاملة, وتعليمات مركز الإضافات و README و changelog بعشر لغات"
+      ],
+      "dependency": [
+        "تضمين AutoJs4 {{ autojs4_version }} كـ Git submodule عند commit [`{{ autojs4_commit }}`]({{ autojs4_commit_url }})"
+      ]
+    }
+  }
+}

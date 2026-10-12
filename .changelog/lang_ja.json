@@ -1,0 +1,24 @@
+{
+  "changelog_label_hint": "ヒント",
+  "changelog_label_feature": "機能",
+  "changelog_label_fix": "修正",
+  "changelog_label_improvement": "改善",
+  "changelog_label_dependency": "依存関係",
+  "$data": {
+    "v1.0.0": {
+      "released_date": "2026/10/12",
+      "hint": [
+        "初回リリースは 32 ビットのみのネイティブライブラリを含め AutoJs4 を忠実に再現するため, 64 ビット専用端末にはインストールできません"
+      ],
+      "feature": [
+        "AutoJs6 のファイルマネージャーの `AutoJs4 で実行` メニューから, 内蔵の AutoJs4 {{ autojs4_version }} エンジン (Rhino {{ rhino_version }}, OpenCV 3.4.3) で `.js` ファイル, `.auto` 記録ファイル, プロジェクトフォルダーを実行",
+        "バージョン管理された `autojs4-runtime-api` AIDL 契約による保護されたランタイムサービス: ファイルパス要求, コンソール行のストリーミング, 開始と完了イベント, キャンセル, 同時実行",
+        "ユーザー補助サービス, 他のアプリの上に表示, ストレージへのアクセス, 電池の最適化, Root 状態を示すプラグイン設定ページと `AutoJs4 コンソールウィンドウを表示` スイッチ",
+        "`armeabi-v7a`, `x86`, `universal` APK の提供, Wake アクティベーション, 完全な PluginInfo メタデータ, 10 言語のプラグインセンター説明, README, changelog"
+      ],
+      "dependency": [
+        "AutoJs4 {{ autojs4_version }} を Git submodule として commit [`{{ autojs4_commit }}`]({{ autojs4_commit_url }}) で内蔵"
+      ]
+    }
+  }
+}
