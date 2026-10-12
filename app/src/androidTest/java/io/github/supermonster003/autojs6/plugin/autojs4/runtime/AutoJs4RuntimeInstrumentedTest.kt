@@ -83,7 +83,7 @@ class AutoJs4RuntimeInstrumentedTest {
     fun infoRuntimeInfoAndScriptRoundTrip() {
         withBoundRuntime { runtime ->
             val info = runtime.info
-            assertEquals(context.getString(R.string.app_name), info.name)
+            assertEquals(context.getString(R.string.plugin_name), info.name)
             assertEquals(context.getString(R.string.plugin_description), info.description)
             assertEquals(AutoJs4PluginIds.ID, info.id)
             assertEquals(AutoJs4PluginIds.ENGINE, info.engine)

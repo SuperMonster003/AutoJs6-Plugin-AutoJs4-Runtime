@@ -111,7 +111,10 @@ android {
         versionName = versions.appVersionName
         multiDexEnabled = true
 
-        resValue("string", "app_name", "AutoJs4 Runtime")
+        // The display name lives in plugin_name: the AutoJs4 engine libraries localize app_name to "Auto.js"
+        // (values-en), which would override an app-level default-locale app_name on English devices.
+        // zh-CN: 显示名称使用 plugin_name; AutoJs4 引擎库把 app_name 本地化为 "Auto.js" (values-en), 会在英文环境覆盖应用层的默认值.
+        resValue("string", "plugin_name", "AutoJs4 Runtime")
         resValue("string", "plugin_author", "SuperMonster003")
         resValue("string", "plugin_version_date", utils.getDateString("MMM d, yyyy", "GMT+08:00"))
 

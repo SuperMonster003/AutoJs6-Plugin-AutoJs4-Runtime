@@ -94,7 +94,7 @@ internal fun Context.autoJs4PluginInfo(): PluginInfo {
     }
     val identity = AutoJs4PluginMetadata.identity()
     return PluginInfo().apply {
-        name = getString(R.string.app_name)
+        name = getString(R.string.plugin_name)
         description = getString(R.string.plugin_description)
         instruction = INSTRUCTION_REFERENCE
         author = getString(R.string.plugin_author)
