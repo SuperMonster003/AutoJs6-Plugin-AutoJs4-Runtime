@@ -1,0 +1,114 @@
+name: Build integrity
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Documentation, unit, lint, and APK verification
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Check out repository with the AutoJs4 submodule
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          submodules: recursive
+
+      - name: Set up Java
+        uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: gradle
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v4
+
+      - name: Verify documentation, icon and version build
+        run: |
+          python3 -m pip install --quiet pillow
+          python3 -B .python/generate_markdown.py --check
+          python3 -B .python/generate_provisional_icon.py --check
+          python3 -B -m unittest discover -s .python -p "test_*.py"
+          version_ref="${{ github.event.pull_request.head.sha || github.sha }}"
+          commit_count="$(git rev-list --count "$version_ref")"
+          actual_build="$(sed -n 's/^VERSION_BUILD=//p' version.properties)"
+          # VERSION_BUILD follows the commit count within 10 (shared rule of the AutoJs6 repositories).
+          drift=$(( actual_build - commit_count ))
+          if [ "${drift#-}" -gt 10 ]; then
+            echo "::error title=Build number drift::VERSION_BUILD=$actual_build is $drift away from $commit_count commits (allowed: 10)"
+            exit 1
+          fi
+
+      - name: Run tests, lint, and assemble debug APKs
+        run: |
+          chmod +x gradlew
+          ./gradlew \
+            :app:testDebugUnitTest \
+            :app:lintDebug \
+            :app:assembleDebug \
+            :app:assembleDebugAndroidTest \
+            --stacktrace
+
+      - name: Upload debug and test APKs
+        uses: actions/upload-artifact@v7
+        with:
+          name: autojs4-runtime-debug-apks
+          path: app/build/outputs/apk
+          if-no-files-found: error
+          retention-days: 7
+          compression-level: 0
+
+  instrumentation:
+    name: Binder and AutoJs4 round trip (API ${{ matrix.api_level }}, x86)
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    strategy:
+      fail-fast: false
+      matrix:
+        api_level: [24, 30]
+
+    steps:
+      - name: Check out repository with the AutoJs4 submodule
+        uses: actions/checkout@v7
+        with:
+          submodules: recursive
+
+      - name: Set up Java
+        uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: gradle
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v4
+
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+
+      # The plugin ships 32-bit code only (armeabi-v7a and x86), so the emulator must offer an x86 ABI.
+      - name: Run Android instrumentation
+        uses: reactivecircus/android-emulator-runner@v2.38.0
+        with:
+          api-level: ${{ matrix.api_level }}
+          target: google_apis
+          arch: x86
+          profile: pixel_2
+          script: bash ./gradlew connectedDebugAndroidTest -PrequiredApiLevel=${{ matrix.api_level }} --stacktrace
