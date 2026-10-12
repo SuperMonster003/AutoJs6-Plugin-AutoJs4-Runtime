@@ -77,6 +77,14 @@ val stageOpenCvJniLibs by tasks.registering(StageOpenCvJniLibsTask::class) {
     outputDirectory.set(layout.buildDirectory.dir("generated/opencv-jnilibs"))
 }
 
+// The index metadata above must match the AIDL contract; fail the build when they drift apart.
+// zh-CN: 上面的索引元数据必须与 AIDL 契约一致, 不一致时构建失败.
+run {
+    val contract = rootProject.file("plugin-api/autojs4-runtime-api/src/main/java/org/autojs/plugin/autojs4/runtime/api/AutoJs4RuntimeContract.java").readText()
+    val declared = Regex("""REQUIRES_HOST_VERSION\s*=\s*(\d+)L""").find(contract)?.groupValues?.get(1)
+    check(declared == "5334") { "plugin_requires_host_version (5334) differs from AutoJs4RuntimeContract.REQUIRES_HOST_VERSION ($declared)" }
+}
+
 val autoJs4Dir = rootProject.layout.projectDirectory.dir("autojs4")
 val autoJs4Versions = (JsonSlurper().parse(autoJs4Dir.file("project-versions.json").asFile) as Map<*, *>)
 val autoJs4VersionName = autoJs4Versions["appVersionName"].toString()
@@ -115,6 +123,13 @@ android {
         // (values-en), which would override an app-level default-locale app_name on English devices.
         // zh-CN: 显示名称使用 plugin_name; AutoJs4 引擎库把 app_name 本地化为 "Auto.js" (values-en), 会在英文环境覆盖应用层的默认值.
         resValue("string", "plugin_name", "AutoJs4 Runtime")
+        // Routing and compatibility metadata read by the official plugin index generator (literal values only).
+        // The host version is checked at build time against AutoJs4RuntimeContract.REQUIRES_HOST_VERSION.
+        // zh-CN: 官方插件索引生成器读取的路由与兼容性元数据 (只能是字面量); 宿主版本在构建时与契约常量核对.
+        resValue("string", "plugin_id", "autojs4-runtime")
+        resValue("string", "plugin_engine", "autojs4")
+        resValue("string", "plugin_variant", "default")
+        resValue("string", "plugin_requires_host_version", "5334")
         resValue("string", "plugin_author", "SuperMonster003")
         resValue("string", "plugin_version_date", utils.getDateString("MMM d, yyyy", "GMT+08:00"))
 
