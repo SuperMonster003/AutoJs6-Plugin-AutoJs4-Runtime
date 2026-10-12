@@ -185,7 +185,7 @@ app/src/main/res/values*/strings.xml
 app/src/main/res/raw*/plugin_instruction.md
 ```
 
-L'icône de lancement est un glyphe provisoire rendu par `.python/generate_provisional_icon.py` en attendant l'illustration du mainteneur ; vérifiez-la avec `py .python/generate_provisional_icon.py --check`.
+L'icône conserve le [PNG fourni par le responsable du projet](https://github.com/SuperMonster003/AutoJs6-Plugin-AutoJs4-Runtime/tree/master/.python/icons) (une variante pour le thème clair et une pour le thème sombre) et sa composition d'origine. Ajustez-la dans Icon Studio et vérifiez la recette et les ressources générées avec `python .python/generate_icon_studio.py --check`.
 
 ******
 

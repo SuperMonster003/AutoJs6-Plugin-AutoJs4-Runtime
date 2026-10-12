@@ -54,5 +54,5 @@
   "text_link_roadmap": "AutoJs4 Runtime roadmap",
   "p_instruction_backend": "このリリースは AutoJs4 {{ autojs4_version }} (commit `{{ autojs4_commit }}`) を Rhino {{ rhino_version }} と OpenCV 3.4.3 とともに内蔵し, すべてのスクリプトを隔離された `:autojs4_runtime` プロセスで実行します. 開始, コンソール行, 完了は host 契約を通じて AutoJs6 に返され, タスクは AutoJs6 のタスクリストから停止できます.",
   "p_instruction_more": "ABI の選択, 権限, 正確な契約, このバージョンの範囲は [プロジェクト README]({{ repo_url }}) を参照してください.",
-  "p_icon_artwork": "ランチャーアイコンは, メンテナーのアートワークが用意されるまで `.python/generate_provisional_icon.py` が描画する暫定的なグリフです. `py .python/generate_provisional_icon.py --check` で検証できます."
+  "p_icon_artwork": "アイコンは管理者提供の [PNG 原稿]({{ icon_source_url }}) (ライトテーマ用とダークテーマ用の 2 枚) と元の構図を保持しています. Icon Studio で調整し, `python .python/generate_icon_studio.py --check` でレシピと生成リソースの一致を確認してください."
 }

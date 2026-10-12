@@ -185,7 +185,7 @@ app/src/main/res/values*/strings.xml
 app/src/main/res/raw*/plugin_instruction.md
 ```
 
-El icono de lanzador es un glifo provisional renderizado por `.python/generate_provisional_icon.py` hasta que exista el arte del mantenedor; verifícalo con `py .python/generate_provisional_icon.py --check`.
+El icono conserva el [PNG proporcionado por el mantenedor](https://github.com/SuperMonster003/AutoJs6-Plugin-AutoJs4-Runtime/tree/master/.python/icons) (una variante para el tema claro y otra para el oscuro) y su composición original. Ajústelo con Icon Studio y compruebe la receta y los recursos generados con `python .python/generate_icon_studio.py --check`.
 
 ******
 

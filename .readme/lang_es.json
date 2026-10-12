@@ -54,5 +54,5 @@
   "text_link_roadmap": "Roadmap de AutoJs4 Runtime",
   "p_instruction_backend": "Esta versión integra AutoJs4 {{ autojs4_version }} (commit `{{ autojs4_commit }}`) con Rhino {{ rhino_version }} y OpenCV 3.4.3 y ejecuta cada script en el proceso aislado `:autojs4_runtime`. El inicio, las líneas de consola y la finalización vuelven a AutoJs6 mediante el contrato del host; la tarea puede detenerse desde la lista de tareas de AutoJs6.",
   "p_instruction_more": "Consulta el [README del proyecto]({{ repo_url }}) para la selección de ABI, los permisos, el contrato exacto y el alcance de esta versión.",
-  "p_icon_artwork": "El icono de lanzador es un glifo provisional renderizado por `.python/generate_provisional_icon.py` hasta que exista el arte del mantenedor; verifícalo con `py .python/generate_provisional_icon.py --check`."
+  "p_icon_artwork": "El icono conserva el [PNG proporcionado por el mantenedor]({{ icon_source_url }}) (una variante para el tema claro y otra para el oscuro) y su composición original. Ajústelo con Icon Studio y compruebe la receta y los recursos generados con `python .python/generate_icon_studio.py --check`."
 }

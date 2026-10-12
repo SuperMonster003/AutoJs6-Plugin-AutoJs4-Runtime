@@ -185,7 +185,7 @@ app/src/main/res/values*/strings.xml
 app/src/main/res/raw*/plugin_instruction.md
 ```
 
-The launcher icon is a provisional glyph rendered by `.python/generate_provisional_icon.py` until maintainer artwork is available; verify it with `py .python/generate_provisional_icon.py --check`.
+The icon preserves the [PNG artwork supplied by the maintainer](https://github.com/SuperMonster003/AutoJs6-Plugin-AutoJs4-Runtime/tree/master/.python/icons) (a light-theme and a dark-theme variant) and its original composition. Adjust it with Icon Studio and verify the recipe and generated resources using `python .python/generate_icon_studio.py --check`.
 
 ******
 

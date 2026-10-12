@@ -185,7 +185,7 @@ app/src/main/res/values*/strings.xml
 app/src/main/res/raw*/plugin_instruction.md
 ```
 
-런처 아이콘은 관리자 아트워크가 준비될 때까지 `.python/generate_provisional_icon.py`가 그리는 임시 글리프입니다. `py .python/generate_provisional_icon.py --check`로 확인할 수 있습니다.
+아이콘은 관리자가 제공한 [PNG 원본](https://github.com/SuperMonster003/AutoJs6-Plugin-AutoJs4-Runtime/tree/master/.python/icons) (라이트 테마용과 다크 테마용 각 1장)과 원래 구도를 유지합니다. Icon Studio로 조정하고 `python .python/generate_icon_studio.py --check`로 레시피와 생성 리소스의 일치 여부를 확인하세요.
 
 ******
 

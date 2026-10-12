@@ -185,7 +185,7 @@ app/src/main/res/values*/strings.xml
 app/src/main/res/raw*/plugin_instruction.md
 ```
 
-啟動器圖示是 `.python/generate_provisional_icon.py` 渲染的臨時圖案, 維護者圖稿到位前暫用; 可用 `py .python/generate_provisional_icon.py --check` 複核.
+圖示保留維護者提供的 [PNG 原稿](https://github.com/SuperMonster003/AutoJs6-Plugin-AutoJs4-Runtime/tree/master/.python/icons) (亮色與暗色主題各一張) 及原始構圖. 可透過 Icon Studio 調整, 使用 `python .python/generate_icon_studio.py --check` 核對配方與生成資源的一致性.
 
 ******
 

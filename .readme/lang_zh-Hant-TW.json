@@ -54,5 +54,5 @@
   "text_link_roadmap": "AutoJs4 Runtime roadmap",
   "p_instruction_backend": "此版本內嵌 AutoJs4 {{ autojs4_version }} (commit `{{ autojs4_commit }}`), 使用 Rhino {{ rhino_version }} 與 OpenCV 3.4.3, 並在隔離的 `:autojs4_runtime` 處理程序中執行每個指令碼. 開始, 主控台行與結束狀態透過宿主契約傳回 AutoJs6, 工作可在 AutoJs6 工作清單中停止.",
   "p_instruction_more": "ABI 選擇, 權限, 精確契約與本版本範圍請參閱 [專案 README]({{ repo_url }}).",
-  "p_icon_artwork": "啟動器圖示是 `.python/generate_provisional_icon.py` 渲染的臨時圖案, 維護者圖稿到位前暫用; 可用 `py .python/generate_provisional_icon.py --check` 複核."
+  "p_icon_artwork": "圖示保留維護者提供的 [PNG 原稿]({{ icon_source_url }}) (亮色與暗色主題各一張) 及原始構圖. 可透過 Icon Studio 調整, 使用 `python .python/generate_icon_studio.py --check` 核對配方與生成資源的一致性."
 }

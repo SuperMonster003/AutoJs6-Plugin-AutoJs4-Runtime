@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": "1.3.0",
+  "profile": "catalog",
+  "repository": "AutoJs6-Plugin-AutoJs4-Runtime",
+  "packages": [
+    "io.github.supermonster003.autojs6.plugin.autojs4.runtime"
+  ],
+  "launcher": false,
+  "params": {
+    "sources": {
+      "day": "3af6469f64b12e75bb52a177ef4649b3ece25f8634ae84d4f5d6a4d996f4dfad",
+      "night": "231916207e9ad407ba2485da1646508f0ea7abff27a70e8976ec4daf8dee48c4",
+      "alphaMode": "alpha"
+    },
+    "geometry": {
+      "mode": "preserve",
+      "scale": 0.92,
+      "offsetX": 0.0,
+      "offsetY": 0.0
+    },
+    "day": {
+      "mode": "original",
+      "foreground": "#272727",
+      "brightness": 1.0,
+      "contrast": 1.0,
+      "gamma": 1.0,
+      "threshold": 128,
+      "invert": false
+    },
+    "night": {
+      "mode": "original",
+      "foreground": "#d8d8d8",
+      "brightness": 1.0,
+      "contrast": 1.0,
+      "gamma": 1.0,
+      "threshold": 128,
+      "invert": false
+    },
+    "backgrounds": {
+      "day": "transparent",
+      "night": "transparent"
+    }
+  },
+  "baseline": {
+    "params": {
+      "sources": {
+        "day": "3af6469f64b12e75bb52a177ef4649b3ece25f8634ae84d4f5d6a4d996f4dfad",
+        "night": "231916207e9ad407ba2485da1646508f0ea7abff27a70e8976ec4daf8dee48c4",
+        "alphaMode": "alpha"
+      },
+      "geometry": {
+        "mode": "preserve",
+        "scale": 0.92,
+        "offsetX": 0.0,
+        "offsetY": 0.0
+      },
+      "day": {
+        "mode": "original",
+        "foreground": "#272727",
+        "brightness": 1.0,
+        "contrast": 1.0,
+        "gamma": 1.0,
+        "threshold": 128,
+        "invert": false
+      },
+      "night": {
+        "mode": "original",
+        "foreground": "#d8d8d8",
+        "brightness": 1.0,
+        "contrast": 1.0,
+        "gamma": 1.0,
+        "threshold": 128,
+        "invert": false
+      },
+      "backgrounds": {
+        "day": "transparent",
+        "night": "transparent"
+      }
+    },
+    "day": "3af6469f64b12e75bb52a177ef4649b3ece25f8634ae84d4f5d6a4d996f4dfad",
+    "night": "231916207e9ad407ba2485da1646508f0ea7abff27a70e8976ec4daf8dee48c4"
+  },
+  "outputs": {
+    "app/src/main/res/mipmap/ic_plugin_center.png": {
+      "role": "ui-day"
+    },
+    "app/src/main/res/mipmap-night/ic_plugin_center.png": {
+      "role": "ui-night"
+    },
+    "app/src/main/res/raw/keep_plugin_center_icon.xml": {
+      "role": "keep-rule"
+    },
+    "app/src/main/res/values/icon_studio_backgrounds.xml": {
+      "role": "background-color",
+      "theme": "day"
+    },
+    "app/src/main/res/values-night/icon_studio_backgrounds.xml": {
+      "role": "background-color",
+      "theme": "night"
+    },
+    "app/src/main/res/raw/keep_icon_studio_background.xml": {
+      "role": "background-keep"
+    },
+    "app/src/main/res/mipmap/ic_launcher.png": {
+      "role": "ui-day"
+    },
+    "app/src/main/res/mipmap-night/ic_launcher.png": {
+      "role": "ui-night"
+    },
+    "app/src/main/res/mipmap/ic_icon_studio_application.png": {
+      "role": "legacy-day"
+    },
+    "app/src/main/res/mipmap-night/ic_icon_studio_application.png": {
+      "role": "legacy-night"
+    },
+    "app/src/main/res/mipmap/ic_icon_studio_application_foreground.png": {
+      "role": "adaptive-day"
+    },
+    "app/src/main/res/mipmap-night/ic_icon_studio_application_foreground.png": {
+      "role": "adaptive-night"
+    },
+    "app/src/main/res/mipmap/ic_icon_studio_application_monochrome.png": {
+      "role": "mono"
+    },
+    "app/src/main/res/mipmap-anydpi-v26/ic_icon_studio_application.xml": {
+      "role": "application-adaptive"
+    },
+    "app/src/main/res/mipmap-night-anydpi-v26/ic_icon_studio_application.xml": {
+      "role": "application-adaptive"
+    },
+    "app/src/main/res/raw/keep_icon_studio_application.xml": {
+      "role": "application-keep"
+    }
+  },
+  "assets": [
+    "231916207e9ad407ba2485da1646508f0ea7abff27a70e8976ec4daf8dee48c4",
+    "3af6469f64b12e75bb52a177ef4649b3ece25f8634ae84d4f5d6a4d996f4dfad"
+  ],
+  "legacyGenerator": null,
+  "backgroundDefaults": {
+    "day": "transparent",
+    "night": "transparent"
+  },
+  "originalSources": {
+    "3af6469f64b12e75bb52a177ef4649b3ece25f8634ae84d4f5d6a4d996f4dfad": {
+      "asset": "3af6469f64b12e75bb52a177ef4649b3ece25f8634ae84d4f5d6a4d996f4dfad",
+      "filename": "autojs4-runtime-ic-launcher-light.png"
+    },
+    "231916207e9ad407ba2485da1646508f0ea7abff27a70e8976ec4daf8dee48c4": {
+      "asset": "231916207e9ad407ba2485da1646508f0ea7abff27a70e8976ec4daf8dee48c4",
+      "filename": "autojs4-runtime-ic-launcher-dark.png"
+    }
+  },
+  "systemIcon": true,
+  "systemIconMinSdk": 24,
+  "systemIconObsolete": []
+}

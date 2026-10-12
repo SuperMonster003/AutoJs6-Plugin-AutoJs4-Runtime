@@ -185,7 +185,7 @@ app/src/main/res/values*/strings.xml
 app/src/main/res/raw*/plugin_instruction.md
 ```
 
-Значок запуска является временным глифом, который рисует `.python/generate_provisional_icon.py`, пока нет графики от мейнтейнера; проверьте его командой `py .python/generate_provisional_icon.py --check`.
+Значок сохраняет [PNG-оригиналы, предоставленные сопровождающим проекта](https://github.com/SuperMonster003/AutoJs6-Plugin-AutoJs4-Runtime/tree/master/.python/icons) (варианты для светлой и темной темы), и исходную композицию. Настройте его в Icon Studio и проверьте соответствие рецепта и сгенерированных ресурсов командой `python .python/generate_icon_studio.py --check`.
 
 ******
 

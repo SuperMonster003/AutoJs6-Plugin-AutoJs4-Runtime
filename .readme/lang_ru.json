@@ -54,5 +54,5 @@
   "text_link_roadmap": "AutoJs4 Runtime roadmap",
   "p_instruction_backend": "Этот выпуск содержит AutoJs4 {{ autojs4_version }} (commit `{{ autojs4_commit }}`) с Rhino {{ rhino_version }} и OpenCV 3.4.3 и выполняет каждый скрипт в изолированном процессе `:autojs4_runtime`. Запуск, строки консоли и завершение возвращаются в AutoJs6 через контракт host; задачу можно остановить из списка задач AutoJs6.",
   "p_instruction_more": "Выбор ABI, разрешения, точный контракт и область этой версии описаны в [README проекта]({{ repo_url }}).",
-  "p_icon_artwork": "Значок запуска является временным глифом, который рисует `.python/generate_provisional_icon.py`, пока нет графики от мейнтейнера; проверьте его командой `py .python/generate_provisional_icon.py --check`."
+  "p_icon_artwork": "Значок сохраняет [PNG-оригиналы, предоставленные сопровождающим проекта]({{ icon_source_url }}) (варианты для светлой и темной темы), и исходную композицию. Настройте его в Icon Studio и проверьте соответствие рецепта и сгенерированных ресурсов командой `python .python/generate_icon_studio.py --check`."
 }

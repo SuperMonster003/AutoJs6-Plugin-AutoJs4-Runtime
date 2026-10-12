@@ -33,5 +33,6 @@
   "max_concurrent_executions": "16",
   "max_log_chunk": "64 KiB",
   "opencv_version": "3.4.3",
-  "ndk_version": "28.2.13676358"
+  "ndk_version": "28.2.13676358",
+  "icon_source_url": "https://github.com/SuperMonster003/AutoJs6-Plugin-AutoJs4-Runtime/tree/master/.python/icons"
 }

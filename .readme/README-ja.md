@@ -185,7 +185,7 @@ app/src/main/res/values*/strings.xml
 app/src/main/res/raw*/plugin_instruction.md
 ```
 
-ランチャーアイコンは, メンテナーのアートワークが用意されるまで `.python/generate_provisional_icon.py` が描画する暫定的なグリフです. `py .python/generate_provisional_icon.py --check` で検証できます.
+アイコンは管理者提供の [PNG 原稿](https://github.com/SuperMonster003/AutoJs6-Plugin-AutoJs4-Runtime/tree/master/.python/icons) (ライトテーマ用とダークテーマ用の 2 枚) と元の構図を保持しています. Icon Studio で調整し, `python .python/generate_icon_studio.py --check` でレシピと生成リソースの一致を確認してください.
 
 ******
 

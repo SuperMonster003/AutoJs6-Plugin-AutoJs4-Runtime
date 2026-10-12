@@ -185,7 +185,7 @@ app/src/main/res/values*/strings.xml
 app/src/main/res/raw*/plugin_instruction.md
 ```
 
-أيقونة المشغّل رمز مؤقت يرسمه `.python/generate_provisional_icon.py` حتى يتوفر عمل المشرف الفني; تحقق منها بالأمر `py .python/generate_provisional_icon.py --check`.
+تحتفظ الأيقونة بملفات [PNG التي قدمها مسؤول المشروع](https://github.com/SuperMonster003/AutoJs6-Plugin-AutoJs4-Runtime/tree/master/.python/icons) (نسخة للسمة الفاتحة وأخرى للسمة الداكنة) وتكوينها الأصلي. يمكن تعديلها باستخدام Icon Studio والتحقق من تطابق الوصفة والموارد المولدة بالأمر `python .python/generate_icon_studio.py --check`.
 
 ******
 

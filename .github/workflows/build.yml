@@ -40,7 +40,7 @@ jobs:
         run: |
           python3 -m pip install --quiet pillow
           python3 -B .python/generate_markdown.py --check
-          python3 -B .python/generate_provisional_icon.py --check
+          python3 -B .python/generate_icon_studio.py --check
           python3 -B -m unittest discover -s .python -p "test_*.py"
           # The rebuilt 64-bit OpenCV libraries must match native/opencv/opencv.lock.json (SHA-256 only without an NDK).
           python3 -B tools/opencv/build_opencv_android.py --check
