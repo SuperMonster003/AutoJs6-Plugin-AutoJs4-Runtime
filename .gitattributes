@@ -1,0 +1,4 @@
+# Shell scripts and Python tools must stay LF for CI runners.
+gradlew text eol=lf
+*.sh text eol=lf
+.python/*.py text eol=lf
