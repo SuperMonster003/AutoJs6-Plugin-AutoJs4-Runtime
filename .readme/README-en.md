@@ -67,12 +67,12 @@ AutoJs4 Runtime embeds the engine of [AutoJs4](https://github.com/SuperMonster00
 Save this file in the AutoJs6 workspace and run it through `Run with AutoJs4`:
 
 ```javascript
-console.log(context.getPackageName() + " / Rhino " + org.mozilla.javascript.Context.getCurrentContext().getImplementationVersion());
+console.log("engine package: " + context.getPackageName());
 console.log("device: " + device.brand + " " + device.model + " (API " + device.sdkInt + ")");
 toast("Hello from AutoJs4");
 ```
 
-The AutoJs6 console prints the lines prefixed with `[AutoJs4]`; the first line shows the AutoJs4 package name and Rhino version that executed the script.
+The AutoJs6 console prints the lines prefixed with `[AutoJs4]`; the first line shows the plugin package name that executed the script, which proves the AutoJs4 engine ran it.
 
 ******
 

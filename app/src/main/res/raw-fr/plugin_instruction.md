@@ -5,12 +5,12 @@ Cette version embarque AutoJs4 4.4.0 (commit `3fb08269198ebd49a880ab3ca2621383ea
 ### Démarrage rapide
 
 ```javascript
-console.log(context.getPackageName() + " / Rhino " + org.mozilla.javascript.Context.getCurrentContext().getImplementationVersion());
+console.log("engine package: " + context.getPackageName());
 console.log("device: " + device.brand + " " + device.model + " (API " + device.sdkInt + ")");
 toast("Hello from AutoJs4");
 ```
 
-La console d'AutoJs6 affiche les lignes préfixées par `[AutoJs4]` ; la première ligne indique le nom du paquet AutoJs4 et la version de Rhino qui ont exécuté le script.
+La console d'AutoJs6 affiche les lignes préfixées par `[AutoJs4]` ; la première ligne indique le nom du paquet du plugin qui a exécuté le script, ce qui confirme l'exécution par le moteur AutoJs4.
 
 ### Compatibilité et portée
 

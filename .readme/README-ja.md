@@ -67,12 +67,12 @@ AutoJs4 Runtime は, AutoJs6 の動作基準となる Auto.js 4.1.1 Alpha2 の�
 このファイルを AutoJs6 のワークスペースに保存し, `AutoJs4 で実行` から実行します:
 
 ```javascript
-console.log(context.getPackageName() + " / Rhino " + org.mozilla.javascript.Context.getCurrentContext().getImplementationVersion());
+console.log("engine package: " + context.getPackageName());
 console.log("device: " + device.brand + " " + device.model + " (API " + device.sdkInt + ")");
 toast("Hello from AutoJs4");
 ```
 
-AutoJs6 のコンソールに `[AutoJs4]` 接頭辞付きの行が出力され, 最初の行にスクリプトを実行した AutoJs4 のパッケージ名と Rhino バージョンが表示されます.
+AutoJs6 のコンソールに `[AutoJs4]` 接頭辞付きの行が出力され, 最初の行にスクリプトを実行したプラグインのパッケージ名が表示されます. これで AutoJs4 エンジンが実行したことを確認できます.
 
 ******
 

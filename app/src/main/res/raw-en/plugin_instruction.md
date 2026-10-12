@@ -5,12 +5,12 @@ This release embeds AutoJs4 4.4.0 (commit `3fb08269198ebd49a880ab3ca2621383eaa10
 ### Quick Start
 
 ```javascript
-console.log(context.getPackageName() + " / Rhino " + org.mozilla.javascript.Context.getCurrentContext().getImplementationVersion());
+console.log("engine package: " + context.getPackageName());
 console.log("device: " + device.brand + " " + device.model + " (API " + device.sdkInt + ")");
 toast("Hello from AutoJs4");
 ```
 
-The AutoJs6 console prints the lines prefixed with `[AutoJs4]`; the first line shows the AutoJs4 package name and Rhino version that executed the script.
+The AutoJs6 console prints the lines prefixed with `[AutoJs4]`; the first line shows the plugin package name that executed the script, which proves the AutoJs4 engine ran it.
 
 ### Compatibility and Scope
 

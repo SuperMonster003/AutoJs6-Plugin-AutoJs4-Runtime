@@ -29,7 +29,7 @@
   ],
   "p_usage_note": "لا تعدّل الإضافة AutoJs4: نفس Rhino {{ rhino_version }}, ونفس مكتبة OpenCV 3.4.3 الأصلية, و `targetSdk {{ android_target_sdk }}`, ونفس نطاق معماريات 32 بت. لذلك فإن الفروق الملاحظة بين المحركين هي فروق بين AutoJs4 و AutoJs6 ويمكن الإبلاغ عنها في متتبع issue الخاص بـ AutoJs6.",
   "p_quick_start_intro": "احفظ هذا الملف في مساحة عمل AutoJs6 ثم شغّله عبر `تشغيل باستخدام AutoJs4`",
-  "p_quick_start_result": "تطبع وحدة تحكم AutoJs6 الأسطر مسبوقة بـ `[AutoJs4]`; يعرض السطر الأول اسم حزمة AutoJs4 وإصدار Rhino الذي نفّذ السكربت.",
+  "p_quick_start_result": "تطبع وحدة تحكم AutoJs6 الأسطر مسبوقة بـ `[AutoJs4]`; يعرض السطر الأول اسم حزمة الإضافة التي نفّذت السكربت, مما يؤكد أن محرك AutoJs4 هو من شغّله.",
   "compatibility_points": [
     "المحرك: AutoJs4 {{ autojs4_version }} (نسخة من {{ autojs4_baseline }}), Git commit [`{{ autojs4_commit }}`]({{ autojs4_commit_url }}), Rhino {{ rhino_version }}, OpenCV 3.4.3. تُضمّن مصادر AutoJs4 كـ Git submodule وتُترجم دون تعديل.",
     "المنصة: Android {{ min_android_version }} (API {{ android_min_sdk }}) أو أحدث مع دعم تطبيقات 32 بت. تغطي ملفات APK أحادية المعمارية `{{ supported_abis }}`; ويحتوي APK `universal` على كليهما. لا يمكن تثبيت الإضافة على الأجهزة التي تدعم 64 بت فقط, تماما كما لا يمكن تثبيت AutoJs4 عليها.",

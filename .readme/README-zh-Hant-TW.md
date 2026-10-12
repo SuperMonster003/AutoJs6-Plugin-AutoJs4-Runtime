@@ -67,12 +67,12 @@ AutoJs4 Runtime 內嵌了 [AutoJs4](https://github.com/SuperMonster003/AutoJs4) 
 把這個檔案儲存到 AutoJs6 工作目錄, 然後透過 `使用 AutoJs4 執行` 執行:
 
 ```javascript
-console.log(context.getPackageName() + " / Rhino " + org.mozilla.javascript.Context.getCurrentContext().getImplementationVersion());
+console.log("engine package: " + context.getPackageName());
 console.log("device: " + device.brand + " " + device.model + " (API " + device.sdkInt + ")");
 toast("Hello from AutoJs4");
 ```
 
-AutoJs6 主控台會列印帶 `[AutoJs4]` 前綴的日誌, 第一行顯示執行指令碼的 AutoJs4 套件名稱與 Rhino 版本.
+AutoJs6 主控台會列印帶 `[AutoJs4]` 前綴的日誌, 第一行顯示執行指令碼的外掛套件名稱, 以此確認指令碼由 AutoJs4 引擎執行.
 
 ******
 

@@ -29,7 +29,7 @@
   ],
   "p_usage_note": "插件不修改 AutoJs4: 相同的 Rhino {{ rhino_version }}, 相同的 OpenCV 3.4.3 原生库, `targetSdk {{ android_target_sdk }}` 与相同的 32 位 ABI 覆盖范围. 因此两个引擎之间观察到的差异就是 AutoJs4 与 AutoJs6 的差异, 可反馈到 AutoJs6 的 issue 跟踪器.",
   "p_quick_start_intro": "把这个文件保存到 AutoJs6 工作目录, 然后通过 `使用 AutoJs4 运行` 执行",
-  "p_quick_start_result": "AutoJs6 控制台会打印带 `[AutoJs4]` 前缀的日志, 第一行显示执行脚本的 AutoJs4 包名与 Rhino 版本.",
+  "p_quick_start_result": "AutoJs6 控制台会打印带 `[AutoJs4]` 前缀的日志, 第一行显示执行脚本的插件包名, 以此确认脚本由 AutoJs4 引擎运行.",
   "compatibility_points": [
     "引擎: AutoJs4 {{ autojs4_version }} ({{ autojs4_baseline }} 克隆), Git commit [`{{ autojs4_commit }}`]({{ autojs4_commit_url }}), Rhino {{ rhino_version }}, OpenCV 3.4.3. AutoJs4 源码以 Git submodule 引入并原样编译.",
     "平台: Android {{ min_android_version }} (API {{ android_min_sdk }}) 或更高版本, 且支持 32 位应用. 单 ABI APK 覆盖 `{{ supported_abis }}`, `universal` APK 包含两者. 64 位专用设备无法安装本插件, 与无法安装 AutoJs4 的情形一致.",

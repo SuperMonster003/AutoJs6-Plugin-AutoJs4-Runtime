@@ -29,7 +29,7 @@
   ],
   "p_usage_note": "外掛不修改 AutoJs4: 相同的 Rhino {{ rhino_version }}, 相同的 OpenCV 3.4.3 原生程式庫, `targetSdk {{ android_target_sdk }}` 與相同的 32 位元 ABI 涵蓋範圍. 因此兩個引擎之間觀察到的差異就是 AutoJs4 與 AutoJs6 的差異, 可回報到 AutoJs6 的 issue 追蹤器.",
   "p_quick_start_intro": "把這個檔案儲存到 AutoJs6 工作目錄, 然後透過 `使用 AutoJs4 執行` 執行",
-  "p_quick_start_result": "AutoJs6 主控台會列印帶 `[AutoJs4]` 前綴的日誌, 第一行顯示執行指令碼的 AutoJs4 套件名稱與 Rhino 版本.",
+  "p_quick_start_result": "AutoJs6 主控台會列印帶 `[AutoJs4]` 前綴的日誌, 第一行顯示執行指令碼的外掛套件名稱, 以此確認指令碼由 AutoJs4 引擎執行.",
   "compatibility_points": [
     "引擎: AutoJs4 {{ autojs4_version }} ({{ autojs4_baseline }} 複製), Git commit [`{{ autojs4_commit }}`]({{ autojs4_commit_url }}), Rhino {{ rhino_version }}, OpenCV 3.4.3. AutoJs4 原始碼以 Git submodule 引入並原樣編譯.",
     "平台: Android {{ min_android_version }} (API {{ android_min_sdk }}) 或更高版本, 且支援 32 位元應用程式. 單 ABI APK 涵蓋 `{{ supported_abis }}`, `universal` APK 包含兩者. 64 位元專用裝置無法安裝本外掛, 與無法安裝 AutoJs4 的情形一致.",

@@ -67,12 +67,12 @@
 احفظ هذا الملف في مساحة عمل AutoJs6 ثم شغّله عبر `تشغيل باستخدام AutoJs4`:
 
 ```javascript
-console.log(context.getPackageName() + " / Rhino " + org.mozilla.javascript.Context.getCurrentContext().getImplementationVersion());
+console.log("engine package: " + context.getPackageName());
 console.log("device: " + device.brand + " " + device.model + " (API " + device.sdkInt + ")");
 toast("Hello from AutoJs4");
 ```
 
-تطبع وحدة تحكم AutoJs6 الأسطر مسبوقة بـ `[AutoJs4]`; يعرض السطر الأول اسم حزمة AutoJs4 وإصدار Rhino الذي نفّذ السكربت.
+تطبع وحدة تحكم AutoJs6 الأسطر مسبوقة بـ `[AutoJs4]`; يعرض السطر الأول اسم حزمة الإضافة التي نفّذت السكربت, مما يؤكد أن محرك AutoJs4 هو من شغّله.
 
 ******
 

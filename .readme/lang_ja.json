@@ -29,7 +29,7 @@
   ],
   "p_usage_note": "プラグインは AutoJs4 を変更しません. 同じ Rhino {{ rhino_version }}, 同じ OpenCV 3.4.3 ネイティブライブラリ, `targetSdk {{ android_target_sdk }}`, 同じ 32 ビット ABI 範囲です. したがって両エンジンの間で観察される差は AutoJs4 と AutoJs6 の差であり, AutoJs6 の issue トラッカーに報告できます.",
   "p_quick_start_intro": "このファイルを AutoJs6 のワークスペースに保存し, `AutoJs4 で実行` から実行します",
-  "p_quick_start_result": "AutoJs6 のコンソールに `[AutoJs4]` 接頭辞付きの行が出力され, 最初の行にスクリプトを実行した AutoJs4 のパッケージ名と Rhino バージョンが表示されます.",
+  "p_quick_start_result": "AutoJs6 のコンソールに `[AutoJs4]` 接頭辞付きの行が出力され, 最初の行にスクリプトを実行したプラグインのパッケージ名が表示されます. これで AutoJs4 エンジンが実行したことを確認できます.",
   "compatibility_points": [
     "エンジン: AutoJs4 {{ autojs4_version }} ({{ autojs4_baseline }} クローン), Git commit [`{{ autojs4_commit }}`]({{ autojs4_commit_url }}), Rhino {{ rhino_version }}, OpenCV 3.4.3. AutoJs4 のソースは Git submodule として取り込み, 変更せずにコンパイルします.",
     "プラットフォーム: Android {{ min_android_version }} (API {{ android_min_sdk }}) 以降で 32 ビットアプリに対応した端末. 単一 ABI の APK は `{{ supported_abis }}` を, `universal` APK は両方を含みます. 64 ビット専用端末には AutoJs4 と同様にインストールできません.",

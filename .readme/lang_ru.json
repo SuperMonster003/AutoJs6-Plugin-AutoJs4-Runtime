@@ -29,7 +29,7 @@
   ],
   "p_usage_note": "Плагин не изменяет AutoJs4: тот же Rhino {{ rhino_version }}, та же нативная библиотека OpenCV 3.4.3, `targetSdk {{ android_target_sdk }}` и тот же набор 32-битных ABI. Поэтому различия между двумя движками являются различиями между AutoJs4 и AutoJs6 и могут быть сообщены в трекер issue AutoJs6.",
   "p_quick_start_intro": "Сохраните этот файл в рабочей области AutoJs6 и запустите через `Запустить в AutoJs4`",
-  "p_quick_start_result": "Консоль AutoJs6 выводит строки с префиксом `[AutoJs4]`; первая строка показывает имя пакета AutoJs4 и версию Rhino, выполнившие скрипт.",
+  "p_quick_start_result": "Консоль AutoJs6 выводит строки с префиксом `[AutoJs4]`; первая строка показывает имя пакета плагина, выполнившего скрипт, что подтверждает запуск движком AutoJs4.",
   "compatibility_points": [
     "Движок: AutoJs4 {{ autojs4_version }} (клон {{ autojs4_baseline }}), Git commit [`{{ autojs4_commit }}`]({{ autojs4_commit_url }}), Rhino {{ rhino_version }}, OpenCV 3.4.3. Исходный код AutoJs4 подключен как Git submodule и компилируется без изменений.",
     "Платформа: Android {{ min_android_version }} (API {{ android_min_sdk }}) или новее с поддержкой 32-битных приложений. APK для одной ABI покрывают `{{ supported_abis }}`; APK `universal` содержит обе. Устройства только с 64-битной поддержкой не могут установить плагин, как и AutoJs4.",

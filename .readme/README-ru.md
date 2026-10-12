@@ -67,12 +67,12 @@ AutoJs4 Runtime содержит движок [AutoJs4](https://github.com/Super
 Сохраните этот файл в рабочей области AutoJs6 и запустите через `Запустить в AutoJs4`:
 
 ```javascript
-console.log(context.getPackageName() + " / Rhino " + org.mozilla.javascript.Context.getCurrentContext().getImplementationVersion());
+console.log("engine package: " + context.getPackageName());
 console.log("device: " + device.brand + " " + device.model + " (API " + device.sdkInt + ")");
 toast("Hello from AutoJs4");
 ```
 
-Консоль AutoJs6 выводит строки с префиксом `[AutoJs4]`; первая строка показывает имя пакета AutoJs4 и версию Rhino, выполнившие скрипт.
+Консоль AutoJs6 выводит строки с префиксом `[AutoJs4]`; первая строка показывает имя пакета плагина, выполнившего скрипт, что подтверждает запуск движком AutoJs4.
 
 ******
 

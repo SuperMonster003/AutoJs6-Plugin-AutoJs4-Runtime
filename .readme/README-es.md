@@ -67,12 +67,12 @@ AutoJs4 Runtime integra el motor de [AutoJs4](https://github.com/SuperMonster003
 Guarda este archivo en el espacio de trabajo de AutoJs6 y ejecútalo mediante `Ejecutar con AutoJs4`:
 
 ```javascript
-console.log(context.getPackageName() + " / Rhino " + org.mozilla.javascript.Context.getCurrentContext().getImplementationVersion());
+console.log("engine package: " + context.getPackageName());
 console.log("device: " + device.brand + " " + device.model + " (API " + device.sdkInt + ")");
 toast("Hello from AutoJs4");
 ```
 
-La consola de AutoJs6 muestra las líneas con el prefijo `[AutoJs4]`; la primera línea indica el nombre del paquete de AutoJs4 y la versión de Rhino que ejecutaron el script.
+La consola de AutoJs6 muestra las líneas con el prefijo `[AutoJs4]`; la primera línea indica el nombre del paquete del complemento que ejecutó el script, lo que confirma que lo ejecutó el motor AutoJs4.
 
 ******
 

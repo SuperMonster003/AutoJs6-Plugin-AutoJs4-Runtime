@@ -29,7 +29,7 @@
   ],
   "p_usage_note": "The plugin keeps AutoJs4 unchanged: the same Rhino {{ rhino_version }}, the same OpenCV 3.4.3 native library, `targetSdk {{ android_target_sdk }}` and the same 32-bit ABI coverage. Differences you observe between the two engines are therefore differences between AutoJs4 and AutoJs6, and can be reported to the AutoJs6 issue tracker.",
   "p_quick_start_intro": "Save this file in the AutoJs6 workspace and run it through `Run with AutoJs4`",
-  "p_quick_start_result": "The AutoJs6 console prints the lines prefixed with `[AutoJs4]`; the first line shows the AutoJs4 package name and Rhino version that executed the script.",
+  "p_quick_start_result": "The AutoJs6 console prints the lines prefixed with `[AutoJs4]`; the first line shows the plugin package name that executed the script, which proves the AutoJs4 engine ran it.",
   "compatibility_points": [
     "Engine: AutoJs4 {{ autojs4_version }} ({{ autojs4_baseline }} clone), Git commit [`{{ autojs4_commit }}`]({{ autojs4_commit_url }}), Rhino {{ rhino_version }}, OpenCV 3.4.3. The AutoJs4 sources are included as a Git submodule and compiled without modification.",
     "Platform: Android {{ min_android_version }} (API {{ android_min_sdk }}) or later with 32-bit app support. Single-ABI APKs cover `{{ supported_abis }}`; the `universal` APK contains both. 64-bit-only devices cannot install the plugin, just as they cannot install AutoJs4.",

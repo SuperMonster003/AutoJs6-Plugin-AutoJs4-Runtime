@@ -5,12 +5,12 @@ AutoJs4 Runtime은 AutoJs6의 동작 기준인 Auto.js 4.1.1 Alpha2 복제본 [A
 ### 빠른 시작
 
 ```javascript
-console.log(context.getPackageName() + " / Rhino " + org.mozilla.javascript.Context.getCurrentContext().getImplementationVersion());
+console.log("engine package: " + context.getPackageName());
 console.log("device: " + device.brand + " " + device.model + " (API " + device.sdkInt + ")");
 toast("Hello from AutoJs4");
 ```
 
-AutoJs6 콘솔에 `[AutoJs4]` 접두어가 붙은 줄이 출력되며, 첫 줄에 스크립트를 실행한 AutoJs4 패키지 이름과 Rhino 버전이 표시됩니다.
+AutoJs6 콘솔에 `[AutoJs4]` 접두어가 붙은 줄이 출력되며, 첫 줄에 스크립트를 실행한 플러그인 패키지 이름이 표시되어 AutoJs4 엔진이 실행했음을 확인할 수 있습니다.
 
 ### 호환성과 범위
 
