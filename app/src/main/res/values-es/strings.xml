@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="log_title">Registro de AutoJs4</string>
+    <string name="plugin_description">Ejecuta scripts con el motor Auto.js 4.1.1 Alpha2 integrado para comparar los resultados con AutoJs6</string>
+    <string name="release_history_load_failed">No se puede cargar el historial de versiones</string>
+    <string name="release_history_title">Historial de versiones</string>
+    <string name="settings_accessibility_summary_disabled">Desactivado, toca para abrir los ajustes de accesibilidad del sistema</string>
+    <string name="settings_accessibility_summary_enabled">Activado</string>
+    <string name="settings_accessibility_title">Servicio de accesibilidad</string>
+    <string name="settings_battery_title">Ignorar la optimización de batería</string>
+    <string name="settings_console_window_summary">Permitir que console.show() abra la consola flotante de AutoJs4 en este proceso. Los registros siempre se envían a AutoJs6</string>
+    <string name="settings_console_window_title">Mostrar la ventana de consola de AutoJs4</string>
+    <string name="settings_group_about">Acerca de</string>
+    <string name="settings_group_permissions">Permisos y servicios</string>
+    <string name="settings_group_running">Ejecución</string>
+    <string name="settings_overlay_title">Mostrar sobre otras aplicaciones</string>
+    <string name="settings_project_page_title">Página del proyecto</string>
+    <string name="settings_release_history_title">Historial de versiones</string>
+    <string name="settings_root_summary_available">Disponible</string>
+    <string name="settings_root_summary_checking" tools:ignore="TypographyEllipsis">Comprobando...</string>
+    <string name="settings_root_summary_unavailable">No disponible</string>
+    <string name="settings_root_summary_unknown">Toca para comprobar</string>
+    <string name="settings_root_title">Acceso root</string>
+    <string name="settings_storage_title">Acceso al almacenamiento</string>
+    <string name="settings_title">Ajustes</string>
+    <string name="settings_version_summary">%1$s (AutoJs4 %2$s, commit %3$s)</string>
+    <string name="settings_version_title">Versión</string>
+    <string name="text_auto_operate_service_enabled_but_not_running">El servicio de accesibilidad de AutoJs4 Runtime está activado pero no se está ejecutando. Desactívalo y vuelve a activarlo en los ajustes del sistema</string>
+    <string name="text_no_accessibility_permission">El servicio de accesibilidad de AutoJs4 Runtime no está activado</string>
+    <string name="text_permission_required_for_script">El script no puede ejecutarse hasta que se conceda \"%1$s\" a AutoJs4 Runtime</string>
+    <string name="text_status_granted">Concedido</string>
+    <string name="text_status_not_granted">No concedido, toca para conceder</string>
+</resources>

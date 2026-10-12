@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="log_title">AutoJs4 로그</string>
+    <string name="plugin_description">내장된 Auto.js 4.1.1 Alpha2 엔진으로 스크립트를 실행하여 AutoJs6 결과와 비교</string>
+    <string name="release_history_load_failed">릴리스 기록을 불러올 수 없습니다</string>
+    <string name="release_history_title">릴리스 기록</string>
+    <string name="settings_accessibility_summary_disabled">꺼져 있음, 탭하여 시스템 접근성 설정 열기</string>
+    <string name="settings_accessibility_summary_enabled">켜져 있음</string>
+    <string name="settings_accessibility_title">접근성 서비스</string>
+    <string name="settings_battery_title">배터리 최적화 무시</string>
+    <string name="settings_console_window_summary">console.show()가 이 프로세스에서 AutoJs4 플로팅 콘솔을 열도록 허용합니다. 로그는 항상 AutoJs6로 전송됩니다</string>
+    <string name="settings_console_window_title">AutoJs4 콘솔 창 표시</string>
+    <string name="settings_group_about">정보</string>
+    <string name="settings_group_permissions">권한과 서비스</string>
+    <string name="settings_group_running">실행</string>
+    <string name="settings_overlay_title">다른 앱 위에 표시</string>
+    <string name="settings_project_page_title">프로젝트 페이지</string>
+    <string name="settings_release_history_title">릴리스 기록</string>
+    <string name="settings_root_summary_available">사용 가능</string>
+    <string name="settings_root_summary_checking" tools:ignore="TypographyEllipsis">확인 중...</string>
+    <string name="settings_root_summary_unavailable">사용 불가</string>
+    <string name="settings_root_summary_unknown">탭하여 확인</string>
+    <string name="settings_root_title">Root 권한</string>
+    <string name="settings_storage_title">저장공간 접근</string>
+    <string name="settings_title">설정</string>
+    <string name="settings_version_summary">%1$s (AutoJs4 %2$s, 커밋 %3$s)</string>
+    <string name="settings_version_title">버전</string>
+    <string name="text_auto_operate_service_enabled_but_not_running">AutoJs4 Runtime 접근성 서비스가 켜져 있지만 실행되지 않습니다. 시스템 설정에서 끈 뒤 다시 켜 주세요</string>
+    <string name="text_no_accessibility_permission">AutoJs4 Runtime 접근성 서비스가 켜져 있지 않습니다</string>
+    <string name="text_permission_required_for_script">AutoJs4 Runtime에 \"%1$s\" 권한을 부여해야 스크립트를 실행할 수 있습니다</string>
+    <string name="text_status_granted">허용됨</string>
+    <string name="text_status_not_granted">허용되지 않음, 탭하여 허용</string>
+</resources>

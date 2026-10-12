@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="log_title">سجل AutoJs4</string>
+    <string name="plugin_description">يشغّل السكربتات بمحرك Auto.js 4.1.1 Alpha2 المضمّن لمقارنة النتائج مع AutoJs6</string>
+    <string name="release_history_load_failed">تعذر تحميل سجل الإصدارات</string>
+    <string name="release_history_title">سجل الإصدارات</string>
+    <string name="settings_accessibility_summary_disabled">غير مفعّلة, انقر لفتح إعدادات إمكانية الوصول في النظام</string>
+    <string name="settings_accessibility_summary_enabled">مفعّلة</string>
+    <string name="settings_accessibility_title">خدمة إمكانية الوصول</string>
+    <string name="settings_battery_title">تجاهل تحسين البطارية</string>
+    <string name="settings_console_window_summary">السماح لـ console.show() بفتح وحدة تحكم AutoJs4 العائمة في هذه العملية. تُرسل السجلات دائما إلى AutoJs6</string>
+    <string name="settings_console_window_title">إظهار نافذة وحدة تحكم AutoJs4</string>
+    <string name="settings_group_about">حول</string>
+    <string name="settings_group_permissions">الأذونات والخدمات</string>
+    <string name="settings_group_running">التشغيل</string>
+    <string name="settings_overlay_title">العرض فوق التطبيقات الأخرى</string>
+    <string name="settings_project_page_title">صفحة المشروع</string>
+    <string name="settings_release_history_title">سجل الإصدارات</string>
+    <string name="settings_root_summary_available">متاح</string>
+    <string name="settings_root_summary_checking" tools:ignore="TypographyEllipsis">جارٍ التحقق...</string>
+    <string name="settings_root_summary_unavailable">غير متاح</string>
+    <string name="settings_root_summary_unknown">انقر للتحقق</string>
+    <string name="settings_root_title">صلاحية root</string>
+    <string name="settings_storage_title">الوصول إلى وحدة التخزين</string>
+    <string name="settings_title">الإعدادات</string>
+    <string name="settings_version_summary">%1$s (AutoJs4 %2$s, commit %3$s)</string>
+    <string name="settings_version_title">الإصدار</string>
+    <string name="text_auto_operate_service_enabled_but_not_running">خدمة إمكانية الوصول في AutoJs4 Runtime مفعّلة لكنها لا تعمل. أوقفها ثم أعد تفعيلها من إعدادات النظام</string>
+    <string name="text_no_accessibility_permission">خدمة إمكانية الوصول في AutoJs4 Runtime غير مفعّلة</string>
+    <string name="text_permission_required_for_script">لا يمكن تشغيل السكربت حتى يُمنح AutoJs4 Runtime إذن \"%1$s\"</string>
+    <string name="text_status_granted">مُمنوح</string>
+    <string name="text_status_not_granted">غير مُمنوح, انقر للمنح</string>
+</resources>

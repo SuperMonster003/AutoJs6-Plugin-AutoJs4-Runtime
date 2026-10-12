@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="log_title">AutoJs4 ログ</string>
+    <string name="plugin_description">内蔵の Auto.js 4.1.1 Alpha2 エンジンでスクリプトを実行し, AutoJs6 の結果と比較する</string>
+    <string name="release_history_load_failed">リリース履歴を読み込めません</string>
+    <string name="release_history_title">リリース履歴</string>
+    <string name="settings_accessibility_summary_disabled">無効です. タップしてシステムのユーザー補助設定を開く</string>
+    <string name="settings_accessibility_summary_enabled">有効</string>
+    <string name="settings_accessibility_title">ユーザー補助サービス</string>
+    <string name="settings_battery_title">電池の最適化を無視</string>
+    <string name="settings_console_window_summary">console.show() でこのプロセスに AutoJs4 のフローティングコンソールを表示する. ログは常に AutoJs6 に送られる</string>
+    <string name="settings_console_window_title">AutoJs4 コンソールウィンドウを表示</string>
+    <string name="settings_group_about">情報</string>
+    <string name="settings_group_permissions">権限とサービス</string>
+    <string name="settings_group_running">実行</string>
+    <string name="settings_overlay_title">他のアプリの上に表示</string>
+    <string name="settings_project_page_title">プロジェクトページ</string>
+    <string name="settings_release_history_title">リリース履歴</string>
+    <string name="settings_root_summary_available">利用可能</string>
+    <string name="settings_root_summary_checking" tools:ignore="TypographyEllipsis">確認中...</string>
+    <string name="settings_root_summary_unavailable">利用不可</string>
+    <string name="settings_root_summary_unknown">タップして確認</string>
+    <string name="settings_root_title">Root 権限</string>
+    <string name="settings_storage_title">ストレージへのアクセス</string>
+    <string name="settings_title">設定</string>
+    <string name="settings_version_summary">%1$s (AutoJs4 %2$s, コミット %3$s)</string>
+    <string name="settings_version_title">バージョン</string>
+    <string name="text_auto_operate_service_enabled_but_not_running">AutoJs4 Runtime のユーザー補助サービスは有効ですが動作していません. システム設定で一度オフにしてから再度オンにしてください</string>
+    <string name="text_no_accessibility_permission">AutoJs4 Runtime のユーザー補助サービスが有効になっていません</string>
+    <string name="text_permission_required_for_script">AutoJs4 Runtime に \"%1$s\" を許可するまでスクリプトは実行できません</string>
+    <string name="text_status_granted">許可済み</string>
+    <string name="text_status_not_granted">未許可. タップして許可</string>
+</resources>
