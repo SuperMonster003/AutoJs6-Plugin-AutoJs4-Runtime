@@ -133,6 +133,12 @@ max log chunk: 64 KiB
 
 ******
 
+#### v1.0.1
+
+_2026/10/12_
+
+- `Improvement` When a script needs the accessibility service while the plugin's service is not enabled, a toast explains why the system accessibility settings open
+
 #### v1.0.0
 
 _2026/10/12_

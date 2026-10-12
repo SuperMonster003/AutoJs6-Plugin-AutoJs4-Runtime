@@ -4,6 +4,12 @@
 
 ******
 
+# v1.0.1
+
+###### 2026/10/12
+
+* `Amélioration` Lorsqu'un script a besoin du service d'accessibilité alors que le service du plugin n'est pas activé, un message toast explique pourquoi les paramètres d'accessibilité du système s'ouvrent
+
 # v1.0.0
 
 ###### 2026/10/12

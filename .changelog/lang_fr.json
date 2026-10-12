@@ -5,6 +5,12 @@
   "changelog_label_improvement": "Amélioration",
   "changelog_label_dependency": "Dépendance",
   "$data": {
+    "v1.0.1": {
+      "released_date": "2026/10/12",
+      "improvement": [
+        "Lorsqu'un script a besoin du service d'accessibilité alors que le service du plugin n'est pas activé, un message toast explique pourquoi les paramètres d'accessibilité du système s'ouvrent"
+      ]
+    },
     "v1.0.0": {
       "released_date": "2026/10/12",
       "hint": [

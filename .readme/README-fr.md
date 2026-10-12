@@ -133,6 +133,12 @@ Pages de 16 KB : les bibliothèques natives arm64-v8a et x86_64 (OpenCV 3.4.3 re
 
 ******
 
+#### v1.0.1
+
+_2026/10/12_
+
+- `Amélioration` Lorsqu'un script a besoin du service d'accessibilité alors que le service du plugin n'est pas activé, un message toast explique pourquoi les paramètres d'accessibilité du système s'ouvrent
+
 #### v1.0.0
 
 _2026/10/12_

@@ -5,6 +5,12 @@
   "changelog_label_improvement": "Mejora",
   "changelog_label_dependency": "Dependencia",
   "$data": {
+    "v1.0.1": {
+      "released_date": "2026/10/12",
+      "improvement": [
+        "Cuando un script necesita el servicio de accesibilidad y el servicio del complemento no está activado, un aviso emergente explica por qué se abren los ajustes de accesibilidad del sistema"
+      ]
+    },
     "v1.0.0": {
       "released_date": "2026/10/12",
       "hint": [

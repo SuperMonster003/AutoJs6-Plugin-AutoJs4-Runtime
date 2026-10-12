@@ -5,6 +5,12 @@
   "changelog_label_improvement": "改善",
   "changelog_label_dependency": "相依項目",
   "$data": {
+    "v1.0.1": {
+      "released_date": "2026/10/12",
+      "improvement": [
+        "指令碼需要無障礙服務而外掛的無障礙服務未開啟時, 開啟系統無障礙設定頁的同時以 toast 說明原因"
+      ]
+    },
     "v1.0.0": {
       "released_date": "2026/10/12",
       "hint": [

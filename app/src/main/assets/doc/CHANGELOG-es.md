@@ -4,6 +4,12 @@
 
 ******
 
+# v1.0.1
+
+###### 2026/10/12
+
+* `Mejora` Cuando un script necesita el servicio de accesibilidad y el servicio del complemento no está activado, un aviso emergente explica por qué se abren los ajustes de accesibilidad del sistema
+
 # v1.0.0
 
 ###### 2026/10/12

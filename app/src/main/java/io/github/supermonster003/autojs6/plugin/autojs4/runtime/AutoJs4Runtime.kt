@@ -55,15 +55,22 @@ class AutoJs4Runtime private constructor(application: Application) : AutoJs(appl
             return
         }
         val message = accessibilityErrorMessage()
+        uiHandler.toast(message)
         PluginPermissions.openAccessibilitySettings(application)
         throw ScriptException(message)
     }
 
+    /**
+     * `auto.waitFor()`: tells the user why the system accessibility settings open (a toast, since the script keeps
+     * waiting and nothing reaches the host console), then blocks until the plugin's service is running.
+     * zh-CN: `auto.waitFor()`: 以 toast 说明为什么打开了系统无障碍设置 (脚本会继续等待, 宿主控制台收不到任何信息),
+     * 然后阻塞直到插件自己的服务运行.
+     */
     override fun waitForAccessibilityServiceEnabled() {
         if (AccessibilityService.instance != null) {
             return
         }
-        accessibilityErrorMessage()
+        uiHandler.toast(accessibilityErrorMessage())
         PluginPermissions.openAccessibilitySettings(application)
         if (!AccessibilityService.waitForEnabled(-1)) {
             throw ScriptInterruptedException()

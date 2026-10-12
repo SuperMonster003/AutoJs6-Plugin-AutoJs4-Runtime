@@ -5,6 +5,12 @@
   "changelog_label_improvement": "개선",
   "changelog_label_dependency": "의존성",
   "$data": {
+    "v1.0.1": {
+      "released_date": "2026/10/12",
+      "improvement": [
+        "스크립트에 접근성 서비스가 필요한데 플러그인의 서비스가 켜져 있지 않으면, 시스템 접근성 설정을 여는 이유를 토스트로 안내"
+      ]
+    },
     "v1.0.0": {
       "released_date": "2026/10/12",
       "hint": [

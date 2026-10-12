@@ -133,6 +133,12 @@ Tamaño de página de 16 KB: las bibliotecas nativas de arm64-v8a y x86_64 (Open
 
 ******
 
+#### v1.0.1
+
+_2026/10/12_
+
+- `Mejora` Cuando un script necesita el servicio de accesibilidad y el servicio del complemento no está activado, un aviso emergente explica por qué se abren los ajustes de accesibilidad del sistema
+
 #### v1.0.0
 
 _2026/10/12_

@@ -5,6 +5,12 @@
   "changelog_label_improvement": "Improvement",
   "changelog_label_dependency": "Dependency",
   "$data": {
+    "v1.0.1": {
+      "released_date": "2026/10/12",
+      "improvement": [
+        "When a script needs the accessibility service while the plugin's service is not enabled, a toast explains why the system accessibility settings open"
+      ]
+    },
     "v1.0.0": {
       "released_date": "2026/10/12",
       "hint": [
