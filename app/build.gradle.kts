@@ -1,5 +1,6 @@
 import groovy.json.JsonSlurper
 import java.util.Properties
+import javax.inject.Inject
 
 plugins {
     id("io.github.supermonster003.autojs6-native-alignment")
@@ -18,12 +19,63 @@ val androidTestPermissionName = providers.gradleProperty("androidTestPermissionN
 val requiredApiLevel = providers.gradleProperty("requiredApiLevel")
     .map(String::trim)
 
-// AutoJs4 ships OpenCV 3.4.3 only for armeabi-v7a and the terminal libraries for armeabi-v7a and
-// x86. The plugin mirrors that inventory instead of adding 64-bit builds AutoJs4 never had.
-// zh-CN: AutoJs4 只为 armeabi-v7a 提供 OpenCV 3.4.3, 终端库覆盖 armeabi-v7a 与 x86. 插件镜像这一
-// 清单, 不额外提供 AutoJs4 从未有过的 64 位构建.
-val supportedAbis = listOf("armeabi-v7a", "x86")
+// Native inventory (roadmap Q10 = B): AutoJs4 ships OpenCV 3.4.3 only for armeabi-v7a, so the
+// 32-bit library is taken byte-for-byte from the submodule, while arm64-v8a and x86_64 use the same
+// OpenCV 3.4.3 rebuilt with NDK 28.2 for 16 KB pages (native/opencv, see tools/opencv). The jackpal
+// terminal libraries for all four ABIs come from the AAR rebuilt by the AutoJs6 host. x86 has no
+// OpenCV, exactly like AutoJs4.
+// zh-CN: 原生库清单 (roadmap Q10 = B): AutoJs4 只为 armeabi-v7a 提供 OpenCV 3.4.3, 32 位库逐字节取自
+// submodule; arm64-v8a 与 x86_64 使用以 NDK 28.2 重编并满足 16 KB 页对齐的同一 OpenCV 3.4.3
+// (native/opencv, 见 tools/opencv). 四个 ABI 的 jackpal 终端库来自宿主 AutoJs6 重编的 AAR. x86 与
+// AutoJs4 一样没有 OpenCV.
+val supportedAbis = listOf("arm64-v8a", "armeabi-v7a", "x86_64", "x86")
+val openCvLibraryName = "libopencv_java3.so"
+val openCvSources = mapOf(
+    "armeabi-v7a" to rootProject.layout.projectDirectory.file("autojs4/app/src/main/jniLibs/armeabi-v7a/$openCvLibraryName"),
+    "arm64-v8a" to rootProject.layout.projectDirectory.file("native/opencv/arm64-v8a/$openCvLibraryName"),
+    "x86_64" to rootProject.layout.projectDirectory.file("native/opencv/x86_64/$openCvLibraryName"),
+)
 var isSignsValid = false
+
+/** Stages the per-ABI OpenCV JNI library so that only the intended copy of each ABI reaches the APK. */
+abstract class StageOpenCvJniLibsTask @Inject constructor(private val fileSystem: FileSystemOperations) : DefaultTask() {
+
+    /** ABI names, index-aligned with [libraries]. */
+    @get:Input
+    abstract val abis: ListProperty<String>
+
+    /** One `libopencv_java3.so` per ABI, index-aligned with [abis]. */
+    @get:InputFiles
+    @get:PathSensitive(PathSensitivity.NONE)
+    abstract val libraries: ListProperty<RegularFile>
+
+    @get:OutputDirectory
+    abstract val outputDirectory: DirectoryProperty
+
+    @TaskAction
+    fun stage() {
+        val abiNames = abis.get()
+        val sources = libraries.get()
+        require(abiNames.size == sources.size) { "abis and libraries must be index-aligned" }
+        val destination = outputDirectory.get().asFile
+        fileSystem.delete { delete(destination) }
+        abiNames.forEachIndexed { index, abi ->
+            val source = sources[index].asFile
+            check(source.isFile) { "OpenCV library for $abi is missing: $source (run tools/opencv/build_opencv_android.py)" }
+            fileSystem.copy {
+                from(source)
+                into(destination.resolve(abi))
+            }
+        }
+    }
+}
+
+val stageOpenCvJniLibs by tasks.registering(StageOpenCvJniLibsTask::class) {
+    description = "Collects libopencv_java3.so per ABI (AutoJs4 original for armeabi-v7a, 16 KB rebuilds for 64-bit ABIs)."
+    abis.set(openCvSources.keys.toList())
+    libraries.set(openCvSources.values.toList())
+    outputDirectory.set(layout.buildDirectory.dir("generated/opencv-jnilibs"))
+}
 
 val autoJs4Dir = rootProject.layout.projectDirectory.dir("autojs4")
 val autoJs4Versions = (JsonSlurper().parse(autoJs4Dir.file("project-versions.json").asFile) as Map<*, *>)
@@ -69,14 +121,6 @@ android {
 
         ndk {
             abiFilters += supportedAbis
-        }
-    }
-
-    sourceSets {
-        getByName("main") {
-            // libopencv_java3.so and the jackpal terminal libraries exactly as AutoJs4 packages them.
-            // zh-CN: 与 AutoJs4 打包方式完全相同的 libopencv_java3.so 与 jackpal 终端库.
-            jniLibs.srcDirs(autoJs4Dir.dir("app/src/main/jniLibs"))
         }
     }
 
@@ -133,6 +177,14 @@ android {
         aidl = true
         resValues = true
         buildConfig = true
+    }
+}
+
+androidComponents {
+    onVariants { variant ->
+        // AGP 9 refuses Provider-backed source directories in the legacy sourceSets API; the generated
+        // jniLibs directory is wired through the Variant API so the staging task dependency is carried.
+        variant.sources.jniLibs?.addGeneratedSourceDirectory(stageOpenCvJniLibs, StageOpenCvJniLibsTask::outputDirectory)
     }
 }
 

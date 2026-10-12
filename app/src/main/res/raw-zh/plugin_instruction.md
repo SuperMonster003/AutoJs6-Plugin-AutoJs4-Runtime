@@ -14,8 +14,8 @@ AutoJs6 控制台会打印带 `[AutoJs4]` 前缀的日志, 第一行显示执行
 
 ### 兼容性和范围
 
-- 引擎: AutoJs4 4.4.0 (Auto.js 4.1.1 Alpha2 克隆), Git commit [`3fb08269198ebd49a880ab3ca2621383eaa10443`](https://github.com/SuperMonster003/AutoJs4/commit/3fb08269198ebd49a880ab3ca2621383eaa10443), Rhino 1.7.7.2, OpenCV 3.4.3. AutoJs4 源码以 Git submodule 引入并原样编译.
-- 平台: Android 7.0 (API 24) 或更高版本, 且支持 32 位应用. 单 ABI APK 覆盖 `armeabi-v7a, x86`, `universal` APK 包含两者. 64 位专用设备无法安装本插件, 与无法安装 AutoJs4 的情形一致.
+- 引擎: AutoJs4 4.4.0 (Auto.js 4.1.1 Alpha2 克隆), Git commit [`3fb08269198ebd49a880ab3ca2621383eaa10443`](https://github.com/SuperMonster003/AutoJs4/commit/3fb08269198ebd49a880ab3ca2621383eaa10443), Rhino 1.7.7.2, OpenCV 3.4.3. AutoJs4 源码以 Git submodule 引入并原样编译; arm64-v8a 与 x86_64 的 OpenCV 库以 NDK 28.2.13676358 从同一版本重新编译, 并校验导出了原库的全部 JNI 符号.
+- 平台: Android 7.0 (API 24) 或更高版本. 单 ABI APK 覆盖 `arm64-v8a, armeabi-v7a, x86_64, x86`, `universal` APK 包含全部四种. 与 AutoJs4 一样, `x86` 构建不含 OpenCV.
 - 脚本: `.js` 文件, `.auto` Root 录制文件以及含 `project.json` 的项目文件夹 (遵循 `main` 入口与 `features`). `"ui";` 脚本在插件进程中打开 AutoJs4 自己的脚本 Activity.
 - 权限: 存储权限 (传统外部存储, `targetSdk 28`), 悬浮窗与 AutoJs4 无障碍服务都单独授予插件, 与 AutoJs6 无关. Root 功能与 AutoJs4 一样使用设备上的 `su`.
 - 并发: 最多同时运行 16 个 AutoJs4 脚本; 在 AutoJs6 中停止任务会停止 AutoJs4 引擎, 插件进程崩溃会被报告为失败的任务.

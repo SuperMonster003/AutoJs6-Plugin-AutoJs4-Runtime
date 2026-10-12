@@ -21,18 +21,18 @@
   "text_link_third_party_notices": "第三方声明",
   "p_introduction": "AutoJs4 Runtime 内嵌了 [AutoJs4]({{ autojs4_url }}) 的引擎, 即作为 AutoJs6 行为基准的 {{ autojs4_baseline }} 克隆项目. 安装后, AutoJs6 文件管理器中的 \"使用 AutoJs4 运行\" 会在本插件自己的进程里用原版 Rhino {{ rhino_version }} 引擎运行 `.js` 文件, `.auto` 录制文件与项目文件夹, 控制台输出回传到 AutoJs6. 这样无需另外安装 AutoJs4, 就能在同一台设备上检查脚本在 AutoJs4 与 AutoJs6 上的表现是否不同.",
   "usage_steps": [
-    "在 Android {{ min_android_version }} (API {{ android_min_sdk }}) 或更高版本上使用 AutoJs6 build {{ required_host_version_code }} ({{ required_host_version_name }}) 或更高版本. 设备需要能运行 32 位应用, 与 AutoJs4 的要求相同.",
-    "安装与设备 ABI 对应的发布 APK (ARM 设备为 `armeabi-v7a`, 模拟器为 `x86`), 或安装 `universal` APK.",
+    "在 Android {{ min_android_version }} (API {{ android_min_sdk }}) 或更高版本上使用 AutoJs6 build {{ required_host_version_code }} ({{ required_host_version_name }}) 或更高版本.",
+    "安装与设备 ABI 对应的发布 APK (多数现代手机为 `arm64-v8a`, 32 位设备为 `armeabi-v7a`, 模拟器为 `x86_64` 或 `x86`), 或安装体积更大的 `universal` APK.",
     "打开 AutoJs6 插件中心并启用 AutoJs4 Runtime. 如果 Android 仍将新安装的包保持在停止状态, 请使用宿主显示的 `激活` 操作.",
     "从插件中心打开插件设置, 按脚本需要授予存储权限, 悬浮窗与无障碍服务; 这些权限属于插件自身, 与 AutoJs6 的权限相互独立.",
     "在 AutoJs6 文件管理器中打开 `.js` 文件, `.auto` 文件或项目文件夹的菜单, 选择 `使用 AutoJs4 运行`. 任务会出现在 AutoJs6 的任务列表中并可在那里停止."
   ],
-  "p_usage_note": "插件不修改 AutoJs4: 相同的 Rhino {{ rhino_version }}, 相同的 OpenCV 3.4.3 原生库, `targetSdk {{ android_target_sdk }}` 与相同的 32 位 ABI 覆盖范围. 因此两个引擎之间观察到的差异就是 AutoJs4 与 AutoJs6 的差异, 可反馈到 AutoJs6 的 issue 跟踪器.",
+  "p_usage_note": "插件不修改 AutoJs4: 相同的 Rhino {{ rhino_version }}, armeabi-v7a 使用 AutoJs4 原版 OpenCV {{ opencv_version }} 库, 64 位设备使用同一 OpenCV 版本的重编库, `targetSdk {{ android_target_sdk }}` 与相同的引擎模块. 因此两个引擎之间观察到的差异就是 AutoJs4 与 AutoJs6 的差异, 可反馈到 AutoJs6 的 issue 跟踪器.",
   "p_quick_start_intro": "把这个文件保存到 AutoJs6 工作目录, 然后通过 `使用 AutoJs4 运行` 执行",
   "p_quick_start_result": "AutoJs6 控制台会打印带 `[AutoJs4]` 前缀的日志, 第一行显示执行脚本的插件包名, 以此确认脚本由 AutoJs4 引擎运行.",
   "compatibility_points": [
-    "引擎: AutoJs4 {{ autojs4_version }} ({{ autojs4_baseline }} 克隆), Git commit [`{{ autojs4_commit }}`]({{ autojs4_commit_url }}), Rhino {{ rhino_version }}, OpenCV 3.4.3. AutoJs4 源码以 Git submodule 引入并原样编译.",
-    "平台: Android {{ min_android_version }} (API {{ android_min_sdk }}) 或更高版本, 且支持 32 位应用. 单 ABI APK 覆盖 `{{ supported_abis }}`, `universal` APK 包含两者. 64 位专用设备无法安装本插件, 与无法安装 AutoJs4 的情形一致.",
+    "引擎: AutoJs4 {{ autojs4_version }} ({{ autojs4_baseline }} 克隆), Git commit [`{{ autojs4_commit }}`]({{ autojs4_commit_url }}), Rhino {{ rhino_version }}, OpenCV {{ opencv_version }}. AutoJs4 源码以 Git submodule 引入并原样编译; arm64-v8a 与 x86_64 的 OpenCV 库以 NDK {{ ndk_version }} 从同一版本重新编译, 并校验导出了原库的全部 JNI 符号.",
+    "平台: Android {{ min_android_version }} (API {{ android_min_sdk }}) 或更高版本. 单 ABI APK 覆盖 `{{ supported_abis }}`, `universal` APK 包含全部四种. 与 AutoJs4 一样, `x86` 构建不含 OpenCV.",
     "脚本: `.js` 文件, `.auto` Root 录制文件以及含 `project.json` 的项目文件夹 (遵循 `main` 入口与 `features`). `\"ui\";` 脚本在插件进程中打开 AutoJs4 自己的脚本 Activity.",
     "权限: 存储权限 (传统外部存储, `targetSdk {{ android_target_sdk }}`), 悬浮窗与 AutoJs4 无障碍服务都单独授予插件, 与 AutoJs6 无关. Root 功能与 AutoJs4 一样使用设备上的 `su`.",
     "并发: 最多同时运行 {{ max_concurrent_executions }} 个 AutoJs4 脚本; 在 AutoJs6 中停止任务会停止 AutoJs4 引擎, 插件进程崩溃会被报告为失败的任务."
@@ -44,7 +44,7 @@
     "AutoJs4 原有的外部入口 (运行意图, 快捷方式, Tasker) 均不导出, 只有 AutoJs6 宿主可以通过受保护的 Binder 服务启动脚本."
   ],
   "p_contract": "`AutoJs4RuntimeService` 通过 action `{{ plugin_service_action }}` 和 category `{{ plugin_service_category }}` 被发现. `runScript` 校验请求 Bundle (脚本路径, 工作目录, 可选的项目文件夹, 参数, 延迟, 间隔与循环次数), 启动 AutoJs4 执行并立即返回受理 Bundle, 随后 `started`, `log` 与 `finished` 事件经回调送达. `cancelScript` 停止运行中的执行, 或为尚未调度的执行记录一次取消. 完整契约见 AutoJs6 仓库 ([协议 V1]({{ protocol_doc_url }})).",
-  "p_16kb_status": "16 KB 页大小: 插件只携带 AutoJs4 自带的 32 位原生库, 没有 64 位原生代码, 因此对齐门禁无需检查任何库, APK 也无法安装到 64 位专用设备. 是否以重新编译的 OpenCV 3.4.x 增加 `arm64-v8a` 构建, 作为待决问题记录在 [roadmap]({{ roadmap_url }}) 中.",
+  "p_16kb_status": "16 KB 页大小: arm64-v8a 与 x86_64 的原生库 (以 NDK {{ ndk_version }} 重编的 OpenCV {{ opencv_version }} 与宿主 AutoJs6 重编的 jackpal 终端库) 均以 16 KB 最大页大小链接, 共享对齐门禁在构建时校验每个 ELF PT_LOAD 段. 尚未在 16 KB 页设备上实际运行.",
   "p_build_intro": "构建需要 JDK 17 或更高版本, Python 3 与 Android SDK 37 (AutoJs4 引擎模块按 API 30 编译, 由 Android SDK 按需下载). 克隆时使用 `--recurse-submodules` 以填充 `autojs4/`. 标准检查会验证生成文档, JVM 测试, debug APK, instrumentation 包与 Android Lint.",
   "p_localization": "编辑 JSON 和 Markdown 模板后运行 `py .python/generate_markdown.py`. 不要手动编辑生成的 README, changelog 或插件说明文件. `--check` 模式会在不写入文件的情况下验证语言结构, 版本一致性, 本地化资源, 孤立文件和生成文件漂移.",
   "p_license": "插件代码采用 [Mozilla Public License 2.0]({{ license_url }}). 内嵌的 AutoJs4 源码采用 MPL 2.0 并附带 AutoJs4 仓库的非商业性使用条款; Rhino, OpenCV, jackpal 终端库与其他第三方组件保留各自的许可证. 参阅 [第三方声明]({{ third_party_notices_url }}).",

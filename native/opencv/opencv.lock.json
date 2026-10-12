@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "opencvVersion": "3.4.3",
+  "archiveUrl": "https://github.com/opencv/opencv/archive/refs/tags/3.4.3.zip",
+  "archiveSha256": "37c7d8c3b9807902ad11b9181bbde61dcb3898a78a563130494752f46fe8cc5f",
+  "ndkVersion": "28.2.13676358",
+  "androidPlatform": "android-24",
+  "cmakeOptions": [
+    "-DCMAKE_BUILD_TYPE=Release",
+    "-DOPENCV_VCSVERSION=3.4.3",
+    "-DANDROID_PLATFORM=android-24",
+    "-DANDROID_STL=c++_static",
+    "-DBUILD_SHARED_LIBS=OFF",
+    "-DBUILD_FAT_JAVA_LIB=ON",
+    "-DBUILD_opencv_java=ON",
+    "-DBUILD_ANDROID_PROJECTS=OFF",
+    "-DBUILD_ANDROID_EXAMPLES=OFF",
+    "-DBUILD_TESTS=OFF",
+    "-DBUILD_PERF_TESTS=OFF",
+    "-DBUILD_DOCS=OFF",
+    "-DBUILD_EXAMPLES=OFF",
+    "-DBUILD_opencv_apps=OFF",
+    "-DBUILD_opencv_python2=OFF",
+    "-DBUILD_opencv_python3=OFF",
+    "-DBUILD_opencv_python_bindings_generator=OFF",
+    "-DBUILD_opencv_js=OFF",
+    "-DBUILD_opencv_ts=OFF",
+    "-DWITH_CUDA=OFF",
+    "-DWITH_OPENCL=OFF",
+    "-DWITH_IPP=OFF",
+    "-DWITH_TBB=OFF",
+    "-DWITH_1394=OFF",
+    "-DWITH_GSTREAMER=OFF",
+    "-DWITH_V4L=OFF",
+    "-DWITH_FFMPEG=OFF",
+    "-DWITH_GTK=OFF",
+    "-DWITH_QT=OFF",
+    "-DWITH_OPENEXR=OFF",
+    "-DWITH_OPENCL_SVM=OFF",
+    "-DCMAKE_C_FLAGS=-Wno-error=implicit-function-declaration -Wno-error=implicit-int -Wno-error=int-conversion -Wno-error=incompatible-function-pointer-types -Wno-error=incompatible-pointer-types",
+    "-DCMAKE_CXX_FLAGS=-Wno-error=enum-constexpr-conversion -Wno-error=register -Wno-error=deprecated-declarations -Wno-error=unused-but-set-variable",
+    "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-z,max-page-size=16384 -Wl,-z,common-page-size=16384"
+  ],
+  "referenceLibrary": {
+    "path": "autojs4/app/src/main/jniLibs/armeabi-v7a/libopencv_java3.so",
+    "sha256": "d05136b5f6a915da2343920ffcaecb13bd6b6e9d38f24ada78a6d11010a66638",
+    "jniSymbols": 2039
+  },
+  "libraries": [
+    {
+      "path": "arm64-v8a/libopencv_java3.so",
+      "sha256": "198b64424c1f7b6f9b4ed3b57ba7c2d8e3e265348400e49ae681669eee59fc1b",
+      "size": 16256784,
+      "minLoadAlign": 16384,
+      "jniSymbols": 2039,
+      "referenceSymbolsCovered": 2039
+    },
+    {
+      "path": "x86_64/libopencv_java3.so",
+      "sha256": "31043edaf77bc9aa56f3dd1eff07bb29642c899c6a49d185a972687deacaa80b",
+      "size": 17457936,
+      "minLoadAlign": 16384,
+      "jniSymbols": 2039,
+      "referenceSymbolsCovered": 2039
+    }
+  ]
+}

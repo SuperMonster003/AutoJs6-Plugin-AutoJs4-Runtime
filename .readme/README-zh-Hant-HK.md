@@ -50,13 +50,13 @@ AutoJs4 Runtime 內嵌了 [AutoJs4](https://github.com/SuperMonster003/AutoJs4) 
 
 ******
 
-1. 在 Android 7.0 (API 24) 或更高版本上使用 AutoJs6 build 5334 (6.8.0) 或更高版本. 裝置需要能執行 32 位應用, 與 AutoJs4 的要求相同.
-2. 安裝與裝置 ABI 對應的發佈 APK (ARM 裝置為 `armeabi-v7a`, 模擬器為 `x86`), 或安裝 `universal` APK.
+1. 在 Android 7.0 (API 24) 或更高版本上使用 AutoJs6 build 5334 (6.8.0) 或更高版本.
+2. 安裝與裝置 ABI 對應的發佈 APK (多數現代手機為 `arm64-v8a`, 32 位裝置為 `armeabi-v7a`, 模擬器為 `x86_64` 或 `x86`), 或安裝體積更大的 `universal` APK.
 3. 打開 AutoJs6 插件中心並啟用 AutoJs4 Runtime. 如果 Android 仍將新安裝的套件保持在停止狀態, 請使用宿主顯示的 `啟動` 操作.
 4. 從插件中心打開插件設定, 按腳本需要授予儲存權限, 懸浮視窗與無障礙服務; 這些權限屬於插件自身, 與 AutoJs6 的權限相互獨立.
 5. 在 AutoJs6 檔案管理器中打開 `.js` 檔案, `.auto` 檔案或專案資料夾的選單, 選擇 `使用 AutoJs4 執行`. 任務會出現在 AutoJs6 的任務列表中並可在那裏停止.
 
-> 插件不修改 AutoJs4: 相同的 Rhino 1.7.7.2, 相同的 OpenCV 3.4.3 原生庫, `targetSdk 28` 與相同的 32 位 ABI 覆蓋範圍. 因此兩個引擎之間觀察到的差異就是 AutoJs4 與 AutoJs6 的差異, 可回饋到 AutoJs6 的 issue 追蹤器.
+> 插件不修改 AutoJs4: 相同的 Rhino 1.7.7.2, armeabi-v7a 使用 AutoJs4 原版 OpenCV 3.4.3 庫, 64 位裝置使用同一 OpenCV 版本的重編庫, `targetSdk 28` 與相同的引擎模組. 因此兩個引擎之間觀察到的差異就是 AutoJs4 與 AutoJs6 的差異, 可回饋到 AutoJs6 的 issue 追蹤器.
 
 ******
 
@@ -80,8 +80,8 @@ AutoJs6 控制台會列印帶 `[AutoJs4]` 前綴的日誌, 第一行顯示執行
 
 ******
 
-- 引擎: AutoJs4 4.4.0 (Auto.js 4.1.1 Alpha2 克隆), Git commit [`3fb08269198ebd49a880ab3ca2621383eaa10443`](https://github.com/SuperMonster003/AutoJs4/commit/3fb08269198ebd49a880ab3ca2621383eaa10443), Rhino 1.7.7.2, OpenCV 3.4.3. AutoJs4 原始碼以 Git submodule 引入並原樣編譯.
-- 平台: Android 7.0 (API 24) 或更高版本, 且支援 32 位應用. 單 ABI APK 覆蓋 `armeabi-v7a, x86`, `universal` APK 包含兩者. 64 位專用裝置無法安裝本插件, 與無法安裝 AutoJs4 的情形一致.
+- 引擎: AutoJs4 4.4.0 (Auto.js 4.1.1 Alpha2 克隆), Git commit [`3fb08269198ebd49a880ab3ca2621383eaa10443`](https://github.com/SuperMonster003/AutoJs4/commit/3fb08269198ebd49a880ab3ca2621383eaa10443), Rhino 1.7.7.2, OpenCV 3.4.3. AutoJs4 原始碼以 Git submodule 引入並原樣編譯; arm64-v8a 與 x86_64 的 OpenCV 庫以 NDK 28.2.13676358 從同一版本重新編譯, 並校驗匯出了原庫的全部 JNI 符號.
+- 平台: Android 7.0 (API 24) 或更高版本. 單 ABI APK 覆蓋 `arm64-v8a, armeabi-v7a, x86_64, x86`, `universal` APK 包含全部四種. 與 AutoJs4 一樣, `x86` 建置不含 OpenCV.
 - 腳本: `.js` 檔案, `.auto` Root 錄製檔案以及含 `project.json` 的專案資料夾 (遵循 `main` 入口與 `features`). `"ui";` 腳本在插件進程中打開 AutoJs4 自己的腳本 Activity.
 - 權限: 儲存權限 (傳統外部儲存, `targetSdk 28`), 懸浮視窗與 AutoJs4 無障礙服務都單獨授予插件, 與 AutoJs6 無關. Root 功能與 AutoJs4 一樣使用裝置上的 `su`.
 - 並發: 最多同時執行 16 個 AutoJs4 腳本; 在 AutoJs6 中停止任務會停止 AutoJs4 引擎, 插件進程崩潰會被報告為失敗的任務.
@@ -118,14 +118,14 @@ aidl methods: getInfo(), getRuntimeInfo(), runScript(request, callback), cancelS
 minimum host build: 5334 (6.8.0)
 embedded AutoJs4: 4.4.0 (3fb08269198ebd49a880ab3ca2621383eaa10443)
 rhino: 1.7.7.2
-supported abis: armeabi-v7a, x86
+supported abis: arm64-v8a, armeabi-v7a, x86_64, x86
 max concurrent executions: 16
 max log chunk: 64 KiB
 ```
 
 `AutoJs4RuntimeService` 透過 action `org.autojs.plugin.autojs4.RUNTIME` 和 category `autojs4-runtime` 被發現. `runScript` 校驗請求 Bundle (腳本路徑, 工作目錄, 可選的專案資料夾, 參數, 延遲, 間隔與循環次數), 啟動 AutoJs4 執行並立即返回受理 Bundle, 隨後 `started`, `log` 與 `finished` 事件經回呼送達. `cancelScript` 停止執行中的執行, 或為尚未排程的執行記錄一次取消. 完整契約見 AutoJs6 倉庫 ([協定 V1](https://github.com/SuperMonster003/AutoJs6/blob/master/docs/dev/autojs4-runtime-protocol-v1.md)).
 
-16 KB 頁大小: 插件只攜帶 AutoJs4 自帶的 32 位原生庫, 沒有 64 位原生程式碼, 因此對齊門禁無需檢查任何庫, APK 也無法安裝到 64 位專用裝置. 是否以重新編譯的 OpenCV 3.4.x 增加 `arm64-v8a` 建置, 作為待決問題記錄在 [roadmap](https://github.com/SuperMonster003/AutoJs6/blob/master/docs/dev/autojs4-runtime-plugin-roadmap.md) 中.
+16 KB 頁大小: arm64-v8a 與 x86_64 的原生庫 (以 NDK 28.2.13676358 重編的 OpenCV 3.4.3 與宿主 AutoJs6 重編的 jackpal 終端庫) 均以 16 KB 最大頁大小連結, 共享對齊門禁在建置時校驗每個 ELF PT_LOAD 段. 尚未在 16 KB 頁裝置上實際執行.
 
 ******
 
@@ -137,11 +137,12 @@ max log chunk: 64 KiB
 
 _2026/10/12_
 
-- `提示` 首個版本完全鏡像 AutoJs4, 包括其僅有 32 位的原生庫, 因此插件無法安裝到 64 位專用裝置
+- `提示` armeabi-v7a 使用 AutoJs4 原版 OpenCV 3.4.3 原生庫, 64 位裝置使用以 NDK 28.2 重編的同一版本; x86 建置與 AutoJs4 一樣不含 OpenCV
 - `功能` 透過 AutoJs6 檔案管理器的 `使用 AutoJs4 執行` 選單項, 以內嵌的 AutoJs4 4.4.0 引擎 (Rhino 1.7.7.2, OpenCV 3.4.3) 執行 `.js` 檔案, `.auto` 錄製檔案與專案資料夾
 - `功能` 受保護的執行時服務與版本化的 `autojs4-runtime-api` AIDL 契約: 檔案路徑請求, 串流控制台行, 開始與結束事件, 取消及並發執行
 - `功能` 插件設定頁提供無障礙服務, 懸浮視窗, 儲存權限, 電池優化與 Root 狀態, 以及 `顯示 AutoJs4 控制台視窗` 開關
-- `功能` 發佈 `armeabi-v7a`, `x86` 與 `universal` APK, 提供 Wake 啟動, 完整 PluginInfo 元資料, 以及 10 種語言的插件中心說明, README 與 changelog
+- `功能` 發佈 `arm64-v8a`, `armeabi-v7a`, `x86_64`, `x86` 與 `universal` APK, 提供 Wake 啟動, 完整 PluginInfo 元資料, 以及 10 種語言的插件中心說明, README 與 changelog
+- `改善` arm64-v8a 與 x86_64 的 OpenCV 3.4.3 及 jackpal 終端庫以 16 KB 頁對齊建置, 並在建置時校驗 ELF 對齊與原庫 JNI 符號的完整覆蓋
 - `依賴` 以 Git submodule 內嵌 AutoJs4 4.4.0, 對應 commit [`3fb08269198ebd49a880ab3ca2621383eaa10443`](https://github.com/SuperMonster003/AutoJs4/commit/3fb08269198ebd49a880ab3ca2621383eaa10443)
 
 ##### 更多發佈記錄

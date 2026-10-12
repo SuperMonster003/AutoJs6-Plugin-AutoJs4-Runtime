@@ -14,8 +14,8 @@ AutoJs6 のコンソールに `[AutoJs4]` 接頭辞付きの行が出力され, 
 
 ### 互換性と範囲
 
-- エンジン: AutoJs4 4.4.0 (Auto.js 4.1.1 Alpha2 クローン), Git commit [`3fb08269198ebd49a880ab3ca2621383eaa10443`](https://github.com/SuperMonster003/AutoJs4/commit/3fb08269198ebd49a880ab3ca2621383eaa10443), Rhino 1.7.7.2, OpenCV 3.4.3. AutoJs4 のソースは Git submodule として取り込み, 変更せずにコンパイルします.
-- プラットフォーム: Android 7.0 (API 24) 以降で 32 ビットアプリに対応した端末. 単一 ABI の APK は `armeabi-v7a, x86` を, `universal` APK は両方を含みます. 64 ビット専用端末には AutoJs4 と同様にインストールできません.
+- エンジン: AutoJs4 4.4.0 (Auto.js 4.1.1 Alpha2 クローン), Git commit [`3fb08269198ebd49a880ab3ca2621383eaa10443`](https://github.com/SuperMonster003/AutoJs4/commit/3fb08269198ebd49a880ab3ca2621383eaa10443), Rhino 1.7.7.2, OpenCV 3.4.3. AutoJs4 のソースは Git submodule として取り込み変更せずにコンパイルします. arm64-v8a と x86_64 の OpenCV ライブラリは同じリリースから NDK 28.2.13676358 で再ビルドし, オリジナルライブラリの全 JNI シンボルを公開していることを検証しています.
+- プラットフォーム: Android 7.0 (API 24) 以降. 単一 ABI の APK は `arm64-v8a, armeabi-v7a, x86_64, x86` を, `universal` APK は 4 つすべてを含みます. AutoJs4 と同様に `x86` ビルドには OpenCV がありません.
 - スクリプト: `.js` ファイル, `.auto` root 記録ファイル, `project.json` を持つプロジェクトフォルダー (`main` と `features` を尊重). `"ui";` スクリプトはプラグインプロセス内で AutoJs4 自身のスクリプト Activity を開きます.
 - 権限: ストレージへのアクセス (従来の外部ストレージ, `targetSdk 28`), 他のアプリの上に表示, AutoJs4 のユーザー補助サービスは AutoJs6 とは別にプラグインへ付与します. Root 機能は AutoJs4 と同様に端末の `su` を使用します.
 - 同時実行: 最大 16 個の AutoJs4 スクリプトを同時に実行できます. AutoJs6 でタスクを停止すると AutoJs4 エンジンが停止し, プラグインプロセスのクラッシュは失敗したタスクとして報告されます.

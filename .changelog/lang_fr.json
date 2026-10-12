@@ -8,13 +8,16 @@
     "v1.0.0": {
       "released_date": "2026/10/12",
       "hint": [
-        "La première version reproduit exactement AutoJs4, y compris ses bibliothèques natives uniquement 32 bits ; le plugin ne peut donc pas être installé sur les appareils uniquement 64 bits"
+        "armeabi-v7a utilise la bibliothèque native OpenCV 3.4.3 d'origine d'AutoJs4, les appareils 64 bits utilisent la même version recompilée avec le NDK 28.2 ; la build x86 n'a pas d'OpenCV, comme AutoJs4"
       ],
       "feature": [
         "Exécution des fichiers `.js`, des enregistrements `.auto` et des dossiers de projet depuis le gestionnaire de fichiers d'AutoJs6 avec le moteur AutoJs4 {{ autojs4_version }} embarqué (Rhino {{ rhino_version }}, OpenCV 3.4.3) via l'entrée de menu `Exécuter avec AutoJs4`",
         "Service d'exécution protégé avec le contrat AIDL versionné `autojs4-runtime-api` : requêtes par chemin de fichier, lignes de console diffusées, événements de démarrage et de fin, annulation et exécutions concurrentes",
         "Page de paramètres du plugin avec service d'accessibilité, superposition aux autres applications, accès au stockage, optimisation de la batterie et état root, plus l'interrupteur `Afficher la fenêtre de console AutoJs4`",
-        "Livraison des APK `armeabi-v7a`, `x86` et `universal`, activation Wake, métadonnées PluginInfo complètes, instructions du centre de plugins, README et changelog en 10 langues"
+        "Livraison des APK `arm64-v8a`, `armeabi-v7a`, `x86_64`, `x86` et `universal`, activation Wake, métadonnées PluginInfo complètes, instructions du centre de plugins, README et changelog en 10 langues"
+      ],
+      "improvement": [
+        "Compilation des bibliothèques OpenCV 3.4.3 et de terminal jackpal pour arm64-v8a et x86_64 avec alignement sur des pages de 16 KB, et vérification à la compilation de l'alignement ELF et de la couverture complète des symboles JNI de la bibliothèque d'origine"
       ],
       "dependency": [
         "Intégration d'AutoJs4 {{ autojs4_version }} comme submodule Git au commit [`{{ autojs4_commit }}`]({{ autojs4_commit_url }})"

@@ -50,13 +50,13 @@ AutoJs4 Runtime은 AutoJs6의 동작 기준인 Auto.js 4.1.1 Alpha2 복제본 [A
 
 ******
 
-1. Android 7.0 (API 24) 이상에서 AutoJs6 build 5334 (6.8.0) 이상을 사용합니다. AutoJs4와 마찬가지로 기기가 32비트 앱을 실행할 수 있어야 합니다.
-2. 기기 ABI에 맞는 release APK (ARM 기기는 `armeabi-v7a`, 에뮬레이터는 `x86`) 또는 `universal` APK를 설치합니다.
+1. Android 7.0 (API 24) 이상에서 AutoJs6 build 5334 (6.8.0) 이상을 사용합니다.
+2. 기기 ABI에 맞는 release APK (대부분의 최신 휴대폰은 `arm64-v8a`, 32비트 기기는 `armeabi-v7a`, 에뮬레이터는 `x86_64` 또는 `x86`) 또는 용량이 더 큰 `universal` APK를 설치합니다.
 3. AutoJs6 플러그인 센터를 열어 AutoJs4 Runtime을 사용 설정합니다. Android가 새로 설치된 패키지를 중지 상태로 두었다면 host의 `활성화` 동작을 사용합니다.
 4. 플러그인 센터에서 플러그인 설정을 열고 스크립트에 필요한 저장공간 접근, 다른 앱 위에 표시, 접근성 서비스를 허용합니다. 이 권한은 AutoJs6가 아닌 플러그인 자체의 권한입니다.
 5. AutoJs6 파일 관리자에서 `.js` 파일, `.auto` 파일 또는 프로젝트 폴더의 메뉴를 열고 `AutoJs4로 실행`을 선택합니다. 작업은 AutoJs6 작업 목록에 나타나며 거기서 중지할 수 있습니다.
 
-> 플러그인은 AutoJs4를 변경하지 않습니다. 같은 Rhino 1.7.7.2, 같은 OpenCV 3.4.3 네이티브 라이브러리, `targetSdk 28`, 같은 32비트 ABI 범위입니다. 따라서 두 엔진 사이에서 관찰되는 차이는 AutoJs4와 AutoJs6의 차이이며 AutoJs6 issue 트래커에 보고할 수 있습니다.
+> 플러그인은 AutoJs4를 변경하지 않습니다. 같은 Rhino 1.7.7.2, armeabi-v7a에서는 AutoJs4 원본 OpenCV 3.4.3 라이브러리, 64비트 기기에서는 같은 OpenCV 릴리스를 다시 빌드한 라이브러리, `targetSdk 28`, 같은 엔진 모듈입니다. 따라서 두 엔진 사이에서 관찰되는 차이는 AutoJs4와 AutoJs6의 차이이며 AutoJs6 issue 트래커에 보고할 수 있습니다.
 
 ******
 
@@ -80,8 +80,8 @@ AutoJs6 콘솔에 `[AutoJs4]` 접두어가 붙은 줄이 출력되며, 첫 줄�
 
 ******
 
-- 엔진: AutoJs4 4.4.0 (Auto.js 4.1.1 Alpha2 복제본), Git commit [`3fb08269198ebd49a880ab3ca2621383eaa10443`](https://github.com/SuperMonster003/AutoJs4/commit/3fb08269198ebd49a880ab3ca2621383eaa10443), Rhino 1.7.7.2, OpenCV 3.4.3. AutoJs4 소스는 Git submodule로 포함되며 수정 없이 컴파일됩니다.
-- 플랫폼: 32비트 앱을 지원하는 Android 7.0 (API 24) 이상. 단일 ABI APK는 `armeabi-v7a, x86`를 지원하고 `universal` APK는 둘 모두를 포함합니다. 64비트 전용 기기에는 AutoJs4와 마찬가지로 설치할 수 없습니다.
+- 엔진: AutoJs4 4.4.0 (Auto.js 4.1.1 Alpha2 복제본), Git commit [`3fb08269198ebd49a880ab3ca2621383eaa10443`](https://github.com/SuperMonster003/AutoJs4/commit/3fb08269198ebd49a880ab3ca2621383eaa10443), Rhino 1.7.7.2, OpenCV 3.4.3. AutoJs4 소스는 Git submodule로 포함되며 수정 없이 컴파일됩니다. arm64-v8a와 x86_64의 OpenCV 라이브러리는 같은 릴리스에서 NDK 28.2.13676358로 다시 빌드했으며 원본 라이브러리의 모든 JNI 심볼을 내보내는지 검증했습니다.
+- 플랫폼: Android 7.0 (API 24) 이상. 단일 ABI APK는 `arm64-v8a, armeabi-v7a, x86_64, x86`를 지원하고 `universal` APK는 네 가지를 모두 포함합니다. AutoJs4와 마찬가지로 `x86` 빌드에는 OpenCV가 없습니다.
 - 스크립트: `.js` 파일, `.auto` root 기록 파일, `project.json`이 있는 프로젝트 폴더 (`main`과 `features`를 따릅니다). `"ui";` 스크립트는 플러그인 프로세스 안에서 AutoJs4 자체 스크립트 Activity를 엽니다.
 - 권한: 저장공간 접근 (레거시 외부 저장공간, `targetSdk 28`), 다른 앱 위에 표시, AutoJs4 접근성 서비스는 AutoJs6와 별도로 플러그인에 부여합니다. Root 기능은 AutoJs4처럼 기기의 `su`를 사용합니다.
 - 동시 실행: 최대 16개의 AutoJs4 스크립트를 동시에 실행합니다. AutoJs6에서 작업을 중지하면 AutoJs4 엔진이 중지되고, 플러그인 프로세스가 비정상 종료되면 실패한 작업으로 보고됩니다.
@@ -118,14 +118,14 @@ aidl methods: getInfo(), getRuntimeInfo(), runScript(request, callback), cancelS
 minimum host build: 5334 (6.8.0)
 embedded AutoJs4: 4.4.0 (3fb08269198ebd49a880ab3ca2621383eaa10443)
 rhino: 1.7.7.2
-supported abis: armeabi-v7a, x86
+supported abis: arm64-v8a, armeabi-v7a, x86_64, x86
 max concurrent executions: 16
 max log chunk: 64 KiB
 ```
 
 `AutoJs4RuntimeService`는 action `org.autojs.plugin.autojs4.RUNTIME`과 category `autojs4-runtime`로 발견됩니다. `runScript`는 요청 Bundle (스크립트 경로, 작업 디렉터리, 선택적 프로젝트 폴더, 인수, 지연, 간격, 반복 횟수)을 검증하고 AutoJs4 실행을 시작한 뒤 수락 Bundle을 즉시 반환하며, 이후 `started`, `log`, `finished` 이벤트가 콜백으로 전달됩니다. `cancelScript`는 실행 중인 작업을 중지하거나 아직 디스패치되지 않은 실행에 대한 취소를 기억합니다. 전체 계약은 AutoJs6 저장소 ([protocol V1](https://github.com/SuperMonster003/AutoJs6/blob/master/docs/dev/autojs4-runtime-protocol-v1.md))에 문서화되어 있습니다.
 
-16 KB 페이지 크기: 플러그인은 AutoJs4가 제공하는 32비트 네이티브 라이브러리만 포함합니다. 64비트 네이티브 코드가 없으므로 정렬 게이트가 검사할 대상이 없고, APK는 64비트 전용 기기에 설치할 수 없습니다. 다시 빌드한 OpenCV 3.4.x로 `arm64-v8a` 빌드를 추가하는 문제는 [roadmap](https://github.com/SuperMonster003/AutoJs6/blob/master/docs/dev/autojs4-runtime-plugin-roadmap.md)의 미결 사항으로 관리합니다.
+16 KB 페이지 크기: arm64-v8a와 x86_64 네이티브 라이브러리 (NDK 28.2.13676358로 다시 빌드한 OpenCV 3.4.3와 AutoJs6 host가 다시 빌드한 jackpal 터미널 라이브러리)는 16 KB 최대 페이지 크기로 링크되며, 공유 정렬 게이트가 빌드 시 모든 ELF PT_LOAD 세그먼트를 검증합니다. 16 KB 페이지 기기에서의 실행은 아직 수행하지 않았습니다.
 
 ******
 
@@ -137,11 +137,12 @@ max log chunk: 64 KiB
 
 _2026/10/12_
 
-- `안내` 첫 릴리스는 32비트 전용 네이티브 라이브러리를 포함해 AutoJs4를 그대로 반영하므로 64비트 전용 기기에는 설치할 수 없습니다
+- `안내` armeabi-v7a는 AutoJs4 원본 OpenCV 3.4.3 네이티브 라이브러리를, 64비트 기기는 NDK 28.2로 다시 빌드한 같은 릴리스를 사용합니다. x86 빌드에는 AutoJs4와 마찬가지로 OpenCV가 없습니다
 - `기능` AutoJs6 파일 관리자의 `AutoJs4로 실행` 메뉴 항목을 통해 내장된 AutoJs4 4.4.0 엔진 (Rhino 1.7.7.2, OpenCV 3.4.3)으로 `.js` 파일, `.auto` 기록 파일, 프로젝트 폴더 실행
 - `기능` 버전 관리되는 `autojs4-runtime-api` AIDL 계약을 사용하는 보호된 런타임 서비스: 파일 경로 요청, 콘솔 줄 스트리밍, 시작과 완료 이벤트, 취소, 동시 실행
 - `기능` 접근성 서비스, 다른 앱 위에 표시, 저장공간 접근, 배터리 최적화, Root 상태를 보여 주는 플러그인 설정 페이지와 `AutoJs4 콘솔 창 표시` 스위치
-- `기능` `armeabi-v7a`, `x86`, `universal` APK 제공, Wake 활성화, 완전한 PluginInfo 메타데이터, 10개 언어의 플러그인 센터 설명, README, changelog
+- `기능` `arm64-v8a`, `armeabi-v7a`, `x86_64`, `x86`, `universal` APK 제공, Wake 활성화, 완전한 PluginInfo 메타데이터, 10개 언어의 플러그인 센터 설명, README, changelog
+- `개선` arm64-v8a와 x86_64의 OpenCV 3.4.3 및 jackpal 터미널 라이브러리를 16 KB 페이지 정렬로 빌드하고, 빌드 시 ELF 정렬과 원본 라이브러리 JNI 심볼의 완전한 포함을 검증
 - `의존성` AutoJs4 4.4.0을 commit [`3fb08269198ebd49a880ab3ca2621383eaa10443`](https://github.com/SuperMonster003/AutoJs4/commit/3fb08269198ebd49a880ab3ca2621383eaa10443)의 Git submodule로 내장
 
 ##### 더 많은 릴리스 기록

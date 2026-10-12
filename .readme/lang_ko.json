@@ -21,18 +21,18 @@
   "text_link_third_party_notices": "제3자 고지",
   "p_introduction": "AutoJs4 Runtime은 AutoJs6의 동작 기준인 {{ autojs4_baseline }} 복제본 [AutoJs4]({{ autojs4_url }})의 엔진을 내장합니다. 설치하면 AutoJs6 파일 관리자의 \"AutoJs4로 실행\" 항목이 `.js` 파일, `.auto` 기록 파일, 프로젝트 폴더를 이 플러그인 자체 프로세스에서 원본 Rhino {{ rhino_version }} 엔진으로 실행하고 콘솔 출력을 AutoJs6로 돌려보냅니다. AutoJs4를 따로 설치하지 않고도 한 기기에서 스크립트가 AutoJs4와 AutoJs6에서 다르게 동작하는지 확인할 수 있습니다.",
   "usage_steps": [
-    "Android {{ min_android_version }} (API {{ android_min_sdk }}) 이상에서 AutoJs6 build {{ required_host_version_code }} ({{ required_host_version_name }}) 이상을 사용합니다. AutoJs4와 마찬가지로 기기가 32비트 앱을 실행할 수 있어야 합니다.",
-    "기기 ABI에 맞는 release APK (ARM 기기는 `armeabi-v7a`, 에뮬레이터는 `x86`) 또는 `universal` APK를 설치합니다.",
+    "Android {{ min_android_version }} (API {{ android_min_sdk }}) 이상에서 AutoJs6 build {{ required_host_version_code }} ({{ required_host_version_name }}) 이상을 사용합니다.",
+    "기기 ABI에 맞는 release APK (대부분의 최신 휴대폰은 `arm64-v8a`, 32비트 기기는 `armeabi-v7a`, 에뮬레이터는 `x86_64` 또는 `x86`) 또는 용량이 더 큰 `universal` APK를 설치합니다.",
     "AutoJs6 플러그인 센터를 열어 AutoJs4 Runtime을 사용 설정합니다. Android가 새로 설치된 패키지를 중지 상태로 두었다면 host의 `활성화` 동작을 사용합니다.",
     "플러그인 센터에서 플러그인 설정을 열고 스크립트에 필요한 저장공간 접근, 다른 앱 위에 표시, 접근성 서비스를 허용합니다. 이 권한은 AutoJs6가 아닌 플러그인 자체의 권한입니다.",
     "AutoJs6 파일 관리자에서 `.js` 파일, `.auto` 파일 또는 프로젝트 폴더의 메뉴를 열고 `AutoJs4로 실행`을 선택합니다. 작업은 AutoJs6 작업 목록에 나타나며 거기서 중지할 수 있습니다."
   ],
-  "p_usage_note": "플러그인은 AutoJs4를 변경하지 않습니다. 같은 Rhino {{ rhino_version }}, 같은 OpenCV 3.4.3 네이티브 라이브러리, `targetSdk {{ android_target_sdk }}`, 같은 32비트 ABI 범위입니다. 따라서 두 엔진 사이에서 관찰되는 차이는 AutoJs4와 AutoJs6의 차이이며 AutoJs6 issue 트래커에 보고할 수 있습니다.",
+  "p_usage_note": "플러그인은 AutoJs4를 변경하지 않습니다. 같은 Rhino {{ rhino_version }}, armeabi-v7a에서는 AutoJs4 원본 OpenCV {{ opencv_version }} 라이브러리, 64비트 기기에서는 같은 OpenCV 릴리스를 다시 빌드한 라이브러리, `targetSdk {{ android_target_sdk }}`, 같은 엔진 모듈입니다. 따라서 두 엔진 사이에서 관찰되는 차이는 AutoJs4와 AutoJs6의 차이이며 AutoJs6 issue 트래커에 보고할 수 있습니다.",
   "p_quick_start_intro": "이 파일을 AutoJs6 작업 공간에 저장한 뒤 `AutoJs4로 실행`으로 실행합니다",
   "p_quick_start_result": "AutoJs6 콘솔에 `[AutoJs4]` 접두어가 붙은 줄이 출력되며, 첫 줄에 스크립트를 실행한 플러그인 패키지 이름이 표시되어 AutoJs4 엔진이 실행했음을 확인할 수 있습니다.",
   "compatibility_points": [
-    "엔진: AutoJs4 {{ autojs4_version }} ({{ autojs4_baseline }} 복제본), Git commit [`{{ autojs4_commit }}`]({{ autojs4_commit_url }}), Rhino {{ rhino_version }}, OpenCV 3.4.3. AutoJs4 소스는 Git submodule로 포함되며 수정 없이 컴파일됩니다.",
-    "플랫폼: 32비트 앱을 지원하는 Android {{ min_android_version }} (API {{ android_min_sdk }}) 이상. 단일 ABI APK는 `{{ supported_abis }}`를 지원하고 `universal` APK는 둘 모두를 포함합니다. 64비트 전용 기기에는 AutoJs4와 마찬가지로 설치할 수 없습니다.",
+    "엔진: AutoJs4 {{ autojs4_version }} ({{ autojs4_baseline }} 복제본), Git commit [`{{ autojs4_commit }}`]({{ autojs4_commit_url }}), Rhino {{ rhino_version }}, OpenCV {{ opencv_version }}. AutoJs4 소스는 Git submodule로 포함되며 수정 없이 컴파일됩니다. arm64-v8a와 x86_64의 OpenCV 라이브러리는 같은 릴리스에서 NDK {{ ndk_version }}로 다시 빌드했으며 원본 라이브러리의 모든 JNI 심볼을 내보내는지 검증했습니다.",
+    "플랫폼: Android {{ min_android_version }} (API {{ android_min_sdk }}) 이상. 단일 ABI APK는 `{{ supported_abis }}`를 지원하고 `universal` APK는 네 가지를 모두 포함합니다. AutoJs4와 마찬가지로 `x86` 빌드에는 OpenCV가 없습니다.",
     "스크립트: `.js` 파일, `.auto` root 기록 파일, `project.json`이 있는 프로젝트 폴더 (`main`과 `features`를 따릅니다). `\"ui\";` 스크립트는 플러그인 프로세스 안에서 AutoJs4 자체 스크립트 Activity를 엽니다.",
     "권한: 저장공간 접근 (레거시 외부 저장공간, `targetSdk {{ android_target_sdk }}`), 다른 앱 위에 표시, AutoJs4 접근성 서비스는 AutoJs6와 별도로 플러그인에 부여합니다. Root 기능은 AutoJs4처럼 기기의 `su`를 사용합니다.",
     "동시 실행: 최대 {{ max_concurrent_executions }}개의 AutoJs4 스크립트를 동시에 실행합니다. AutoJs6에서 작업을 중지하면 AutoJs4 엔진이 중지되고, 플러그인 프로세스가 비정상 종료되면 실패한 작업으로 보고됩니다."
@@ -44,7 +44,7 @@
     "AutoJs4 자체의 외부 진입점 (실행 인텐트, 바로가기, Tasker)은 내보내지 않습니다. 보호된 Binder 서비스를 통해 스크립트를 시작할 수 있는 것은 AutoJs6 host만입니다."
   ],
   "p_contract": "`AutoJs4RuntimeService`는 action `{{ plugin_service_action }}`과 category `{{ plugin_service_category }}`로 발견됩니다. `runScript`는 요청 Bundle (스크립트 경로, 작업 디렉터리, 선택적 프로젝트 폴더, 인수, 지연, 간격, 반복 횟수)을 검증하고 AutoJs4 실행을 시작한 뒤 수락 Bundle을 즉시 반환하며, 이후 `started`, `log`, `finished` 이벤트가 콜백으로 전달됩니다. `cancelScript`는 실행 중인 작업을 중지하거나 아직 디스패치되지 않은 실행에 대한 취소를 기억합니다. 전체 계약은 AutoJs6 저장소 ([protocol V1]({{ protocol_doc_url }}))에 문서화되어 있습니다.",
-  "p_16kb_status": "16 KB 페이지 크기: 플러그인은 AutoJs4가 제공하는 32비트 네이티브 라이브러리만 포함합니다. 64비트 네이티브 코드가 없으므로 정렬 게이트가 검사할 대상이 없고, APK는 64비트 전용 기기에 설치할 수 없습니다. 다시 빌드한 OpenCV 3.4.x로 `arm64-v8a` 빌드를 추가하는 문제는 [roadmap]({{ roadmap_url }})의 미결 사항으로 관리합니다.",
+  "p_16kb_status": "16 KB 페이지 크기: arm64-v8a와 x86_64 네이티브 라이브러리 (NDK {{ ndk_version }}로 다시 빌드한 OpenCV {{ opencv_version }}와 AutoJs6 host가 다시 빌드한 jackpal 터미널 라이브러리)는 16 KB 최대 페이지 크기로 링크되며, 공유 정렬 게이트가 빌드 시 모든 ELF PT_LOAD 세그먼트를 검증합니다. 16 KB 페이지 기기에서의 실행은 아직 수행하지 않았습니다.",
   "p_build_intro": "빌드에는 JDK 17 이상, Python 3, Android SDK 37이 필요합니다 (AutoJs4 엔진 모듈은 API 30으로 컴파일되며 Android SDK가 필요 시 다운로드합니다). `autojs4/`를 채우기 위해 `--recurse-submodules`로 클론하세요. 표준 검사는 생성 문서, JVM 테스트, debug APK, instrumentation 패키지, Android Lint를 검증합니다.",
   "p_localization": "JSON과 Markdown 템플릿을 편집한 뒤 `py .python/generate_markdown.py`를 실행합니다. 생성된 README, changelog, 플러그인 설명 파일은 수동으로 편집하지 마세요. `--check` 모드는 파일을 쓰지 않고 언어 구조, 버전 일치, 현지화 리소스, 고아 파일, 생성 파일 드리프트를 검증합니다.",
   "p_license": "플러그인 코드는 [Mozilla Public License 2.0]({{ license_url }})으로 제공됩니다. 내장된 AutoJs4 소스는 AutoJs4 저장소의 비상업적 사용 조항이 추가된 MPL 2.0입니다. Rhino, OpenCV, jackpal 터미널 라이브러리와 기타 제3자 구성 요소는 각자의 라이선스를 유지합니다. [제3자 고지]({{ third_party_notices_url }})를 참조하세요.",

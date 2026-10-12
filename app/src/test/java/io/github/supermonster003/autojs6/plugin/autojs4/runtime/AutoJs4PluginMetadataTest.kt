@@ -25,7 +25,7 @@ class AutoJs4PluginMetadataTest {
 
     @Test
     fun distributedAbiInventoryMirrorsAutoJs4() {
-        assertEquals(listOf("armeabi-v7a", "x86"), DISTRIBUTED_ABIS.toList())
+        assertEquals(listOf("arm64-v8a", "armeabi-v7a", "x86_64", "x86"), DISTRIBUTED_ABIS.toList())
         assertTrue(INSTRUCTION_REFERENCE.startsWith("@raw/"))
     }
 

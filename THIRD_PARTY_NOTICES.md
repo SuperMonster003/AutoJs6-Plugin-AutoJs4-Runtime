@@ -9,10 +9,21 @@ by each upstream project; the plugin does not modify any of them.
 - Source: https://github.com/SuperMonster003/AutoJs4, commit `3fb08269198ebd49a880ab3ca2621383eaa10443`
 - Modules compiled without modification: `autojs`, `common`, `automator`; prebuilt artifacts taken as-is:
   `autojs/libs/opencv-3.4.3.aar` (Java bindings), `autojs/libs/rhino-1.7.7.2.jar`, `autojs/libs/dx.jar`,
-  `autojs/libs/libtermexec-release.aar`, `autojs/libs/emulatorview-release.aar`, `autojs/libs/term-debug.aar`,
+  `autojs/libs/emulatorview-release.aar`, `autojs/libs/term-debug.aar`,
   `libs/apk-builder-1.0.3/apk-builder-1.0.3.aar`, `libs/root-shell-1.6/root-shell-1.6.aar`,
-  `app/src/main/jniLibs/armeabi-v7a/libopencv_java3.so`, `app/src/main/jniLibs/armeabi-v7a/libjackpal-*.so`,
-  `autojs/src/main/assets/binary/root_automator`
+  `app/src/main/jniLibs/armeabi-v7a/libopencv_java3.so` (the 32-bit OpenCV library, SHA-256
+  `d05136b5f6a915da2343920ffcaecb13bd6b6e9d38f24ada78a6d11010a66638`), `autojs/src/main/assets/binary/root_automator`
+
+## Rebuilt native libraries
+
+- `native/opencv/arm64-v8a/libopencv_java3.so` and `native/opencv/x86_64/libopencv_java3.so`: OpenCV 3.4.3 built by
+  this repository from the official source archive (`https://github.com/opencv/opencv/archive/refs/tags/3.4.3.zip`,
+  SHA-256 `37c7d8c3b9807902ad11b9181bbde61dcb3898a78a563130494752f46fe8cc5f`) with NDK 28.2.13676358 and 16 KB page
+  alignment; see `tools/opencv/README.md` and `native/opencv/opencv.lock.json`. License: BSD 3-Clause (OpenCV).
+- `libs/jackpal-androidterm-libtermexec-1_0/libtermexec-release.aar`: the jackpal libtermexec AAR whose eight
+  `jni/<abi>/*.so` entries were rebuilt by the AutoJs6 host from upstream commit
+  `35188f8a8b57989a4a4ec9485e11187b46be26d9` with NDK 28.2.13676358 (`provenance.json`, `upstream.lock.json`);
+  Java classes identical to AutoJs4's `autojs/libs/libtermexec-release.aar`. License: Apache License 2.0.
 - License: Mozilla Public License 2.0 with the additional non-commercial clause of the AutoJs4 repository
   ("非商业性使用 - 不得将此项目及衍生项目的源代码和二进制产品用于任何商业和盈利用途"). AutoJs4 is itself a clone
   of Auto.js 4.1.1 Alpha2 by hyb1996.

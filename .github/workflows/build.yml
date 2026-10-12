@@ -42,6 +42,8 @@ jobs:
           python3 -B .python/generate_markdown.py --check
           python3 -B .python/generate_provisional_icon.py --check
           python3 -B -m unittest discover -s .python -p "test_*.py"
+          # The rebuilt 64-bit OpenCV libraries must match native/opencv/opencv.lock.json (SHA-256 only without an NDK).
+          python3 -B tools/opencv/build_opencv_android.py --check
           version_ref="${{ github.event.pull_request.head.sha || github.sha }}"
           commit_count="$(git rev-list --count "$version_ref")"
           actual_build="$(sed -n 's/^VERSION_BUILD=//p' version.properties)"
@@ -72,14 +74,19 @@ jobs:
           compression-level: 0
 
   instrumentation:
-    name: Binder and AutoJs4 round trip (API ${{ matrix.api_level }}, x86)
+    name: Binder and AutoJs4 round trip (API ${{ matrix.api_level }}, ${{ matrix.arch }})
     needs: build
     runs-on: ubuntu-latest
     timeout-minutes: 50
     strategy:
       fail-fast: false
       matrix:
-        api_level: [24, 30]
+        # x86 exercises the 32-bit variant without OpenCV (as in AutoJs4); x86_64 loads the rebuilt 16 KB OpenCV library.
+        include:
+          - api_level: 24
+            arch: x86
+          - api_level: 30
+            arch: x86_64
 
     steps:
       - name: Check out repository with the AutoJs4 submodule
@@ -103,12 +110,11 @@ jobs:
           sudo udevadm control --reload-rules
           sudo udevadm trigger --name-match=kvm
 
-      # The plugin ships 32-bit code only (armeabi-v7a and x86), so the emulator must offer an x86 ABI.
       - name: Run Android instrumentation
         uses: reactivecircus/android-emulator-runner@v2.38.0
         with:
           api-level: ${{ matrix.api_level }}
           target: google_apis
-          arch: x86
+          arch: ${{ matrix.arch }}
           profile: pixel_2
           script: bash ./gradlew connectedDebugAndroidTest -PrequiredApiLevel=${{ matrix.api_level }} --stacktrace

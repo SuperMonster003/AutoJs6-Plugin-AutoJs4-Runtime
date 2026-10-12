@@ -14,8 +14,8 @@ La console d'AutoJs6 affiche les lignes préfixées par `[AutoJs4]` ; la premiè
 
 ### Compatibilité et portée
 
-- Moteur : AutoJs4 4.4.0 (clone de Auto.js 4.1.1 Alpha2), commit Git [`3fb08269198ebd49a880ab3ca2621383eaa10443`](https://github.com/SuperMonster003/AutoJs4/commit/3fb08269198ebd49a880ab3ca2621383eaa10443), Rhino 1.7.7.2, OpenCV 3.4.3. Les sources d'AutoJs4 sont incluses comme submodule Git et compilées sans modification.
-- Plateforme : Android 7.0 (API 24) ou ultérieur avec prise en charge des applications 32 bits. Les APK mono-ABI couvrent `armeabi-v7a, x86` ; l'APK `universal` contient les deux. Les appareils uniquement 64 bits ne peuvent pas installer le plugin, pas plus qu'AutoJs4.
+- Moteur : AutoJs4 4.4.0 (clone de Auto.js 4.1.1 Alpha2), commit Git [`3fb08269198ebd49a880ab3ca2621383eaa10443`](https://github.com/SuperMonster003/AutoJs4/commit/3fb08269198ebd49a880ab3ca2621383eaa10443), Rhino 1.7.7.2, OpenCV 3.4.3. Les sources d'AutoJs4 sont incluses comme submodule Git et compilées sans modification ; les bibliothèques OpenCV arm64-v8a et x86_64 sont recompilées à partir de la même version avec le NDK 28.2.13676358 et vérifiées pour exporter tous les symboles JNI de la bibliothèque d'origine.
+- Plateforme : Android 7.0 (API 24) ou ultérieur. Les APK mono-ABI couvrent `arm64-v8a, armeabi-v7a, x86_64, x86` ; l'APK `universal` contient les quatre. Comme AutoJs4, la build `x86` n'a pas d'OpenCV.
 - Scripts : fichiers `.js`, enregistrements root `.auto` et dossiers de projet avec `project.json` (le script `main` et les `features` sont respectés). Les scripts `"ui";` ouvrent l'activité de script d'AutoJs4 dans le processus du plugin.
 - Permissions : l'accès au stockage (stockage externe hérité, `targetSdk 28`), la superposition aux autres applications et le service d'accessibilité d'AutoJs4 sont accordés au plugin indépendamment d'AutoJs6. Les fonctions root utilisent le `su` de l'appareil comme AutoJs4.
 - Concurrence : jusqu'à 16 scripts AutoJs4 s'exécutent en même temps ; arrêter une tâche dans AutoJs6 arrête le moteur AutoJs4, et un plantage du processus du plugin est signalé comme tâche échouée.

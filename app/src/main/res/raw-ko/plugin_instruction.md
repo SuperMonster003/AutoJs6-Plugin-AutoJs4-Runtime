@@ -14,8 +14,8 @@ AutoJs6 콘솔에 `[AutoJs4]` 접두어가 붙은 줄이 출력되며, 첫 줄�
 
 ### 호환성과 범위
 
-- 엔진: AutoJs4 4.4.0 (Auto.js 4.1.1 Alpha2 복제본), Git commit [`3fb08269198ebd49a880ab3ca2621383eaa10443`](https://github.com/SuperMonster003/AutoJs4/commit/3fb08269198ebd49a880ab3ca2621383eaa10443), Rhino 1.7.7.2, OpenCV 3.4.3. AutoJs4 소스는 Git submodule로 포함되며 수정 없이 컴파일됩니다.
-- 플랫폼: 32비트 앱을 지원하는 Android 7.0 (API 24) 이상. 단일 ABI APK는 `armeabi-v7a, x86`를 지원하고 `universal` APK는 둘 모두를 포함합니다. 64비트 전용 기기에는 AutoJs4와 마찬가지로 설치할 수 없습니다.
+- 엔진: AutoJs4 4.4.0 (Auto.js 4.1.1 Alpha2 복제본), Git commit [`3fb08269198ebd49a880ab3ca2621383eaa10443`](https://github.com/SuperMonster003/AutoJs4/commit/3fb08269198ebd49a880ab3ca2621383eaa10443), Rhino 1.7.7.2, OpenCV 3.4.3. AutoJs4 소스는 Git submodule로 포함되며 수정 없이 컴파일됩니다. arm64-v8a와 x86_64의 OpenCV 라이브러리는 같은 릴리스에서 NDK 28.2.13676358로 다시 빌드했으며 원본 라이브러리의 모든 JNI 심볼을 내보내는지 검증했습니다.
+- 플랫폼: Android 7.0 (API 24) 이상. 단일 ABI APK는 `arm64-v8a, armeabi-v7a, x86_64, x86`를 지원하고 `universal` APK는 네 가지를 모두 포함합니다. AutoJs4와 마찬가지로 `x86` 빌드에는 OpenCV가 없습니다.
 - 스크립트: `.js` 파일, `.auto` root 기록 파일, `project.json`이 있는 프로젝트 폴더 (`main`과 `features`를 따릅니다). `"ui";` 스크립트는 플러그인 프로세스 안에서 AutoJs4 자체 스크립트 Activity를 엽니다.
 - 권한: 저장공간 접근 (레거시 외부 저장공간, `targetSdk 28`), 다른 앱 위에 표시, AutoJs4 접근성 서비스는 AutoJs6와 별도로 플러그인에 부여합니다. Root 기능은 AutoJs4처럼 기기의 `su`를 사용합니다.
 - 동시 실행: 최대 16개의 AutoJs4 스크립트를 동시에 실행합니다. AutoJs6에서 작업을 중지하면 AutoJs4 엔진이 중지되고, 플러그인 프로세스가 비정상 종료되면 실패한 작업으로 보고됩니다.

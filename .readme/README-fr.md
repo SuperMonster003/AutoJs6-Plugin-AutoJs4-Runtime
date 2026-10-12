@@ -50,13 +50,13 @@ AutoJs4 Runtime embarque le moteur d'[AutoJs4](https://github.com/SuperMonster00
 
 ******
 
-1. Utilisez AutoJs6 build 5334 (6.8.0) ou ultérieur sur Android 7.0 (API 24) ou ultérieur. L'appareil doit pouvoir exécuter des applications 32 bits, exactement comme pour AutoJs4.
-2. Installez l'APK de release correspondant à l'ABI de l'appareil (`armeabi-v7a` pour ARM, `x86` pour les émulateurs), ou l'APK `universal`.
+1. Utilisez AutoJs6 build 5334 (6.8.0) ou ultérieur sur Android 7.0 (API 24) ou ultérieur.
+2. Installez l'APK de release correspondant à l'ABI de l'appareil (`arm64-v8a` pour la plupart des téléphones actuels, `armeabi-v7a` pour les appareils 32 bits, `x86_64` ou `x86` pour les émulateurs), ou l'APK `universal` plus volumineux.
 3. Ouvrez le centre de plugins d'AutoJs6 et activez AutoJs4 Runtime. Si Android a laissé le nouveau paquet arrêté, utilisez l'action `Activer` de l'hôte.
 4. Ouvrez les paramètres du plugin depuis le centre de plugins et accordez l'accès au stockage, la superposition aux autres applications et le service d'accessibilité selon les besoins des scripts ; ces permissions appartiennent au plugin, pas à AutoJs6.
 5. Dans le gestionnaire de fichiers d'AutoJs6, ouvrez le menu d'un fichier `.js`, d'un fichier `.auto` ou d'un dossier de projet et choisissez `Exécuter avec AutoJs4`. La tâche apparaît dans la liste des tâches d'AutoJs6 et peut y être arrêtée.
 
-> Le plugin ne modifie pas AutoJs4 : même Rhino 1.7.7.2, même bibliothèque native OpenCV 3.4.3, `targetSdk 28` et même couverture d'ABI 32 bits. Les différences observées entre les deux moteurs sont donc des différences entre AutoJs4 et AutoJs6 et peuvent être signalées dans le suivi des issues d'AutoJs6.
+> Le plugin ne modifie pas AutoJs4 : même Rhino 1.7.7.2, bibliothèque OpenCV 3.4.3 d'origine d'AutoJs4 sur armeabi-v7a et même version d'OpenCV recompilée pour les appareils 64 bits, `targetSdk 28` et mêmes modules de moteur. Les différences observées entre les deux moteurs sont donc des différences entre AutoJs4 et AutoJs6 et peuvent être signalées dans le suivi des issues d'AutoJs6.
 
 ******
 
@@ -80,8 +80,8 @@ La console d'AutoJs6 affiche les lignes préfixées par `[AutoJs4]` ; la premiè
 
 ******
 
-- Moteur : AutoJs4 4.4.0 (clone de Auto.js 4.1.1 Alpha2), commit Git [`3fb08269198ebd49a880ab3ca2621383eaa10443`](https://github.com/SuperMonster003/AutoJs4/commit/3fb08269198ebd49a880ab3ca2621383eaa10443), Rhino 1.7.7.2, OpenCV 3.4.3. Les sources d'AutoJs4 sont incluses comme submodule Git et compilées sans modification.
-- Plateforme : Android 7.0 (API 24) ou ultérieur avec prise en charge des applications 32 bits. Les APK mono-ABI couvrent `armeabi-v7a, x86` ; l'APK `universal` contient les deux. Les appareils uniquement 64 bits ne peuvent pas installer le plugin, pas plus qu'AutoJs4.
+- Moteur : AutoJs4 4.4.0 (clone de Auto.js 4.1.1 Alpha2), commit Git [`3fb08269198ebd49a880ab3ca2621383eaa10443`](https://github.com/SuperMonster003/AutoJs4/commit/3fb08269198ebd49a880ab3ca2621383eaa10443), Rhino 1.7.7.2, OpenCV 3.4.3. Les sources d'AutoJs4 sont incluses comme submodule Git et compilées sans modification ; les bibliothèques OpenCV arm64-v8a et x86_64 sont recompilées à partir de la même version avec le NDK 28.2.13676358 et vérifiées pour exporter tous les symboles JNI de la bibliothèque d'origine.
+- Plateforme : Android 7.0 (API 24) ou ultérieur. Les APK mono-ABI couvrent `arm64-v8a, armeabi-v7a, x86_64, x86` ; l'APK `universal` contient les quatre. Comme AutoJs4, la build `x86` n'a pas d'OpenCV.
 - Scripts : fichiers `.js`, enregistrements root `.auto` et dossiers de projet avec `project.json` (le script `main` et les `features` sont respectés). Les scripts `"ui";` ouvrent l'activité de script d'AutoJs4 dans le processus du plugin.
 - Permissions : l'accès au stockage (stockage externe hérité, `targetSdk 28`), la superposition aux autres applications et le service d'accessibilité d'AutoJs4 sont accordés au plugin indépendamment d'AutoJs6. Les fonctions root utilisent le `su` de l'appareil comme AutoJs4.
 - Concurrence : jusqu'à 16 scripts AutoJs4 s'exécutent en même temps ; arrêter une tâche dans AutoJs6 arrête le moteur AutoJs4, et un plantage du processus du plugin est signalé comme tâche échouée.
@@ -118,14 +118,14 @@ aidl methods: getInfo(), getRuntimeInfo(), runScript(request, callback), cancelS
 minimum host build: 5334 (6.8.0)
 embedded AutoJs4: 4.4.0 (3fb08269198ebd49a880ab3ca2621383eaa10443)
 rhino: 1.7.7.2
-supported abis: armeabi-v7a, x86
+supported abis: arm64-v8a, armeabi-v7a, x86_64, x86
 max concurrent executions: 16
 max log chunk: 64 KiB
 ```
 
 `AutoJs4RuntimeService` est découvert par l'action `org.autojs.plugin.autojs4.RUNTIME` et la catégorie `autojs4-runtime`. `runScript` valide le Bundle de requête (chemin du script, répertoire de travail, dossier de projet facultatif, arguments, délai, intervalle et nombre de boucles), démarre l'exécution AutoJs4 et renvoie immédiatement un Bundle d'acceptation ; les événements `started`, `log` et `finished` arrivent ensuite par le callback. `cancelScript` arrête une exécution en cours ou mémorise une annulation pour une exécution pas encore lancée. Le contrat complet est documenté dans le dépôt AutoJs6 ([protocole V1](https://github.com/SuperMonster003/AutoJs6/blob/master/docs/dev/autojs4-runtime-protocol-v1.md)).
 
-Pages de 16 KB : le plugin ne contient que les bibliothèques natives 32 bits livrées par AutoJs4. Sans code natif 64 bits, le contrôle d'alignement n'a rien à vérifier et l'APK ne peut pas être installé sur les appareils uniquement 64 bits. L'ajout d'une build `arm64-v8a` avec un OpenCV 3.4.x recompilé est suivi comme question ouverte dans la [roadmap](https://github.com/SuperMonster003/AutoJs6/blob/master/docs/dev/autojs4-runtime-plugin-roadmap.md).
+Pages de 16 KB : les bibliothèques natives arm64-v8a et x86_64 (OpenCV 3.4.3 recompilé avec le NDK 28.2.13676358 et les bibliothèques de terminal jackpal recompilées par l'hôte AutoJs6) sont liées avec une taille de page maximale de 16 KB, et le contrôle d'alignement partagé vérifie chaque segment ELF PT_LOAD à la compilation. Aucune exécution sur un appareil à pages de 16 KB n'a encore été effectuée.
 
 ******
 
@@ -137,11 +137,12 @@ Pages de 16 KB : le plugin ne contient que les bibliothèques natives 32 bits li
 
 _2026/10/12_
 
-- `Conseil` La première version reproduit exactement AutoJs4, y compris ses bibliothèques natives uniquement 32 bits ; le plugin ne peut donc pas être installé sur les appareils uniquement 64 bits
+- `Conseil` armeabi-v7a utilise la bibliothèque native OpenCV 3.4.3 d'origine d'AutoJs4, les appareils 64 bits utilisent la même version recompilée avec le NDK 28.2 ; la build x86 n'a pas d'OpenCV, comme AutoJs4
 - `Fonctionnalité` Exécution des fichiers `.js`, des enregistrements `.auto` et des dossiers de projet depuis le gestionnaire de fichiers d'AutoJs6 avec le moteur AutoJs4 4.4.0 embarqué (Rhino 1.7.7.2, OpenCV 3.4.3) via l'entrée de menu `Exécuter avec AutoJs4`
 - `Fonctionnalité` Service d'exécution protégé avec le contrat AIDL versionné `autojs4-runtime-api` : requêtes par chemin de fichier, lignes de console diffusées, événements de démarrage et de fin, annulation et exécutions concurrentes
 - `Fonctionnalité` Page de paramètres du plugin avec service d'accessibilité, superposition aux autres applications, accès au stockage, optimisation de la batterie et état root, plus l'interrupteur `Afficher la fenêtre de console AutoJs4`
-- `Fonctionnalité` Livraison des APK `armeabi-v7a`, `x86` et `universal`, activation Wake, métadonnées PluginInfo complètes, instructions du centre de plugins, README et changelog en 10 langues
+- `Fonctionnalité` Livraison des APK `arm64-v8a`, `armeabi-v7a`, `x86_64`, `x86` et `universal`, activation Wake, métadonnées PluginInfo complètes, instructions du centre de plugins, README et changelog en 10 langues
+- `Amélioration` Compilation des bibliothèques OpenCV 3.4.3 et de terminal jackpal pour arm64-v8a et x86_64 avec alignement sur des pages de 16 KB, et vérification à la compilation de l'alignement ELF et de la couverture complète des symboles JNI de la bibliothèque d'origine
 - `Dépendance` Intégration d'AutoJs4 4.4.0 comme submodule Git au commit [`3fb08269198ebd49a880ab3ca2621383eaa10443`](https://github.com/SuperMonster003/AutoJs4/commit/3fb08269198ebd49a880ab3ca2621383eaa10443)
 
 ##### Historique supplémentaire

@@ -11,7 +11,7 @@ import org.autojs.plugin.common.api.PluginInfo
 import java.util.zip.ZipFile
 
 /** ABIs the release pipeline builds; must match `supportedAbis` in app/build.gradle.kts. */
-internal val DISTRIBUTED_ABIS = arrayOf("armeabi-v7a", "x86")
+internal val DISTRIBUTED_ABIS = arrayOf("arm64-v8a", "armeabi-v7a", "x86_64", "x86")
 internal const val INSTRUCTION_REFERENCE = "@raw/plugin_instruction"
 
 internal data class AutoJs4Identity(

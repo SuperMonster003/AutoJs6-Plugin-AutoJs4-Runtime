@@ -8,9 +8,10 @@
 
 ###### 2026/10/12
 
-* `ヒント` 初回リリースは 32 ビットのみのネイティブライブラリを含め AutoJs4 を忠実に再現するため, 64 ビット専用端末にはインストールできません
+* `ヒント` armeabi-v7a では AutoJs4 オリジナルの OpenCV 3.4.3 ネイティブライブラリを, 64 ビット端末では NDK 28.2 で再ビルドした同じリリースを使用します. x86 ビルドには AutoJs4 と同様に OpenCV がありません
 * `機能` AutoJs6 のファイルマネージャーの `AutoJs4 で実行` メニューから, 内蔵の AutoJs4 4.4.0 エンジン (Rhino 1.7.7.2, OpenCV 3.4.3) で `.js` ファイル, `.auto` 記録ファイル, プロジェクトフォルダーを実行
 * `機能` バージョン管理された `autojs4-runtime-api` AIDL 契約による保護されたランタイムサービス: ファイルパス要求, コンソール行のストリーミング, 開始と完了イベント, キャンセル, 同時実行
 * `機能` ユーザー補助サービス, 他のアプリの上に表示, ストレージへのアクセス, 電池の最適化, Root 状態を示すプラグイン設定ページと `AutoJs4 コンソールウィンドウを表示` スイッチ
-* `機能` `armeabi-v7a`, `x86`, `universal` APK の提供, Wake アクティベーション, 完全な PluginInfo メタデータ, 10 言語のプラグインセンター説明, README, changelog
+* `機能` `arm64-v8a`, `armeabi-v7a`, `x86_64`, `x86`, `universal` APK の提供, Wake アクティベーション, 完全な PluginInfo メタデータ, 10 言語のプラグインセンター説明, README, changelog
+* `改善` arm64-v8a と x86_64 の OpenCV 3.4.3 および jackpal 端末ライブラリを 16 KB ページアライメントでビルドし, ビルド時に ELF アライメントとオリジナルライブラリの JNI シンボルの完全な網羅を検証
 * `依存関係` AutoJs4 4.4.0 を Git submodule として commit [`3fb08269198ebd49a880ab3ca2621383eaa10443`](https://github.com/SuperMonster003/AutoJs4/commit/3fb08269198ebd49a880ab3ca2621383eaa10443) で内蔵
