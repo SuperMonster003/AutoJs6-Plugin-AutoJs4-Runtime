@@ -19,5 +19,6 @@ AutoJs6 主控台會列印帶 `[AutoJs4]` 前綴的日誌, 第一行顯示執行
 - 指令碼: `.js` 檔案, `.auto` Root 錄製檔案以及含 `project.json` 的專案資料夾 (遵循 `main` 入口與 `features`). `"ui";` 指令碼在外掛處理程序中開啟 AutoJs4 自己的指令碼 Activity.
 - 權限: 儲存空間權限 (傳統外部儲存空間, `targetSdk 28`), 懸浮視窗與 AutoJs4 無障礙服務都單獨授予外掛, 與 AutoJs6 無關. Root 功能與 AutoJs4 一樣使用裝置上的 `su`.
 - 並行: 最多同時執行 16 個 AutoJs4 指令碼; 在 AutoJs6 中停止工作會停止 AutoJs4 引擎, 外掛處理程序當機會被回報為失敗的工作.
+- 設定及發行歷史頁面跟隨 AutoJs6 的語言, 暗色模式和主題色, 宿主設定不可用時回退系統外觀.
 
 ABI 選擇, 權限, 精確契約與本版本範圍請參閱 [專案 README](https://github.com/SuperMonster003/AutoJs6-Plugin-AutoJs4-Runtime).

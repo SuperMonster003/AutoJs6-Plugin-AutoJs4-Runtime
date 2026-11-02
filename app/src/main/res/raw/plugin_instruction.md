@@ -19,5 +19,6 @@ The AutoJs6 console prints the lines prefixed with `[AutoJs4]`; the first line s
 - Scripts: `.js` files, `.auto` root recordings and project folders with `project.json` (the `main` script and `features` are honoured). `"ui";` scripts open AutoJs4's own script activity inside the plugin process.
 - Permissions: storage access (legacy external storage, `targetSdk 28`), display over other apps and the AutoJs4 accessibility service are granted to the plugin separately from AutoJs6. Root features use the `su` of the device like AutoJs4.
 - Concurrency: up to 16 AutoJs4 scripts run at the same time; stopping a task in AutoJs6 stops the AutoJs4 engine, and a crashed plugin process is reported as a failed task.
+- Settings and release history pages follow the language, dark mode and theme color of AutoJs6, falling back to the system appearance when host settings are unavailable.
 
 See the [project README](https://github.com/SuperMonster003/AutoJs6-Plugin-AutoJs4-Runtime) for ABI selection, permissions, the exact contract and the scope of this version.

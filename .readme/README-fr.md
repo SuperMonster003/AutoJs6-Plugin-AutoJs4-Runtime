@@ -85,6 +85,7 @@ La console d'AutoJs6 affiche les lignes préfixées par `[AutoJs4]` ; la premiè
 - Scripts : fichiers `.js`, enregistrements root `.auto` et dossiers de projet avec `project.json` (le script `main` et les `features` sont respectés). Les scripts `"ui";` ouvrent l'activité de script d'AutoJs4 dans le processus du plugin.
 - Permissions : l'accès au stockage (stockage externe hérité, `targetSdk 28`), la superposition aux autres applications et le service d'accessibilité d'AutoJs4 sont accordés au plugin indépendamment d'AutoJs6. Les fonctions root utilisent le `su` de l'appareil comme AutoJs4.
 - Concurrence : jusqu'à 16 scripts AutoJs4 s'exécutent en même temps ; arrêter une tâche dans AutoJs6 arrête le moteur AutoJs4, et un plantage du processus du plugin est signalé comme tâche échouée.
+- Les pages de paramètres et d'historique des versions suivent la langue, le mode sombre et la couleur du thème AutoJs6, avec repli sur l'apparence du système si les paramètres de l'hôte sont indisponibles.
 
 ******
 
@@ -135,9 +136,11 @@ Pages de 16 KB : les bibliothèques natives arm64-v8a et x86_64 (OpenCV 3.4.3 re
 
 #### v1.0.1
 
-_2026/10/12_
+_2026/10/14_
 
+- `Correction` Icône de l'application difficile à distinguer sur les fonds sombres de certains lanceurs et listes d'applications système
 - `Amélioration` Lorsqu'un script a besoin du service d'accessibilité alors que le service du plugin n'est pas activé, un message toast explique pourquoi les paramètres d'accessibilité du système s'ouvrent
+- `Amélioration` Les pages de paramètres et d'historique des versions suivent la langue, le mode sombre et la couleur du thème AutoJs6, avec repli sur l'apparence du système si les paramètres de l'hôte sont indisponibles
 
 #### v1.0.0
 

@@ -19,5 +19,6 @@ AutoJs6 콘솔에 `[AutoJs4]` 접두어가 붙은 줄이 출력되며, 첫 줄�
 - 스크립트: `.js` 파일, `.auto` root 기록 파일, `project.json`이 있는 프로젝트 폴더 (`main`과 `features`를 따릅니다). `"ui";` 스크립트는 플러그인 프로세스 안에서 AutoJs4 자체 스크립트 Activity를 엽니다.
 - 권한: 저장공간 접근 (레거시 외부 저장공간, `targetSdk 28`), 다른 앱 위에 표시, AutoJs4 접근성 서비스는 AutoJs6와 별도로 플러그인에 부여합니다. Root 기능은 AutoJs4처럼 기기의 `su`를 사용합니다.
 - 동시 실행: 최대 16개의 AutoJs4 스크립트를 동시에 실행합니다. AutoJs6에서 작업을 중지하면 AutoJs4 엔진이 중지되고, 플러그인 프로세스가 비정상 종료되면 실패한 작업으로 보고됩니다.
+- 설정 및 릴리스 기록 페이지가 AutoJs6의 언어, 다크 모드 및 테마 색상을 따르며, 호스트 설정을 사용할 수 없으면 시스템 모양을 사용합니다.
 
 ABI 선택, 권한, 정확한 계약, 이 버전의 범위는 [프로젝트 README](https://github.com/SuperMonster003/AutoJs6-Plugin-AutoJs4-Runtime)를 참조하세요.

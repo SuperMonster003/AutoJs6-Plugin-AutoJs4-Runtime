@@ -35,7 +35,8 @@
     "平台: Android {{ min_android_version }} (API {{ android_min_sdk }}) 或更高版本. 单 ABI APK 覆盖 `{{ supported_abis }}`, `universal` APK 包含全部四种. 与 AutoJs4 一样, `x86` 构建不含 OpenCV.",
     "脚本: `.js` 文件, `.auto` Root 录制文件以及含 `project.json` 的项目文件夹 (遵循 `main` 入口与 `features`). `\"ui\";` 脚本在插件进程中打开 AutoJs4 自己的脚本 Activity.",
     "权限: 存储权限 (传统外部存储, `targetSdk {{ android_target_sdk }}`), 悬浮窗与 AutoJs4 无障碍服务都单独授予插件, 与 AutoJs6 无关. Root 功能与 AutoJs4 一样使用设备上的 `su`.",
-    "并发: 最多同时运行 {{ max_concurrent_executions }} 个 AutoJs4 脚本; 在 AutoJs6 中停止任务会停止 AutoJs4 引擎, 插件进程崩溃会被报告为失败的任务."
+    "并发: 最多同时运行 {{ max_concurrent_executions }} 个 AutoJs4 脚本; 在 AutoJs6 中停止任务会停止 AutoJs4 引擎, 插件进程崩溃会被报告为失败的任务.",
+    "设置及发行历史页面跟随 AutoJs6 的语言, 暗色模式和主题色, 宿主设置不可用时回退系统外观."
   ],
   "security_points": [
     "Wake Activity 与两个导出服务均要求 `org.autojs.permission.PLUGIN`; 脚本以插件 UID 运行在 `:autojs4_runtime` 进程中, 从不进入 AutoJs6 进程.",

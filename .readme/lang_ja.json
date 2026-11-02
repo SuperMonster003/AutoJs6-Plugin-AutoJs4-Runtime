@@ -35,7 +35,8 @@
     "プラットフォーム: Android {{ min_android_version }} (API {{ android_min_sdk }}) 以降. 単一 ABI の APK は `{{ supported_abis }}` を, `universal` APK は 4 つすべてを含みます. AutoJs4 と同様に `x86` ビルドには OpenCV がありません.",
     "スクリプト: `.js` ファイル, `.auto` root 記録ファイル, `project.json` を持つプロジェクトフォルダー (`main` と `features` を尊重). `\"ui\";` スクリプトはプラグインプロセス内で AutoJs4 自身のスクリプト Activity を開きます.",
     "権限: ストレージへのアクセス (従来の外部ストレージ, `targetSdk {{ android_target_sdk }}`), 他のアプリの上に表示, AutoJs4 のユーザー補助サービスは AutoJs6 とは別にプラグインへ付与します. Root 機能は AutoJs4 と同様に端末の `su` を使用します.",
-    "同時実行: 最大 {{ max_concurrent_executions }} 個の AutoJs4 スクリプトを同時に実行できます. AutoJs6 でタスクを停止すると AutoJs4 エンジンが停止し, プラグインプロセスのクラッシュは失敗したタスクとして報告されます."
+    "同時実行: 最大 {{ max_concurrent_executions }} 個の AutoJs4 スクリプトを同時に実行できます. AutoJs6 でタスクを停止すると AutoJs4 エンジンが停止し, プラグインプロセスのクラッシュは失敗したタスクとして報告されます.",
+    "設定とリリース履歴のページは AutoJs6 の言語, ダークモード, テーマカラーに従い, ホストの設定を利用できない場合はシステムの外観を使用します."
   ],
   "security_points": [
     "Wake Activity と 2 つのエクスポート済みサービスは `org.autojs.permission.PLUGIN` を要求します. スクリプトはプラグイン UID で `:autojs4_runtime` プロセス内で実行され, AutoJs6 のプロセスには入りません.",

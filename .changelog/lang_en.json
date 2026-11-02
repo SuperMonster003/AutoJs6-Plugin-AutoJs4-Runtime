@@ -6,9 +6,13 @@
   "changelog_label_dependency": "Dependency",
   "$data": {
     "v1.0.1": {
-      "released_date": "2026/10/12",
+      "released_date": "2026/10/14",
+      "fix": [
+        "The application icon was difficult to distinguish on dark backgrounds in some launchers and system app lists"
+      ],
       "improvement": [
-        "When a script needs the accessibility service while the plugin's service is not enabled, a toast explains why the system accessibility settings open"
+        "When a script needs the accessibility service while the plugin's service is not enabled, a toast explains why the system accessibility settings open",
+        "Settings and release history pages follow the language, dark mode and theme color of AutoJs6, falling back to the system appearance when host settings are unavailable"
       ]
     },
     "v1.0.0": {

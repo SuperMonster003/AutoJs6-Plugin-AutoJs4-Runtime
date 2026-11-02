@@ -35,7 +35,8 @@
     "Platform: Android {{ min_android_version }} (API {{ android_min_sdk }}) or later. Single-ABI APKs cover `{{ supported_abis }}`; the `universal` APK contains all four. Like AutoJs4, the `x86` build has no OpenCV.",
     "Scripts: `.js` files, `.auto` root recordings and project folders with `project.json` (the `main` script and `features` are honoured). `\"ui\";` scripts open AutoJs4's own script activity inside the plugin process.",
     "Permissions: storage access (legacy external storage, `targetSdk {{ android_target_sdk }}`), display over other apps and the AutoJs4 accessibility service are granted to the plugin separately from AutoJs6. Root features use the `su` of the device like AutoJs4.",
-    "Concurrency: up to {{ max_concurrent_executions }} AutoJs4 scripts run at the same time; stopping a task in AutoJs6 stops the AutoJs4 engine, and a crashed plugin process is reported as a failed task."
+    "Concurrency: up to {{ max_concurrent_executions }} AutoJs4 scripts run at the same time; stopping a task in AutoJs6 stops the AutoJs4 engine, and a crashed plugin process is reported as a failed task.",
+    "Settings and release history pages follow the language, dark mode and theme color of AutoJs6, falling back to the system appearance when host settings are unavailable."
   ],
   "security_points": [
     "The Wake activity and both exported services require `org.autojs.permission.PLUGIN`; scripts run under the plugin UID in the `:autojs4_runtime` process, never inside AutoJs6.",

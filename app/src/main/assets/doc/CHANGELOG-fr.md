@@ -6,9 +6,11 @@
 
 # v1.0.1
 
-###### 2026/10/12
+###### 2026/10/14
 
+* `Correction` Icône de l'application difficile à distinguer sur les fonds sombres de certains lanceurs et listes d'applications système
 * `Amélioration` Lorsqu'un script a besoin du service d'accessibilité alors que le service du plugin n'est pas activé, un message toast explique pourquoi les paramètres d'accessibilité du système s'ouvrent
+* `Amélioration` Les pages de paramètres et d'historique des versions suivent la langue, le mode sombre et la couleur du thème AutoJs6, avec repli sur l'apparence du système si les paramètres de l'hôte sont indisponibles
 
 # v1.0.0
 

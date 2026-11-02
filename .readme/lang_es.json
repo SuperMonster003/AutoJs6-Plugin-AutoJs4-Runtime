@@ -35,7 +35,8 @@
     "Plataforma: Android {{ min_android_version }} (API {{ android_min_sdk }}) o posterior. Los APK de una sola ABI cubren `{{ supported_abis }}`; el APK `universal` contiene las cuatro. Igual que AutoJs4, la build `x86` no tiene OpenCV.",
     "Scripts: archivos `.js`, grabaciones root `.auto` y carpetas de proyecto con `project.json` (se respetan el script `main` y las `features`). Los scripts `\"ui\";` abren la propia actividad de script de AutoJs4 dentro del proceso del complemento.",
     "Permisos: el acceso al almacenamiento (almacenamiento externo heredado, `targetSdk {{ android_target_sdk }}`), la superposición sobre otras aplicaciones y el servicio de accesibilidad de AutoJs4 se conceden al complemento de forma independiente de AutoJs6. Las funciones root usan el `su` del dispositivo como AutoJs4.",
-    "Concurrencia: hasta {{ max_concurrent_executions }} scripts de AutoJs4 se ejecutan a la vez; detener una tarea en AutoJs6 detiene el motor AutoJs4, y un fallo del proceso del complemento se notifica como tarea fallida."
+    "Concurrencia: hasta {{ max_concurrent_executions }} scripts de AutoJs4 se ejecutan a la vez; detener una tarea en AutoJs6 detiene el motor AutoJs4, y un fallo del proceso del complemento se notifica como tarea fallida.",
+    "Las páginas de ajustes e historial de versiones siguen el idioma, modo oscuro y color del tema de AutoJs6, y usan la apariencia del sistema si los ajustes del anfitrión no están disponibles."
   ],
   "security_points": [
     "La actividad Wake y los dos servicios exportados requieren `org.autojs.permission.PLUGIN`; los scripts se ejecutan con el UID del complemento en el proceso `:autojs4_runtime`, nunca dentro de AutoJs6.",
