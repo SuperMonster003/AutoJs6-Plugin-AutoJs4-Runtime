@@ -5,7 +5,6 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.stardust.autojs.core.util.ProcessShell
 import io.github.supermonster003.autojs6.plugin.autojs4.runtime.AutoJs4PluginMetadata
@@ -23,7 +22,7 @@ import java.util.concurrent.Executors
  * zh-CN: 插件设置页 (roadmap D14 / D17): 带实时状态的权限与服务开关, 控制台窗口策略与版本信息.
  * 由宿主通过包启动意图 (MAIN + INFO, 无启动器图标) 打开, 或在缺少权限时由运行时服务打开.
  */
-class SettingsActivity : AppCompatActivity() {
+class SettingsActivity : HostAppearanceActivity() {
 
     private lateinit var rows: SettingsRows
     private lateinit var accessibilityRow: SettingsRows.Row
@@ -37,7 +36,7 @@ class SettingsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
         setTitle(R.string.settings_title)
-        rows = SettingsRows(this, findViewById(R.id.settings_container))
+        rows = SettingsRows(this, findViewById(R.id.settings_container), appearance.accent)
         buildPermissionGroup()
         buildRunningGroup()
         buildAboutGroup()

@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="Theme.AutoJs4Runtime" parent="Theme.AppCompat.DayNight.DarkActionBar" />
+    <!-- Explicit parents keep AppCompat from replacing the host configuration with the system one. -->
+    <style name="Theme.AutoJs4Runtime.Light" parent="Theme.AppCompat.Light.DarkActionBar" />
+    <style name="Theme.AutoJs4Runtime.Dark" parent="Theme.AppCompat" />
 </resources>

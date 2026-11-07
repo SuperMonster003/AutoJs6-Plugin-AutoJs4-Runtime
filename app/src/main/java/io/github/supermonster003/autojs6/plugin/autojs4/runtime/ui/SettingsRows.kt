@@ -1,6 +1,8 @@
 package io.github.supermonster003.autojs6.plugin.autojs4.runtime.ui
 
 import android.content.Context
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.graphics.Typeface
 import android.util.TypedValue
 import android.view.Gravity
@@ -10,6 +12,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.StringRes
 import androidx.appcompat.widget.SwitchCompat
+import androidx.core.graphics.ColorUtils
 
 /**
  * Builds the flat grouped list used by [SettingsActivity]: 14 sp group titles, 16 sp row
@@ -21,7 +24,7 @@ import androidx.appcompat.widget.SwitchCompat
  * 72 dp 最小行高与 24 dp 左右留白, 遵循 AutoJs6 插件设置页约定, 同时不向 AutoJs4 的依赖集引入
  * 更新的 Material 组件.
  */
-internal class SettingsRows(private val context: Context, private val container: LinearLayout) {
+internal class SettingsRows(private val context: Context, private val container: LinearLayout, private val accent: Int) {
 
     inner class Row(private val summaryView: TextView) {
         fun setSummary(text: CharSequence?) {
@@ -62,6 +65,23 @@ internal class SettingsRows(private val context: Context, private val container:
     fun addSwitchRow(@StringRes titleRes: Int, summary: CharSequence?, checked: Boolean, onChanged: (Boolean) -> Unit): Row {
         val (row, summaryView) = createRow(titleRes, summary)
         val switch = SwitchCompat(context).apply {
+            val background = themeColor(android.R.attr.colorBackground)
+            val inactive = secondaryTextColor()
+            // Keep pale host colors visible on both light and dark surfaces.
+            val target = if (ColorUtils.calculateLuminance(background) > 0.5) Color.BLACK else Color.WHITE
+            var active = accent
+            for (step in 0..20) {
+                active = ColorUtils.blendARGB(accent, target, step / 20f)
+                if (ColorUtils.calculateContrast(active, background) >= 3.0) break
+            }
+            val states = arrayOf(
+                intArrayOf(-android.R.attr.state_enabled),
+                intArrayOf(android.R.attr.state_checked),
+                intArrayOf(),
+            )
+            thumbTintList = ColorStateList(states, intArrayOf(ColorUtils.setAlphaComponent(inactive, 96), active, inactive))
+            trackTintList = ColorStateList(states, intArrayOf(ColorUtils.setAlphaComponent(inactive, 32),
+                ColorUtils.setAlphaComponent(active, 128), ColorUtils.setAlphaComponent(inactive, 64)))
             isChecked = checked
             isClickable = false
             isFocusable = false

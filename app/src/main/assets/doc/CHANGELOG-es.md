@@ -4,13 +4,18 @@
 
 ******
 
-# v1.0.1
+# v1.1.0
 
-###### 2026/10/14
+###### 2026/11/08
 
 * `Corrección` El icono de la aplicación era difícil de distinguir sobre fondos oscuros en algunos lanzadores y listas de aplicaciones del sistema
-* `Mejora` Cuando un script necesita el servicio de accesibilidad y el servicio del complemento no está activado, un aviso emergente explica por qué se abren los ajustes de accesibilidad del sistema
 * `Mejora` Las páginas de ajustes e historial de versiones siguen el idioma, modo oscuro y color del tema de AutoJs6, y usan la apariencia del sistema si los ajustes del anfitrión no están disponibles
+
+# v1.0.1
+
+###### 2026/10/12
+
+* `Mejora` Cuando un script necesita el servicio de accesibilidad y el servicio del complemento no está activado, un aviso emergente explica por qué se abren los ajustes de accesibilidad del sistema
 
 # v1.0.0
 

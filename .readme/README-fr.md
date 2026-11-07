@@ -134,13 +134,18 @@ Pages de 16 KB : les bibliothèques natives arm64-v8a et x86_64 (OpenCV 3.4.3 re
 
 ******
 
-#### v1.0.1
+#### v1.1.0
 
-_2026/10/14_
+_2026/11/08_
 
 - `Correction` Icône de l'application difficile à distinguer sur les fonds sombres de certains lanceurs et listes d'applications système
-- `Amélioration` Lorsqu'un script a besoin du service d'accessibilité alors que le service du plugin n'est pas activé, un message toast explique pourquoi les paramètres d'accessibilité du système s'ouvrent
 - `Amélioration` Les pages de paramètres et d'historique des versions suivent la langue, le mode sombre et la couleur du thème AutoJs6, avec repli sur l'apparence du système si les paramètres de l'hôte sont indisponibles
+
+#### v1.0.1
+
+_2026/10/12_
+
+- `Amélioration` Lorsqu'un script a besoin du service d'accessibilité alors que le service du plugin n'est pas activé, un message toast explique pourquoi les paramètres d'accessibilité du système s'ouvrent
 
 #### v1.0.0
 

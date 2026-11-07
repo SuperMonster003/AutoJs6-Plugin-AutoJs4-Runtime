@@ -10,4 +10,9 @@
         android:protectionLevel="signature" />
     <uses-permission android:name="org.autojs.permission.PLUGIN" />
 
+    <!-- UI and engine components share this named process in the production manifest. -->
+    <instrumentation
+        android:name="androidx.test.runner.AndroidJUnitRunner"
+        android:targetProcesses="io.github.supermonster003.autojs6.plugin.autojs4.runtime:autojs4_runtime" />
+
 </manifest>

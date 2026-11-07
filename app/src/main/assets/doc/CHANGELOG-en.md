@@ -4,13 +4,18 @@
 
 ******
 
-# v1.0.1
+# v1.1.0
 
-###### 2026/10/14
+###### 2026/11/08
 
 * `Fix` The application icon was difficult to distinguish on dark backgrounds in some launchers and system app lists
-* `Improvement` When a script needs the accessibility service while the plugin's service is not enabled, a toast explains why the system accessibility settings open
 * `Improvement` Settings and release history pages follow the language, dark mode and theme color of AutoJs6, falling back to the system appearance when host settings are unavailable
+
+# v1.0.1
+
+###### 2026/10/12
+
+* `Improvement` When a script needs the accessibility service while the plugin's service is not enabled, a toast explains why the system accessibility settings open
 
 # v1.0.0
 
