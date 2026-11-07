@@ -25,7 +25,7 @@
     "Install the release APK matching the device ABI (`arm64-v8a` for most current phones, `armeabi-v7a` for 32-bit devices, `x86_64` or `x86` for emulators), or the larger `universal` APK.",
     "Open the AutoJs6 plugin center and enable AutoJs4 Runtime. If Android left the newly installed package stopped, use the host `Activate` action.",
     "Open the plugin settings from the plugin center and grant storage access, display over other apps and the accessibility service as the scripts need them; these permissions belong to the plugin, not to AutoJs6.",
-    "In the AutoJs6 file manager, open the menu of a `.js` file, a `.auto` file or a project folder and choose `Run with AutoJs4`. The task appears in the AutoJs6 task list and can be stopped there."
+    "In the AutoJs6 file manager, open the menu of a `.js` file, a `.auto` file or a project folder and choose `Run with AutoJs4` (under the top-level menu `AutoJs4` since AutoJs6 6.8.1). The task appears in the AutoJs6 task list and can be stopped there."
   ],
   "p_usage_note": "The plugin keeps AutoJs4 unchanged: the same Rhino {{ rhino_version }}, AutoJs4's original OpenCV {{ opencv_version }} library on armeabi-v7a and the same OpenCV release rebuilt for 64-bit devices, `targetSdk {{ android_target_sdk }}` and the same engine modules. Differences you observe between the two engines are therefore differences between AutoJs4 and AutoJs6, and can be reported to the AutoJs6 issue tracker.",
   "p_quick_start_intro": "Save this file in the AutoJs6 workspace and run it through `Run with AutoJs4`",

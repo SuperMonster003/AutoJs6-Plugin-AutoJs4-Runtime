@@ -106,6 +106,18 @@
             </intent-filter>
         </service>
 
+        <!-- "Run with AutoJs4" / "Run with AutoJs4 and compare" in the AutoJs6 file menu (Explorer Action protocol v28,
+             host engine actions run by AutoJs6 itself). -->
+        <service
+            android:name=".AutoJs4ExplorerActionService"
+            android:exported="true"
+            android:permission="org.autojs.permission.PLUGIN">
+            <intent-filter>
+                <action android:name="org.autojs.plugin.EXPLORER_ACTION" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.fileprovider"

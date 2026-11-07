@@ -54,7 +54,7 @@ AutoJs4 Runtime 內嵌了 [AutoJs4](https://github.com/SuperMonster003/AutoJs4) 
 2. 安裝與裝置 ABI 對應的發行 APK (多數現代手機為 `arm64-v8a`, 32 位元裝置為 `armeabi-v7a`, 模擬器為 `x86_64` 或 `x86`), 或安裝體積更大的 `universal` APK.
 3. 開啟 AutoJs6 外掛中心並啟用 AutoJs4 Runtime. 如果 Android 仍將新安裝的套件保持在停止狀態, 請使用宿主顯示的 `啟用` 操作.
 4. 從外掛中心開啟外掛設定, 按指令碼需要授予儲存空間權限, 懸浮視窗與無障礙服務; 這些權限屬於外掛自身, 與 AutoJs6 的權限相互獨立.
-5. 在 AutoJs6 檔案管理器中開啟 `.js` 檔案, `.auto` 檔案或專案資料夾的選單, 選擇 `使用 AutoJs4 執行`. 工作會出現在 AutoJs6 的工作清單中並可在那裡停止.
+5. 在 AutoJs6 檔案管理器中開啟 `.js` 檔案, `.auto` 檔案或專案資料夾的選單, 選擇 `使用 AutoJs4 執行` (AutoJs6 6.8.1 起位於第一層選單 `AutoJs4` 中). 工作會出現在 AutoJs6 的工作清單中並可在那裡停止.
 
 > 外掛不修改 AutoJs4: 相同的 Rhino 1.7.7.2, armeabi-v7a 使用 AutoJs4 原版 OpenCV 3.4.3 程式庫, 64 位元裝置使用同一 OpenCV 版本的重編程式庫, `targetSdk 28` 與相同的引擎模組. 因此兩個引擎之間觀察到的差異就是 AutoJs4 與 AutoJs6 的差異, 可回報到 AutoJs6 的 issue 追蹤器.
 
@@ -139,6 +139,7 @@ max log chunk: 64 KiB
 _2026/11/08_
 
 - `修正` 應用圖示在部分啟動器和系統應用列表的深色背景上難以辨識的問題
+- `改善` AutoJs6 6.8.1 及以上版本的檔案選單中, "使用 AutoJs4 執行" 與 "使用 AutoJs4 執行並對照" 改由外掛提供, 位於第一層選單 "AutoJs4" 之下 (舊版 AutoJs6 中不變)
 - `改善` 設定及發行歷史頁面跟隨 AutoJs6 的語言, 暗色模式和主題色, 宿主設定不可用時回退系統外觀
 
 #### v1.0.1

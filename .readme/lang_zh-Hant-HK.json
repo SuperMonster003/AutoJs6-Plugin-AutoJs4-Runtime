@@ -25,7 +25,7 @@
     "安裝與裝置 ABI 對應的發佈 APK (多數現代手機為 `arm64-v8a`, 32 位裝置為 `armeabi-v7a`, 模擬器為 `x86_64` 或 `x86`), 或安裝體積更大的 `universal` APK.",
     "打開 AutoJs6 插件中心並啟用 AutoJs4 Runtime. 如果 Android 仍將新安裝的套件保持在停止狀態, 請使用宿主顯示的 `啟動` 操作.",
     "從插件中心打開插件設定, 按腳本需要授予儲存權限, 懸浮視窗與無障礙服務; 這些權限屬於插件自身, 與 AutoJs6 的權限相互獨立.",
-    "在 AutoJs6 檔案管理器中打開 `.js` 檔案, `.auto` 檔案或專案資料夾的選單, 選擇 `使用 AutoJs4 執行`. 任務會出現在 AutoJs6 的任務列表中並可在那裏停止."
+    "在 AutoJs6 檔案管理器中打開 `.js` 檔案, `.auto` 檔案或專案資料夾的選單, 選擇 `使用 AutoJs4 執行` (AutoJs6 6.8.1 起位於一級選單 `AutoJs4` 中). 任務會出現在 AutoJs6 的任務列表中並可在那裏停止."
   ],
   "p_usage_note": "插件不修改 AutoJs4: 相同的 Rhino {{ rhino_version }}, armeabi-v7a 使用 AutoJs4 原版 OpenCV {{ opencv_version }} 庫, 64 位裝置使用同一 OpenCV 版本的重編庫, `targetSdk {{ android_target_sdk }}` 與相同的引擎模組. 因此兩個引擎之間觀察到的差異就是 AutoJs4 與 AutoJs6 的差異, 可回饋到 AutoJs6 的 issue 追蹤器.",
   "p_quick_start_intro": "把這個檔案儲存到 AutoJs6 工作目錄, 然後透過 `使用 AutoJs4 執行` 執行",

@@ -9,6 +9,14 @@
       "sourceModule": ":plugin-api:common-plugin-api",
       "sourceHostVersion": "6.8.0",
       "sourceHostVersionCode": 5333
+    },
+    {
+      "path": "libs/explorer-action-api.aar",
+      "sha256": "d387e72888214898dde23105fa0ae86d723a77dffe739ac5925c744268d87b87",
+      "size": 67325,
+      "sourceModule": ":plugin-api:explorer-action-api",
+      "sourceHostVersion": "6.8.1",
+      "sourceHostVersionCode": 6640
     }
   ]
 }

@@ -54,7 +54,7 @@ AutoJs4 Runtime embarque le moteur d'[AutoJs4](https://github.com/SuperMonster00
 2. Installez l'APK de release correspondant à l'ABI de l'appareil (`arm64-v8a` pour la plupart des téléphones actuels, `armeabi-v7a` pour les appareils 32 bits, `x86_64` ou `x86` pour les émulateurs), ou l'APK `universal` plus volumineux.
 3. Ouvrez le centre de plugins d'AutoJs6 et activez AutoJs4 Runtime. Si Android a laissé le nouveau paquet arrêté, utilisez l'action `Activer` de l'hôte.
 4. Ouvrez les paramètres du plugin depuis le centre de plugins et accordez l'accès au stockage, la superposition aux autres applications et le service d'accessibilité selon les besoins des scripts ; ces permissions appartiennent au plugin, pas à AutoJs6.
-5. Dans le gestionnaire de fichiers d'AutoJs6, ouvrez le menu d'un fichier `.js`, d'un fichier `.auto` ou d'un dossier de projet et choisissez `Exécuter avec AutoJs4`. La tâche apparaît dans la liste des tâches d'AutoJs6 et peut y être arrêtée.
+5. Dans le gestionnaire de fichiers d'AutoJs6, ouvrez le menu d'un fichier `.js`, d'un fichier `.auto` ou d'un dossier de projet et choisissez `Exécuter avec AutoJs4` (depuis AutoJs6 6.8.1, dans le menu de premier niveau `AutoJs4`). La tâche apparaît dans la liste des tâches d'AutoJs6 et peut y être arrêtée.
 
 > Le plugin ne modifie pas AutoJs4 : même Rhino 1.7.7.2, bibliothèque OpenCV 3.4.3 d'origine d'AutoJs4 sur armeabi-v7a et même version d'OpenCV recompilée pour les appareils 64 bits, `targetSdk 28` et mêmes modules de moteur. Les différences observées entre les deux moteurs sont donc des différences entre AutoJs4 et AutoJs6 et peuvent être signalées dans le suivi des issues d'AutoJs6.
 
@@ -139,6 +139,7 @@ Pages de 16 KB : les bibliothèques natives arm64-v8a et x86_64 (OpenCV 3.4.3 re
 _2026/11/08_
 
 - `Correction` Icône de l'application difficile à distinguer sur les fonds sombres de certains lanceurs et listes d'applications système
+- `Amélioration` Dans le menu de fichier d'AutoJs6 6.8.1 et versions ultérieures, "Exécuter avec AutoJs4" et "Exécuter avec AutoJs4 et comparer" sont désormais fournis par le plugin, dans le menu de premier niveau "AutoJs4" (inchangé dans les versions antérieures d'AutoJs6)
 - `Amélioration` Les pages de paramètres et d'historique des versions suivent la langue, le mode sombre et la couleur du thème AutoJs6, avec repli sur l'apparence du système si les paramètres de l'hôte sont indisponibles
 
 #### v1.0.1

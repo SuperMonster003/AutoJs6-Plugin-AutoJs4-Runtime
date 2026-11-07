@@ -11,6 +11,7 @@
         "Icône de l'application difficile à distinguer sur les fonds sombres de certains lanceurs et listes d'applications système"
       ],
       "improvement": [
+        "Dans le menu de fichier d'AutoJs6 6.8.1 et versions ultérieures, \"Exécuter avec AutoJs4\" et \"Exécuter avec AutoJs4 et comparer\" sont désormais fournis par le plugin, dans le menu de premier niveau \"AutoJs4\" (inchangé dans les versions antérieures d'AutoJs6)",
         "Les pages de paramètres et d'historique des versions suivent la langue, le mode sombre et la couleur du thème AutoJs6, avec repli sur l'apparence du système si les paramètres de l'hôte sont indisponibles"
       ]
     },

@@ -9,6 +9,7 @@
 ###### 2026/11/08
 
 * `Fix` The application icon was difficult to distinguish on dark backgrounds in some launchers and system app lists
+* `Improvement` In the file menu of AutoJs6 6.8.1 and later, "Run with AutoJs4" and "Run with AutoJs4 and compare" are now provided by the plugin, under the top-level menu "AutoJs4" (unchanged in older AutoJs6 versions)
 * `Improvement` Settings and release history pages follow the language, dark mode and theme color of AutoJs6, falling back to the system appearance when host settings are unavailable
 
 # v1.0.1

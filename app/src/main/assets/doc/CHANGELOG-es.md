@@ -9,6 +9,7 @@
 ###### 2026/11/08
 
 * `Corrección` El icono de la aplicación era difícil de distinguir sobre fondos oscuros en algunos lanzadores y listas de aplicaciones del sistema
+* `Mejora` En el menú de archivos de AutoJs6 6.8.1 y posteriores, "Ejecutar con AutoJs4" y "Ejecutar con AutoJs4 y comparar" los proporciona ahora el complemento, dentro del menú de primer nivel "AutoJs4" (sin cambios en versiones anteriores de AutoJs6)
 * `Mejora` Las páginas de ajustes e historial de versiones siguen el idioma, modo oscuro y color del tema de AutoJs6, y usan la apariencia del sistema si los ajustes del anfitrión no están disponibles
 
 # v1.0.1

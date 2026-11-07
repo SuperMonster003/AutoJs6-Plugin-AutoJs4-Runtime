@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="explorer_action_compare_with_autojs4">Запустить в AutoJs4 и сравнить</string>
+    <string name="explorer_action_run_with_autojs4">Запустить в AutoJs4</string>
     <string name="log_title">Журнал AutoJs4</string>
     <string name="plugin_description">Запускает скрипты встроенным движком Auto.js 4.1.1 Alpha2 для сравнения результатов с AutoJs6</string>
     <string name="release_history_load_failed">Не удалось загрузить историю выпусков</string>

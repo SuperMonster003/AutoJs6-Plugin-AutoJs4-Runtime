@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="explorer_action_compare_with_autojs4">التشغيل باستخدام AutoJs4 والمقارنة</string>
+    <string name="explorer_action_run_with_autojs4">تشغيل باستخدام AutoJs4</string>
     <string name="log_title">سجل AutoJs4</string>
     <string name="plugin_description">يشغّل السكربتات بمحرك Auto.js 4.1.1 Alpha2 المضمّن لمقارنة النتائج مع AutoJs6</string>
     <string name="release_history_load_failed">تعذر تحميل سجل الإصدارات</string>

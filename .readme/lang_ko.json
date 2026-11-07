@@ -25,7 +25,7 @@
     "기기 ABI에 맞는 release APK (대부분의 최신 휴대폰은 `arm64-v8a`, 32비트 기기는 `armeabi-v7a`, 에뮬레이터는 `x86_64` 또는 `x86`) 또는 용량이 더 큰 `universal` APK를 설치합니다.",
     "AutoJs6 플러그인 센터를 열어 AutoJs4 Runtime을 사용 설정합니다. Android가 새로 설치된 패키지를 중지 상태로 두었다면 host의 `활성화` 동작을 사용합니다.",
     "플러그인 센터에서 플러그인 설정을 열고 스크립트에 필요한 저장공간 접근, 다른 앱 위에 표시, 접근성 서비스를 허용합니다. 이 권한은 AutoJs6가 아닌 플러그인 자체의 권한입니다.",
-    "AutoJs6 파일 관리자에서 `.js` 파일, `.auto` 파일 또는 프로젝트 폴더의 메뉴를 열고 `AutoJs4로 실행`을 선택합니다. 작업은 AutoJs6 작업 목록에 나타나며 거기서 중지할 수 있습니다."
+    "AutoJs6 파일 관리자에서 `.js` 파일, `.auto` 파일 또는 프로젝트 폴더의 메뉴를 열고 `AutoJs4로 실행`을 선택합니다 (AutoJs6 6.8.1 부터는 최상위 메뉴 `AutoJs4` 안에 있음). 작업은 AutoJs6 작업 목록에 나타나며 거기서 중지할 수 있습니다."
   ],
   "p_usage_note": "플러그인은 AutoJs4를 변경하지 않습니다. 같은 Rhino {{ rhino_version }}, armeabi-v7a에서는 AutoJs4 원본 OpenCV {{ opencv_version }} 라이브러리, 64비트 기기에서는 같은 OpenCV 릴리스를 다시 빌드한 라이브러리, `targetSdk {{ android_target_sdk }}`, 같은 엔진 모듈입니다. 따라서 두 엔진 사이에서 관찰되는 차이는 AutoJs4와 AutoJs6의 차이이며 AutoJs6 issue 트래커에 보고할 수 있습니다.",
   "p_quick_start_intro": "이 파일을 AutoJs6 작업 공간에 저장한 뒤 `AutoJs4로 실행`으로 실행합니다",

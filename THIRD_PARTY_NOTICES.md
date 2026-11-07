@@ -57,6 +57,8 @@ by each upstream project; the plugin does not modify any of them.
 
 - `libs/common-plugin-api.aar`: built from the AutoJs6 repository (`:plugin-api:common-plugin-api`),
   Mozilla Public License 2.0. Provenance is recorded in `libs/api-artifacts.lock.json`.
+- `libs/explorer-action-api.aar`: built from the AutoJs6 repository (`:plugin-api:explorer-action-api`, Explorer Action
+  protocol v28), Mozilla Public License 2.0. Provenance is recorded in `libs/api-artifacts.lock.json`.
 - `plugin-api/autojs4-runtime-api`: source copy of the AutoJs6 module of the same name, Mozilla Public License 2.0.
 
 The Android Support Library references inside Material Dialogs 0.9.2.3 and EnhancedFloaty 0.31 are

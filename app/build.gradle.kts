@@ -208,6 +208,9 @@ androidComponents {
 
 dependencies {
     implementation(files("$rootDir/libs/common-plugin-api.aar"))
+    // File menu entries in the AutoJs6 file manager (Explorer Action protocol v28).
+    // zh-CN: AutoJs6 文件管理器中的文件菜单项 (Explorer Action 协议 v28).
+    implementation(files("$rootDir/libs/explorer-action-api.aar"))
     implementation(projects.pluginApi.autojs4RuntimeApi)
     implementation(projects.engine.autojs)
 

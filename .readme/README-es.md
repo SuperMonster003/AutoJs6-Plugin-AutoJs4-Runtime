@@ -54,7 +54,7 @@ AutoJs4 Runtime integra el motor de [AutoJs4](https://github.com/SuperMonster003
 2. Instala el APK de release que corresponda a la ABI del dispositivo (`arm64-v8a` para la mayoría de los teléfonos actuales, `armeabi-v7a` para dispositivos de 32 bits, `x86_64` o `x86` para emuladores) o el APK `universal`, más grande.
 3. Abre el centro de complementos de AutoJs6 y activa AutoJs4 Runtime. Si Android dejó el paquete recién instalado detenido, usa la acción `Activar` del host.
 4. Abre los ajustes del complemento desde el centro de complementos y concede el acceso al almacenamiento, la superposición sobre otras aplicaciones y el servicio de accesibilidad según lo necesiten los scripts; estos permisos pertenecen al complemento, no a AutoJs6.
-5. En el gestor de archivos de AutoJs6 abre el menú de un archivo `.js`, un archivo `.auto` o una carpeta de proyecto y elige `Ejecutar con AutoJs4`. La tarea aparece en la lista de tareas de AutoJs6 y puede detenerse allí.
+5. En el gestor de archivos de AutoJs6 abre el menú de un archivo `.js`, un archivo `.auto` o una carpeta de proyecto y elige `Ejecutar con AutoJs4` (desde AutoJs6 6.8.1, dentro del menú de primer nivel `AutoJs4`). La tarea aparece en la lista de tareas de AutoJs6 y puede detenerse allí.
 
 > El complemento no modifica AutoJs4: el mismo Rhino 1.7.7.2, la biblioteca OpenCV 3.4.3 original de AutoJs4 en armeabi-v7a y la misma versión de OpenCV recompilada para dispositivos de 64 bits, `targetSdk 28` y los mismos módulos del motor. Por tanto, las diferencias observadas entre ambos motores son diferencias entre AutoJs4 y AutoJs6 y pueden notificarse en el seguimiento de issues de AutoJs6.
 
@@ -139,6 +139,7 @@ Tamaño de página de 16 KB: las bibliotecas nativas de arm64-v8a y x86_64 (Open
 _2026/11/08_
 
 - `Corrección` El icono de la aplicación era difícil de distinguir sobre fondos oscuros en algunos lanzadores y listas de aplicaciones del sistema
+- `Mejora` En el menú de archivos de AutoJs6 6.8.1 y posteriores, "Ejecutar con AutoJs4" y "Ejecutar con AutoJs4 y comparar" los proporciona ahora el complemento, dentro del menú de primer nivel "AutoJs4" (sin cambios en versiones anteriores de AutoJs6)
 - `Mejora` Las páginas de ajustes e historial de versiones siguen el idioma, modo oscuro y color del tema de AutoJs6, y usan la apariencia del sistema si los ajustes del anfitrión no están disponibles
 
 #### v1.0.1

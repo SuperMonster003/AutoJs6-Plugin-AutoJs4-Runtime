@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="explorer_action_compare_with_autojs4">Run with AutoJs4 and compare</string>
+    <string name="explorer_action_run_with_autojs4">Run with AutoJs4</string>
     <string name="log_title">AutoJs4 log</string>
     <string name="plugin_description">Runs scripts with the embedded Auto.js 4.1.1 Alpha2 engine to compare results with AutoJs6</string>
     <string name="release_history_load_failed">Unable to load the release history</string>

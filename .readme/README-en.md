@@ -54,7 +54,7 @@ AutoJs4 Runtime embeds the engine of [AutoJs4](https://github.com/SuperMonster00
 2. Install the release APK matching the device ABI (`arm64-v8a` for most current phones, `armeabi-v7a` for 32-bit devices, `x86_64` or `x86` for emulators), or the larger `universal` APK.
 3. Open the AutoJs6 plugin center and enable AutoJs4 Runtime. If Android left the newly installed package stopped, use the host `Activate` action.
 4. Open the plugin settings from the plugin center and grant storage access, display over other apps and the accessibility service as the scripts need them; these permissions belong to the plugin, not to AutoJs6.
-5. In the AutoJs6 file manager, open the menu of a `.js` file, a `.auto` file or a project folder and choose `Run with AutoJs4`. The task appears in the AutoJs6 task list and can be stopped there.
+5. In the AutoJs6 file manager, open the menu of a `.js` file, a `.auto` file or a project folder and choose `Run with AutoJs4` (under the top-level menu `AutoJs4` since AutoJs6 6.8.1). The task appears in the AutoJs6 task list and can be stopped there.
 
 > The plugin keeps AutoJs4 unchanged: the same Rhino 1.7.7.2, AutoJs4's original OpenCV 3.4.3 library on armeabi-v7a and the same OpenCV release rebuilt for 64-bit devices, `targetSdk 28` and the same engine modules. Differences you observe between the two engines are therefore differences between AutoJs4 and AutoJs6, and can be reported to the AutoJs6 issue tracker.
 
@@ -139,6 +139,7 @@ max log chunk: 64 KiB
 _2026/11/08_
 
 - `Fix` The application icon was difficult to distinguish on dark backgrounds in some launchers and system app lists
+- `Improvement` In the file menu of AutoJs6 6.8.1 and later, "Run with AutoJs4" and "Run with AutoJs4 and compare" are now provided by the plugin, under the top-level menu "AutoJs4" (unchanged in older AutoJs6 versions)
 - `Improvement` Settings and release history pages follow the language, dark mode and theme color of AutoJs6, falling back to the system appearance when host settings are unavailable
 
 #### v1.0.1
