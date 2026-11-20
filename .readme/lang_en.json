@@ -53,7 +53,50 @@
   "text_link_autojs4_docs": "AutoJs4 documentation",
   "text_link_protocol": "AutoJs4 Runtime protocol V1",
   "text_link_roadmap": "AutoJs4 Runtime roadmap",
-  "p_instruction_backend": "This release embeds AutoJs4 {{ autojs4_version }} (commit `{{ autojs4_commit }}`) with Rhino {{ rhino_version }} and OpenCV 3.4.3 and runs every script in the isolated `:autojs4_runtime` process. Start, console lines and completion return to AutoJs6 through the host contract; the task can be stopped from the AutoJs6 task list.",
-  "p_instruction_more": "See the [project README]({{ repo_url }}) for ABI selection, permissions, the exact contract and the scope of this version.",
-  "p_icon_artwork": "The icon preserves the [PNG artwork supplied by the maintainer]({{ icon_source_url }}) (a light-theme and a dark-theme variant) and its original composition. Adjust it with Icon Studio and verify the recipe and generated resources using `python .python/generate_icon_studio.py --check`."
+  "p_icon_artwork": "The icon preserves the [PNG artwork supplied by the maintainer]({{ icon_source_url }}) (a light-theme and a dark-theme variant) and its original composition. Adjust it with Icon Studio and verify the recipe and generated resources using `python .python/generate_icon_studio.py --check`.",
+  "instruction_p_what": "AutoJs4 Runtime embeds the unmodified engine of AutoJs4 (a clone of {{ autojs4_baseline }}), so AutoJs6 can run scripts with it without installing AutoJs4 separately. Console output is sent back to AutoJs6, which makes it easy to compare how a script behaves on AutoJs4 and on AutoJs6 on the same device.",
+  "instruction_h3_start": "Getting started",
+  "instruction_start_steps": [
+    "Make sure this plugin is enabled in the AutoJs6 Plugin Center.",
+    "Open this plugin's settings from the Plugin Center, and in \"Permissions and services\" grant \"Storage access\", \"Display over other apps\" or \"Accessibility service\" as your scripts need.",
+    "In the AutoJs6 file manager, open the menu of a `.js` file, an `.auto` file or a project folder and choose \"Run with AutoJs4\" (in the \"AutoJs4\" submenu from AutoJs6 6.8.1).",
+    "Logs appear in the AutoJs6 console with the `[AutoJs4]` prefix; the task appears in the AutoJs6 task list, where you can stop it."
+  ],
+  "instruction_h3_features": "Main features",
+  "instruction_features": [
+    "**Run with AutoJs4**: runs `.js` files, `.auto` recordings and project folders with a `project.json` on the AutoJs4 engine; the UI of `\"ui\";` scripts shows in this plugin.",
+    "**Run with AutoJs4 and compare**: runs the same script on AutoJs6 and on AutoJs4, then shows in \"AutoJs4 comparison\" whether the two console outputs match and how long each run took.",
+    "**Show AutoJs4 console window**: a switch in the \"Running\" group of the settings; when it is on, `console.show()` shows the AutoJs4 floating console. Logs always go back to AutoJs6.",
+    "**Permissions and services**: the settings show the state of storage access, display over other apps, the accessibility service, battery optimizations and root access; tap a row to grant or check it."
+  ],
+  "instruction_h3_script": "Using it in scripts",
+  "instruction_p_script": "Scripts use the AutoJs4 API (the same as {{ autojs4_baseline }}). Save the code below as a `.js` file and choose \"Run with AutoJs4\": the first console line shows this plugin's package name, which means AutoJs4 ran the script:",
+  "instruction_script_notes": [
+    "Modules and syntax that only AutoJs6 has are not available in AutoJs4; when the two engines give different results, compare them with \"Run with AutoJs4 and compare\".",
+    "Scripts run as this plugin: file access relies on this plugin's storage permission, and root features use `su` on the device.",
+    "Up to {{ max_concurrent_executions }} AutoJs4 scripts can run at the same time."
+  ],
+  "instruction_h3_requirements": "Requirements",
+  "instruction_requirements": [
+    "Android {{ min_android_version }} or later and AutoJs6 {{ required_host_version_name }} or later.",
+    "Storage access lets scripts read and write their files.",
+    "Display over other apps is used by the AutoJs4 console window and floating UIs, and the accessibility service by finding widgets and automatic taps; grant them only when a script needs them.",
+    "Like the original AutoJs4, the x86 build has no OpenCV, so image features that depend on it (such as finding images) are not available on x86 devices."
+  ],
+  "instruction_h3_faq": "FAQ",
+  "instruction_faq": [
+    {
+      "q": "When a permission is reported missing",
+      "a": "This plugin's permissions are separate from those of AutoJs6. Open this plugin's settings from the Plugin Center, grant the reported permission in \"Permissions and services\", then run the script again."
+    },
+    {
+      "q": "When the two engines give different results",
+      "a": "This plugin uses the unmodified AutoJs4 engine with the same Rhino and OpenCV versions as AutoJs4, so a difference in results is a difference between AutoJs4 and AutoJs6. If it gets in the way of migrating your scripts, you can report it on the [AutoJs6 issue tracker]({{ autojs6_url }}/issues)."
+    },
+    {
+      "q": "When the system stops long-running scripts",
+      "a": "In \"Permissions and services\" in this plugin's settings, tap \"Ignore battery optimizations\" to exempt this plugin from battery optimizations."
+    }
+  ],
+  "instruction_p_more": "For the AutoJs4 script API, see the [AutoJs4 documentation]({{ autojs4_documentation_url }}); for the source code and more details, see the [project page]({{ repo_url }})."
 }

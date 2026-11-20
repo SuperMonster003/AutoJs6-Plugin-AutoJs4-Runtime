@@ -1,19 +1,31 @@
-{{ p_introduction }}
+{{ instruction_p_what }}
 
-{{ p_instruction_backend }}
+### {{ instruction_h3_start }}
 
-### {{ h3_quick_start }}
+{{ placeholder_instruction_start_steps }}
 
-```javascript
+### {{ instruction_h3_features }}
+
+{{ placeholder_instruction_features }}
+
+### {{ instruction_h3_script }}
+
+{{ instruction_p_script }}
+
+```js
 console.log("engine package: " + context.getPackageName());
 console.log("device: " + device.brand + " " + device.model + " (API " + device.sdkInt + ")");
 toast("Hello from AutoJs4");
 ```
 
-{{ p_quick_start_result }}
+{{ placeholder_instruction_script_notes }}
 
-### {{ h3_compatibility }}
+### {{ instruction_h3_requirements }}
 
-{{ placeholder_compatibility_points }}
+{{ placeholder_instruction_requirements }}
 
-{{ p_instruction_more }}
+### {{ instruction_h3_faq }}
+
+{{ placeholder_instruction_faq }}
+
+{{ instruction_p_more }}

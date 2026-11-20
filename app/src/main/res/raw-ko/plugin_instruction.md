@@ -1,24 +1,52 @@
-AutoJs4 Runtime은 AutoJs6의 동작 기준인 Auto.js 4.1.1 Alpha2 복제본 [AutoJs4](https://github.com/SuperMonster003/AutoJs4)의 엔진을 내장합니다. 설치하면 AutoJs6 파일 관리자의 "AutoJs4로 실행" 항목이 `.js` 파일, `.auto` 기록 파일, 프로젝트 폴더를 이 플러그인 자체 프로세스에서 원본 Rhino 1.7.7.2 엔진으로 실행하고 콘솔 출력을 AutoJs6로 돌려보냅니다. AutoJs4를 따로 설치하지 않고도 한 기기에서 스크립트가 AutoJs4와 AutoJs6에서 다르게 동작하는지 확인할 수 있습니다.
+AutoJs4 Runtime은 Auto.js 4.1.1 Alpha2 복제본인 AutoJs4의 엔진을 수정 없이 내장하고 있어, AutoJs4를 따로 설치하지 않아도 AutoJs6에서 이 엔진으로 스크립트를 실행할 수 있습니다. 콘솔 출력은 AutoJs6으로 전달되므로 같은 기기에서 스크립트가 AutoJs4와 AutoJs6에서 어떻게 동작하는지 비교할 수 있습니다.
 
-이 릴리스는 AutoJs4 4.4.0 (commit `3fb08269198ebd49a880ab3ca2621383eaa10443`)을 Rhino 1.7.7.2, OpenCV 3.4.3과 함께 내장하고 모든 스크립트를 격리된 `:autojs4_runtime` 프로세스에서 실행합니다. 시작, 콘솔 줄, 완료는 host 계약을 통해 AutoJs6로 반환되며 작업은 AutoJs6 작업 목록에서 중지할 수 있습니다.
+### 시작하기
 
-### 빠른 시작
+1. AutoJs6 플러그인 센터에서 이 플러그인이 사용 설정되어 있는지 확인합니다.
+2. 플러그인 센터에서 이 플러그인의 설정을 열고, "권한과 서비스"에서 스크립트에 필요한 대로 "저장공간 접근", "다른 앱 위에 표시" 또는 "접근성 서비스"를 허용합니다.
+3. AutoJs6 파일 관리자에서 `.js` 파일, `.auto` 파일 또는 프로젝트 폴더의 메뉴를 열고 "AutoJs4로 실행"을 선택합니다 (AutoJs6 6.8.1부터는 "AutoJs4" 하위 메뉴에 있음).
+4. 로그는 `[AutoJs4]` 접두사와 함께 AutoJs6 콘솔에 표시되고, 작업은 AutoJs6 작업 목록에 나타나 그곳에서 중지할 수 있습니다.
 
-```javascript
+### 주요 기능
+
+- **AutoJs4로 실행**: `.js` 파일, `.auto` 녹화 파일, `project.json`이 있는 프로젝트 폴더를 AutoJs4 엔진으로 실행합니다. `"ui";` 스크립트의 화면은 이 플러그인에서 표시됩니다.
+- **AutoJs4로 실행하고 비교**: 같은 스크립트를 AutoJs6과 AutoJs4에서 각각 실행하고, 두 콘솔 출력이 일치하는지와 각 실행의 소요 시간을 "AutoJs4 비교 결과"에 표시합니다.
+- **AutoJs4 콘솔 창 표시**: 설정의 "실행" 그룹에 있는 스위치로, 켜면 `console.show()`가 AutoJs4의 플로팅 콘솔을 표시합니다. 로그는 항상 AutoJs6으로 전달됩니다.
+- **권한과 서비스**: 설정에 저장공간 접근, 다른 앱 위에 표시, 접근성 서비스, 배터리 최적화, Root 권한의 상태가 표시되며, 탭하여 허용하거나 확인할 수 있습니다.
+
+### 스크립트에서 사용하기
+
+스크립트는 AutoJs4의 API (Auto.js 4.1.1 Alpha2와 동일) 를 사용합니다. 아래 코드를 `.js` 파일로 저장한 뒤 "AutoJs4로 실행"을 선택하면 콘솔 첫 줄에 이 플러그인의 패키지 이름이 표시되어, AutoJs4가 스크립트를 실행했음을 알 수 있습니다:
+
+```js
 console.log("engine package: " + context.getPackageName());
 console.log("device: " + device.brand + " " + device.model + " (API " + device.sdkInt + ")");
 toast("Hello from AutoJs4");
 ```
 
-AutoJs6 콘솔에 `[AutoJs4]` 접두어가 붙은 줄이 출력되며, 첫 줄에 스크립트를 실행한 플러그인 패키지 이름이 표시되어 AutoJs4 엔진이 실행했음을 확인할 수 있습니다.
+- AutoJs6에만 있는 모듈과 문법은 AutoJs4에서 사용할 수 없습니다. 두 엔진의 결과가 다르면 "AutoJs4로 실행하고 비교"로 비교할 수 있습니다.
+- 스크립트는 이 플러그인으로 실행됩니다. 파일 읽기와 쓰기에는 이 플러그인의 저장공간 권한이 쓰이고, Root 기능은 기기의 `su`를 사용합니다.
+- AutoJs4 스크립트는 동시에 최대 16개까지 실행할 수 있습니다.
 
-### 호환성과 범위
+### 요구 사항
 
-- 엔진: AutoJs4 4.4.0 (Auto.js 4.1.1 Alpha2 복제본), Git commit [`3fb08269198ebd49a880ab3ca2621383eaa10443`](https://github.com/SuperMonster003/AutoJs4/commit/3fb08269198ebd49a880ab3ca2621383eaa10443), Rhino 1.7.7.2, OpenCV 3.4.3. AutoJs4 소스는 Git submodule로 포함되며 수정 없이 컴파일됩니다. arm64-v8a와 x86_64의 OpenCV 라이브러리는 같은 릴리스에서 NDK 28.2.13676358로 다시 빌드했으며 원본 라이브러리의 모든 JNI 심볼을 내보내는지 검증했습니다.
-- 플랫폼: Android 7.0 (API 24) 이상. 단일 ABI APK는 `arm64-v8a, armeabi-v7a, x86_64, x86`를 지원하고 `universal` APK는 네 가지를 모두 포함합니다. AutoJs4와 마찬가지로 `x86` 빌드에는 OpenCV가 없습니다.
-- 스크립트: `.js` 파일, `.auto` root 기록 파일, `project.json`이 있는 프로젝트 폴더 (`main`과 `features`를 따릅니다). `"ui";` 스크립트는 플러그인 프로세스 안에서 AutoJs4 자체 스크립트 Activity를 엽니다.
-- 권한: 저장공간 접근 (레거시 외부 저장공간, `targetSdk 28`), 다른 앱 위에 표시, AutoJs4 접근성 서비스는 AutoJs6와 별도로 플러그인에 부여합니다. Root 기능은 AutoJs4처럼 기기의 `su`를 사용합니다.
-- 동시 실행: 최대 16개의 AutoJs4 스크립트를 동시에 실행합니다. AutoJs6에서 작업을 중지하면 AutoJs4 엔진이 중지되고, 플러그인 프로세스가 비정상 종료되면 실패한 작업으로 보고됩니다.
-- 설정 및 릴리스 기록 페이지가 AutoJs6의 언어, 다크 모드 및 테마 색상을 따르며, 호스트 설정을 사용할 수 없으면 시스템 모양을 사용합니다.
+- Android 7.0 이상, AutoJs6 6.8.0 이상.
+- 저장공간 접근은 스크립트가 사용하는 파일을 읽고 쓰는 데 필요합니다.
+- 다른 앱 위에 표시는 AutoJs4의 콘솔 창과 플로팅 화면에, 접근성 서비스는 위젯 찾기와 자동 탭 등에 사용됩니다. 둘 다 스크립트에 필요할 때 허용하세요.
+- 원래의 AutoJs4와 마찬가지로 x86 버전에는 OpenCV가 포함되지 않으므로, x86 기기에서는 이에 의존하는 이미지 기능 (예: 이미지 찾기) 을 사용할 수 없습니다.
 
-ABI 선택, 권한, 정확한 계약, 이 버전의 범위는 [프로젝트 README](https://github.com/SuperMonster003/AutoJs6-Plugin-AutoJs4-Runtime)를 참조하세요.
+### 자주 묻는 질문
+
+**권한이 부족하다는 메시지가 표시되는 경우**
+
+이 플러그인의 권한은 AutoJs6의 권한과 별개입니다. 플러그인 센터에서 이 플러그인의 설정을 열고 "권한과 서비스"에서 안내된 권한을 허용한 뒤 스크립트를 다시 실행하세요.
+
+**두 엔진의 결과가 다른 경우**
+
+이 플러그인은 수정되지 않은 AutoJs4 엔진을 사용하며 Rhino와 OpenCV 버전도 AutoJs4와 같으므로, 결과의 차이는 AutoJs4와 AutoJs6 사이의 차이입니다. 스크립트 이전에 영향을 준다면 [AutoJs6 issue 트래커](https://github.com/SuperMonster003/AutoJs6/issues)에 알려 주세요.
+
+**오래 실행되는 스크립트가 시스템에 의해 중단되는 경우**
+
+이 플러그인 설정의 "권한과 서비스"에서 "배터리 최적화 무시"를 탭하여 이 플러그인이 배터리 최적화의 제한을 받지 않도록 하세요.
+
+AutoJs4 스크립트 API는 [AutoJs4 문서](https://github.com/SuperMonster003/AutoJs4-Documentation)를, 소스 코드와 자세한 설명은 [프로젝트 페이지](https://github.com/SuperMonster003/AutoJs6-Plugin-AutoJs4-Runtime)를 참고하세요.

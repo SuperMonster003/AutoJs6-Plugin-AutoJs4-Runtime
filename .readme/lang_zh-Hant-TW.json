@@ -53,7 +53,50 @@
   "text_link_autojs4_docs": "AutoJs4 文件",
   "text_link_protocol": "AutoJs4 Runtime 協定 V1",
   "text_link_roadmap": "AutoJs4 Runtime roadmap",
-  "p_instruction_backend": "此版本內嵌 AutoJs4 {{ autojs4_version }} (commit `{{ autojs4_commit }}`), 使用 Rhino {{ rhino_version }} 與 OpenCV 3.4.3, 並在隔離的 `:autojs4_runtime` 處理程序中執行每個指令碼. 開始, 主控台行與結束狀態透過宿主契約傳回 AutoJs6, 工作可在 AutoJs6 工作清單中停止.",
-  "p_instruction_more": "ABI 選擇, 權限, 精確契約與本版本範圍請參閱 [專案 README]({{ repo_url }}).",
-  "p_icon_artwork": "圖示保留維護者提供的 [PNG 原稿]({{ icon_source_url }}) (亮色與暗色主題各一張) 及原始構圖. 可透過 Icon Studio 調整, 使用 `python .python/generate_icon_studio.py --check` 核對配方與生成資源的一致性."
+  "p_icon_artwork": "圖示保留維護者提供的 [PNG 原稿]({{ icon_source_url }}) (亮色與暗色主題各一張) 及原始構圖. 可透過 Icon Studio 調整, 使用 `python .python/generate_icon_studio.py --check` 核對配方與生成資源的一致性.",
+  "instruction_p_what": "AutoJs4 Runtime 內嵌了 AutoJs4 ({{ autojs4_baseline }} 的複製專案) 未經修改的引擎, 讓 AutoJs6 不必另外安裝 AutoJs4 就能用它執行指令碼. 主控台輸出會傳回 AutoJs6, 方便在同一台裝置上比較指令碼在 AutoJs4 與 AutoJs6 上的表現.",
+  "instruction_h3_start": "開始使用",
+  "instruction_start_steps": [
+    "確認 AutoJs6 外掛中心裡本外掛已啟用.",
+    "從外掛中心開啟本外掛的設定, 在 \"權限與服務\" 中依指令碼需要授予 \"儲存空間權限\", \"懸浮視窗\" 或 \"無障礙服務\".",
+    "在 AutoJs6 檔案管理器中開啟 `.js` 檔案, `.auto` 檔案或專案資料夾的選單, 選擇 \"使用 AutoJs4 執行\" (AutoJs6 6.8.1 起位於 \"AutoJs4\" 子選單).",
+    "執行記錄帶 `[AutoJs4]` 前綴顯示在 AutoJs6 主控台中; 工作出現在 AutoJs6 的工作清單中, 可以在那裡停止."
+  ],
+  "instruction_h3_features": "主要功能",
+  "instruction_features": [
+    "**使用 AutoJs4 執行**: 用 AutoJs4 引擎執行 `.js` 檔案, `.auto` 錄製檔案與含 `project.json` 的專案資料夾; `\"ui\";` 指令碼的介面在本外掛中顯示.",
+    "**使用 AutoJs4 執行並對照**: 分別用 AutoJs6 與 AutoJs4 執行同一指令碼, 在 \"AutoJs4 對照結果\" 中顯示兩次主控台輸出是否一致以及各自的耗時.",
+    "**顯示 AutoJs4 主控台視窗**: 設定中 \"執行\" 群組的開關, 開啟後 `console.show()` 會顯示 AutoJs4 的浮動主控台; 記錄一律傳回 AutoJs6.",
+    "**權限與服務**: 設定中顯示儲存空間權限, 懸浮視窗, 無障礙服務, 忽略電池最佳化與 Root 權限的狀態, 輕觸即可授予或偵測."
+  ],
+  "instruction_h3_script": "在指令碼中使用",
+  "instruction_p_script": "指令碼使用 AutoJs4 的 API (與 {{ autojs4_baseline }} 相同). 把下面的程式碼儲存為 `.js` 檔案後選擇 \"使用 AutoJs4 執行\", 主控台第一行會顯示本外掛的套件名稱, 表示指令碼由 AutoJs4 執行:",
+  "instruction_script_notes": [
+    "AutoJs6 才有的模組與寫法在 AutoJs4 中無法使用; 兩個引擎的結果不同時, 可以用 \"使用 AutoJs4 執行並對照\" 比較.",
+    "指令碼以本外掛的身分執行: 讀寫檔案依靠本外掛的儲存空間權限, Root 功能使用裝置上的 `su`.",
+    "最多同時執行 {{ max_concurrent_executions }} 個 AutoJs4 指令碼."
+  ],
+  "instruction_h3_requirements": "執行需求",
+  "instruction_requirements": [
+    "Android {{ min_android_version }} 或更新版本, AutoJs6 {{ required_host_version_name }} 或更新版本.",
+    "儲存空間權限用於讀寫指令碼使用的檔案.",
+    "懸浮視窗用於 AutoJs4 的主控台視窗與懸浮介面, 無障礙服務用於尋找控制項與自動點按等操作; 都在指令碼需要時再授予.",
+    "x86 裝置上與 AutoJs4 原版一樣不含 OpenCV, 依賴它的影像功能 (例如找圖) 無法使用."
+  ],
+  "instruction_h3_faq": "常見問題",
+  "instruction_faq": [
+    {
+      "q": "提示缺少權限時的處理",
+      "a": "本外掛的權限與 AutoJs6 的權限彼此獨立. 從外掛中心開啟本外掛的設定, 在 \"權限與服務\" 中授予提示的權限, 然後重新執行指令碼."
+    },
+    {
+      "q": "兩個引擎結果不同的含義",
+      "a": "本外掛使用未經修改的 AutoJs4 引擎, Rhino 與 OpenCV 的版本也與 AutoJs4 相同, 所以結果的差異就是 AutoJs4 與 AutoJs6 之間的差異. 如果差異影響指令碼移轉, 可以回報到 [AutoJs6 的 issue 追蹤器]({{ autojs6_url }}/issues)."
+    },
+    {
+      "q": "長時間執行的指令碼被系統中斷時的處理",
+      "a": "在本外掛設定的 \"權限與服務\" 中輕觸 \"忽略電池最佳化\", 允許本外掛不受電池最佳化限制."
+    }
+  ],
+  "instruction_p_more": "AutoJs4 的指令碼 API 請見 [AutoJs4 文件]({{ autojs4_documentation_url }}), 原始碼與更多說明請見 [專案首頁]({{ repo_url }})."
 }

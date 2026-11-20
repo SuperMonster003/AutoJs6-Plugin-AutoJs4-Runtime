@@ -53,7 +53,50 @@
   "text_link_autojs4_docs": "Documentación de AutoJs4",
   "text_link_protocol": "Protocolo V1 de AutoJs4 Runtime",
   "text_link_roadmap": "Roadmap de AutoJs4 Runtime",
-  "p_instruction_backend": "Esta versión integra AutoJs4 {{ autojs4_version }} (commit `{{ autojs4_commit }}`) con Rhino {{ rhino_version }} y OpenCV 3.4.3 y ejecuta cada script en el proceso aislado `:autojs4_runtime`. El inicio, las líneas de consola y la finalización vuelven a AutoJs6 mediante el contrato del host; la tarea puede detenerse desde la lista de tareas de AutoJs6.",
-  "p_instruction_more": "Consulta el [README del proyecto]({{ repo_url }}) para la selección de ABI, los permisos, el contrato exacto y el alcance de esta versión.",
-  "p_icon_artwork": "El icono conserva el [PNG proporcionado por el mantenedor]({{ icon_source_url }}) (una variante para el tema claro y otra para el oscuro) y su composición original. Ajústelo con Icon Studio y compruebe la receta y los recursos generados con `python .python/generate_icon_studio.py --check`."
+  "p_icon_artwork": "El icono conserva el [PNG proporcionado por el mantenedor]({{ icon_source_url }}) (una variante para el tema claro y otra para el oscuro) y su composición original. Ajústelo con Icon Studio y compruebe la receta y los recursos generados con `python .python/generate_icon_studio.py --check`.",
+  "instruction_p_what": "AutoJs4 Runtime incorpora el motor sin modificar de AutoJs4 (un clon de {{ autojs4_baseline }}), de modo que AutoJs6 puede ejecutar scripts con él sin instalar AutoJs4 por separado. La salida de la consola se devuelve a AutoJs6, lo que facilita comparar cómo se comporta un script en AutoJs4 y en AutoJs6 en el mismo dispositivo.",
+  "instruction_h3_start": "Primeros pasos",
+  "instruction_start_steps": [
+    "Compruebe que este plugin está activado en el centro de plugins de AutoJs6.",
+    "Abra los ajustes de este plugin desde el centro de plugins y, en \"Permisos y servicios\", conceda \"Acceso al almacenamiento\", \"Mostrar sobre otras aplicaciones\" o \"Servicio de accesibilidad\" según lo necesiten sus scripts.",
+    "En el gestor de archivos de AutoJs6, abra el menú de un archivo `.js`, un archivo `.auto` o una carpeta de proyecto y elija \"Ejecutar con AutoJs4\" (en el submenú \"AutoJs4\" a partir de AutoJs6 6.8.1).",
+    "Los registros aparecen en la consola de AutoJs6 con el prefijo `[AutoJs4]`; la tarea aparece en la lista de tareas de AutoJs6, donde puede detenerla."
+  ],
+  "instruction_h3_features": "Funciones principales",
+  "instruction_features": [
+    "**Ejecutar con AutoJs4**: ejecuta archivos `.js`, grabaciones `.auto` y carpetas de proyecto con un `project.json` en el motor de AutoJs4; la interfaz de los scripts `\"ui\";` se muestra en este plugin.",
+    "**Ejecutar con AutoJs4 y comparar**: ejecuta el mismo script en AutoJs6 y en AutoJs4 y muestra en \"Comparación con AutoJs4\" si las dos salidas de consola coinciden y cuánto tardó cada ejecución.",
+    "**Mostrar la ventana de consola de AutoJs4**: un interruptor del grupo \"Ejecución\" de los ajustes; cuando está activado, `console.show()` muestra la consola flotante de AutoJs4. Los registros siempre vuelven a AutoJs6.",
+    "**Permisos y servicios**: los ajustes muestran el estado del acceso al almacenamiento, la superposición sobre otras aplicaciones, el servicio de accesibilidad, la optimización de batería y el acceso root; toque una fila para concederlo o comprobarlo."
+  ],
+  "instruction_h3_script": "Uso en scripts",
+  "instruction_p_script": "Los scripts usan la API de AutoJs4 (la misma que {{ autojs4_baseline }}). Guarde el código siguiente como archivo `.js` y elija \"Ejecutar con AutoJs4\": la primera línea de la consola muestra el nombre de paquete de este plugin, lo que indica que AutoJs4 ejecutó el script:",
+  "instruction_script_notes": [
+    "Los módulos y la sintaxis exclusivos de AutoJs6 no están disponibles en AutoJs4; si los dos motores dan resultados distintos, compárelos con \"Ejecutar con AutoJs4 y comparar\".",
+    "Los scripts se ejecutan como este plugin: el acceso a archivos depende del permiso de almacenamiento de este plugin y las funciones root usan `su` del dispositivo.",
+    "Pueden ejecutarse hasta {{ max_concurrent_executions }} scripts de AutoJs4 a la vez."
+  ],
+  "instruction_h3_requirements": "Requisitos",
+  "instruction_requirements": [
+    "Android {{ min_android_version }} o posterior y AutoJs6 {{ required_host_version_name }} o posterior.",
+    "El acceso al almacenamiento permite a los scripts leer y escribir sus archivos.",
+    "La superposición sobre otras aplicaciones se usa para la ventana de consola y las interfaces flotantes de AutoJs4, y el servicio de accesibilidad para buscar controles y tocar automáticamente; concédalos solo cuando un script los necesite.",
+    "Igual que en el AutoJs4 original, la versión x86 no incluye OpenCV, así que las funciones de imagen que dependen de él (como buscar imágenes) no están disponibles en dispositivos x86."
+  ],
+  "instruction_h3_faq": "Preguntas frecuentes",
+  "instruction_faq": [
+    {
+      "q": "Cuando se indica que falta un permiso",
+      "a": "Los permisos de este plugin son independientes de los de AutoJs6. Abra los ajustes de este plugin desde el centro de plugins, conceda el permiso indicado en \"Permisos y servicios\" y vuelva a ejecutar el script."
+    },
+    {
+      "q": "Cuando los dos motores dan resultados distintos",
+      "a": "Este plugin usa el motor de AutoJs4 sin modificar, con las mismas versiones de Rhino y OpenCV que AutoJs4, así que una diferencia en los resultados es una diferencia entre AutoJs4 y AutoJs6. Si afecta a la migración de sus scripts, puede comunicarla en el [gestor de issues de AutoJs6]({{ autojs6_url }}/issues)."
+    },
+    {
+      "q": "Cuando el sistema detiene scripts de larga duración",
+      "a": "En \"Permisos y servicios\" de los ajustes de este plugin, toque \"Ignorar la optimización de batería\" para que la optimización de batería no limite este plugin."
+    }
+  ],
+  "instruction_p_more": "Para la API de scripts de AutoJs4, consulte la [documentación de AutoJs4]({{ autojs4_documentation_url }}); para el código fuente y más detalles, consulte la [página del proyecto]({{ repo_url }})."
 }

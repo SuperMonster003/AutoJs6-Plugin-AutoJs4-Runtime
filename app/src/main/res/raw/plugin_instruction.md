@@ -1,24 +1,52 @@
-AutoJs4 Runtime embeds the engine of [AutoJs4](https://github.com/SuperMonster003/AutoJs4), the clone of Auto.js 4.1.1 Alpha2 that serves as the behavioral baseline of AutoJs6. After installing it, the "Run with AutoJs4" entry in the AutoJs6 file manager runs `.js` files, `.auto` recordings and project folders with the original Rhino 1.7.7.2 engine inside this plugin's own process, while the console output flows back into AutoJs6. This makes it possible to check on one device whether a script behaves differently on AutoJs4 and on AutoJs6 without installing AutoJs4 itself.
+AutoJs4 Runtime embeds the unmodified engine of AutoJs4 (a clone of Auto.js 4.1.1 Alpha2), so AutoJs6 can run scripts with it without installing AutoJs4 separately. Console output is sent back to AutoJs6, which makes it easy to compare how a script behaves on AutoJs4 and on AutoJs6 on the same device.
 
-This release embeds AutoJs4 4.4.0 (commit `3fb08269198ebd49a880ab3ca2621383eaa10443`) with Rhino 1.7.7.2 and OpenCV 3.4.3 and runs every script in the isolated `:autojs4_runtime` process. Start, console lines and completion return to AutoJs6 through the host contract; the task can be stopped from the AutoJs6 task list.
+### Getting started
 
-### Quick Start
+1. Make sure this plugin is enabled in the AutoJs6 Plugin Center.
+2. Open this plugin's settings from the Plugin Center, and in "Permissions and services" grant "Storage access", "Display over other apps" or "Accessibility service" as your scripts need.
+3. In the AutoJs6 file manager, open the menu of a `.js` file, an `.auto` file or a project folder and choose "Run with AutoJs4" (in the "AutoJs4" submenu from AutoJs6 6.8.1).
+4. Logs appear in the AutoJs6 console with the `[AutoJs4]` prefix; the task appears in the AutoJs6 task list, where you can stop it.
 
-```javascript
+### Main features
+
+- **Run with AutoJs4**: runs `.js` files, `.auto` recordings and project folders with a `project.json` on the AutoJs4 engine; the UI of `"ui";` scripts shows in this plugin.
+- **Run with AutoJs4 and compare**: runs the same script on AutoJs6 and on AutoJs4, then shows in "AutoJs4 comparison" whether the two console outputs match and how long each run took.
+- **Show AutoJs4 console window**: a switch in the "Running" group of the settings; when it is on, `console.show()` shows the AutoJs4 floating console. Logs always go back to AutoJs6.
+- **Permissions and services**: the settings show the state of storage access, display over other apps, the accessibility service, battery optimizations and root access; tap a row to grant or check it.
+
+### Using it in scripts
+
+Scripts use the AutoJs4 API (the same as Auto.js 4.1.1 Alpha2). Save the code below as a `.js` file and choose "Run with AutoJs4": the first console line shows this plugin's package name, which means AutoJs4 ran the script:
+
+```js
 console.log("engine package: " + context.getPackageName());
 console.log("device: " + device.brand + " " + device.model + " (API " + device.sdkInt + ")");
 toast("Hello from AutoJs4");
 ```
 
-The AutoJs6 console prints the lines prefixed with `[AutoJs4]`; the first line shows the plugin package name that executed the script, which proves the AutoJs4 engine ran it.
+- Modules and syntax that only AutoJs6 has are not available in AutoJs4; when the two engines give different results, compare them with "Run with AutoJs4 and compare".
+- Scripts run as this plugin: file access relies on this plugin's storage permission, and root features use `su` on the device.
+- Up to 16 AutoJs4 scripts can run at the same time.
 
-### Compatibility and Scope
+### Requirements
 
-- Engine: AutoJs4 4.4.0 (Auto.js 4.1.1 Alpha2 clone), Git commit [`3fb08269198ebd49a880ab3ca2621383eaa10443`](https://github.com/SuperMonster003/AutoJs4/commit/3fb08269198ebd49a880ab3ca2621383eaa10443), Rhino 1.7.7.2, OpenCV 3.4.3. The AutoJs4 sources are included as a Git submodule and compiled without modification; the arm64-v8a and x86_64 OpenCV libraries are rebuilt from the same release with NDK 28.2.13676358 and verified to export every JNI symbol of the original library.
-- Platform: Android 7.0 (API 24) or later. Single-ABI APKs cover `arm64-v8a, armeabi-v7a, x86_64, x86`; the `universal` APK contains all four. Like AutoJs4, the `x86` build has no OpenCV.
-- Scripts: `.js` files, `.auto` root recordings and project folders with `project.json` (the `main` script and `features` are honoured). `"ui";` scripts open AutoJs4's own script activity inside the plugin process.
-- Permissions: storage access (legacy external storage, `targetSdk 28`), display over other apps and the AutoJs4 accessibility service are granted to the plugin separately from AutoJs6. Root features use the `su` of the device like AutoJs4.
-- Concurrency: up to 16 AutoJs4 scripts run at the same time; stopping a task in AutoJs6 stops the AutoJs4 engine, and a crashed plugin process is reported as a failed task.
-- Settings and release history pages follow the language, dark mode and theme color of AutoJs6, falling back to the system appearance when host settings are unavailable.
+- Android 7.0 or later and AutoJs6 6.8.0 or later.
+- Storage access lets scripts read and write their files.
+- Display over other apps is used by the AutoJs4 console window and floating UIs, and the accessibility service by finding widgets and automatic taps; grant them only when a script needs them.
+- Like the original AutoJs4, the x86 build has no OpenCV, so image features that depend on it (such as finding images) are not available on x86 devices.
 
-See the [project README](https://github.com/SuperMonster003/AutoJs6-Plugin-AutoJs4-Runtime) for ABI selection, permissions, the exact contract and the scope of this version.
+### FAQ
+
+**When a permission is reported missing**
+
+This plugin's permissions are separate from those of AutoJs6. Open this plugin's settings from the Plugin Center, grant the reported permission in "Permissions and services", then run the script again.
+
+**When the two engines give different results**
+
+This plugin uses the unmodified AutoJs4 engine with the same Rhino and OpenCV versions as AutoJs4, so a difference in results is a difference between AutoJs4 and AutoJs6. If it gets in the way of migrating your scripts, you can report it on the [AutoJs6 issue tracker](https://github.com/SuperMonster003/AutoJs6/issues).
+
+**When the system stops long-running scripts**
+
+In "Permissions and services" in this plugin's settings, tap "Ignore battery optimizations" to exempt this plugin from battery optimizations.
+
+For the AutoJs4 script API, see the [AutoJs4 documentation](https://github.com/SuperMonster003/AutoJs4-Documentation); for the source code and more details, see the [project page](https://github.com/SuperMonster003/AutoJs6-Plugin-AutoJs4-Runtime).

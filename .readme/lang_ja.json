@@ -53,7 +53,50 @@
   "text_link_autojs4_docs": "AutoJs4 ドキュメント",
   "text_link_protocol": "AutoJs4 Runtime protocol V1",
   "text_link_roadmap": "AutoJs4 Runtime roadmap",
-  "p_instruction_backend": "このリリースは AutoJs4 {{ autojs4_version }} (commit `{{ autojs4_commit }}`) を Rhino {{ rhino_version }} と OpenCV 3.4.3 とともに内蔵し, すべてのスクリプトを隔離された `:autojs4_runtime` プロセスで実行します. 開始, コンソール行, 完了は host 契約を通じて AutoJs6 に返され, タスクは AutoJs6 のタスクリストから停止できます.",
-  "p_instruction_more": "ABI の選択, 権限, 正確な契約, このバージョンの範囲は [プロジェクト README]({{ repo_url }}) を参照してください.",
-  "p_icon_artwork": "アイコンは管理者提供の [PNG 原稿]({{ icon_source_url }}) (ライトテーマ用とダークテーマ用の 2 枚) と元の構図を保持しています. Icon Studio で調整し, `python .python/generate_icon_studio.py --check` でレシピと生成リソースの一致を確認してください."
+  "p_icon_artwork": "アイコンは管理者提供の [PNG 原稿]({{ icon_source_url }}) (ライトテーマ用とダークテーマ用の 2 枚) と元の構図を保持しています. Icon Studio で調整し, `python .python/generate_icon_studio.py --check` でレシピと生成リソースの一致を確認してください.",
+  "instruction_p_what": "AutoJs4 Runtime は AutoJs4 ({{ autojs4_baseline }} のクローン) の未改変のエンジンを内蔵しており, AutoJs6 は AutoJs4 を別途インストールしなくてもこのエンジンでスクリプトを実行できます. コンソール出力は AutoJs6 に送り返されるため, 同じデバイスでスクリプトの AutoJs4 と AutoJs6 での動作を比較できます.",
+  "instruction_h3_start": "はじめに",
+  "instruction_start_steps": [
+    "AutoJs6 のプラグインセンターでこのプラグインが有効になっていることを確認します.",
+    "プラグインセンターからこのプラグインの設定を開き, \"権限とサービス\" でスクリプトの必要に応じて \"ストレージへのアクセス\", \"他のアプリの上に表示\" または \"ユーザー補助サービス\" を許可します.",
+    "AutoJs6 のファイルマネージャーで `.js` ファイル, `.auto` ファイルまたはプロジェクトフォルダのメニューを開き, \"AutoJs4 で実行\" を選びます (AutoJs6 6.8.1 以降は \"AutoJs4\" サブメニュー内).",
+    "ログは `[AutoJs4]` の接頭辞付きで AutoJs6 のコンソールに表示されます. タスクは AutoJs6 のタスク一覧に表示され, そこで停止できます."
+  ],
+  "instruction_h3_features": "主な機能",
+  "instruction_features": [
+    "**AutoJs4 で実行**: `.js` ファイル, `.auto` 録画ファイル, `project.json` を含むプロジェクトフォルダを AutoJs4 のエンジンで実行します. `\"ui\";` スクリプトの画面はこのプラグイン内に表示されます.",
+    "**AutoJs4 で実行して比較**: 同じスクリプトを AutoJs6 と AutoJs4 でそれぞれ実行し, 2 回のコンソール出力が一致するかどうかと各実行の所要時間を \"AutoJs4 比較結果\" に表示します.",
+    "**AutoJs4 コンソールウィンドウを表示**: 設定の \"実行\" グループにあるスイッチで, オンにすると `console.show()` で AutoJs4 のフローティングコンソールが表示されます. ログは常に AutoJs6 に送り返されます.",
+    "**権限とサービス**: 設定にストレージへのアクセス, 他のアプリの上に表示, ユーザー補助サービス, 電池の最適化, Root 権限の状態が表示され, タップして許可または確認できます."
+  ],
+  "instruction_h3_script": "スクリプトでの使い方",
+  "instruction_p_script": "スクリプトは AutoJs4 の API ({{ autojs4_baseline }} と同じ) を使います. 次のコードを `.js` ファイルとして保存して \"AutoJs4 で実行\" を選ぶと, コンソールの 1 行目にこのプラグインのパッケージ名が表示され, AutoJs4 で実行されたことがわかります:",
+  "instruction_script_notes": [
+    "AutoJs6 にしかないモジュールや書き方は AutoJs4 では使えません. 2 つのエンジンの結果が異なるときは \"AutoJs4 で実行して比較\" で比較できます.",
+    "スクリプトはこのプラグインとして実行されます. ファイルの読み書きにはこのプラグインのストレージ権限が使われ, Root 機能はデバイスの `su` を使います.",
+    "AutoJs4 のスクリプトは同時に最大 {{ max_concurrent_executions }} 個まで実行できます."
+  ],
+  "instruction_h3_requirements": "動作要件",
+  "instruction_requirements": [
+    "Android {{ min_android_version }} 以降, AutoJs6 {{ required_host_version_name }} 以降.",
+    "ストレージへのアクセスは, スクリプトが使うファイルの読み書きに使います.",
+    "他のアプリの上に表示は AutoJs4 のコンソールウィンドウとフローティング画面に, ユーザー補助サービスはウィジェットの検索や自動タップなどに使います. どちらもスクリプトが必要とするときに許可してください.",
+    "オリジナルの AutoJs4 と同じく x86 版には OpenCV が含まれないため, x86 デバイスではそれに依存する画像機能 (画像検索など) は使えません."
+  ],
+  "instruction_h3_faq": "よくある質問",
+  "instruction_faq": [
+    {
+      "q": "権限が不足していると表示される場合",
+      "a": "このプラグインの権限は AutoJs6 の権限とは別です. プラグインセンターからこのプラグインの設定を開き, \"権限とサービス\" で表示された権限を許可してから, スクリプトを再実行してください."
+    },
+    {
+      "q": "2 つのエンジンで結果が異なる場合",
+      "a": "このプラグインは未改変の AutoJs4 エンジンを使い, Rhino と OpenCV のバージョンも AutoJs4 と同じなので, 結果の違いは AutoJs4 と AutoJs6 の違いです. スクリプトの移行に影響する場合は [AutoJs6 の issue トラッカー]({{ autojs6_url }}/issues) に報告できます."
+    },
+    {
+      "q": "長時間実行するスクリプトがシステムに中断される場合",
+      "a": "このプラグインの設定の \"権限とサービス\" で \"電池の最適化を無視\" をタップし, このプラグインを電池の最適化の対象外にしてください."
+    }
+  ],
+  "instruction_p_more": "AutoJs4 のスクリプト API は [AutoJs4 のドキュメント]({{ autojs4_documentation_url }}) を, ソースコードと詳しい説明は [プロジェクトページ]({{ repo_url }}) を参照してください."
 }

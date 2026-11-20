@@ -1,24 +1,52 @@
-AutoJs4 Runtime 內嵌了 [AutoJs4](https://github.com/SuperMonster003/AutoJs4) 的引擎, 即作為 AutoJs6 行為基準的 Auto.js 4.1.1 Alpha2 複製專案. 安裝後, AutoJs6 檔案管理器中的 "使用 AutoJs4 執行" 會在本外掛自己的處理程序裡用原版 Rhino 1.7.7.2 引擎執行 `.js` 檔案, `.auto` 錄製檔案與專案資料夾, 主控台輸出回傳到 AutoJs6. 這樣無需另外安裝 AutoJs4, 就能在同一部裝置上檢查指令碼在 AutoJs4 與 AutoJs6 上的表現是否不同.
+AutoJs4 Runtime 內嵌了 AutoJs4 (Auto.js 4.1.1 Alpha2 的複製專案) 未經修改的引擎, 讓 AutoJs6 不必另外安裝 AutoJs4 就能用它執行指令碼. 主控台輸出會傳回 AutoJs6, 方便在同一台裝置上比較指令碼在 AutoJs4 與 AutoJs6 上的表現.
 
-此版本內嵌 AutoJs4 4.4.0 (commit `3fb08269198ebd49a880ab3ca2621383eaa10443`), 使用 Rhino 1.7.7.2 與 OpenCV 3.4.3, 並在隔離的 `:autojs4_runtime` 處理程序中執行每個指令碼. 開始, 主控台行與結束狀態透過宿主契約傳回 AutoJs6, 工作可在 AutoJs6 工作清單中停止.
+### 開始使用
 
-### 快速開始
+1. 確認 AutoJs6 外掛中心裡本外掛已啟用.
+2. 從外掛中心開啟本外掛的設定, 在 "權限與服務" 中依指令碼需要授予 "儲存空間權限", "懸浮視窗" 或 "無障礙服務".
+3. 在 AutoJs6 檔案管理器中開啟 `.js` 檔案, `.auto` 檔案或專案資料夾的選單, 選擇 "使用 AutoJs4 執行" (AutoJs6 6.8.1 起位於 "AutoJs4" 子選單).
+4. 執行記錄帶 `[AutoJs4]` 前綴顯示在 AutoJs6 主控台中; 工作出現在 AutoJs6 的工作清單中, 可以在那裡停止.
 
-```javascript
+### 主要功能
+
+- **使用 AutoJs4 執行**: 用 AutoJs4 引擎執行 `.js` 檔案, `.auto` 錄製檔案與含 `project.json` 的專案資料夾; `"ui";` 指令碼的介面在本外掛中顯示.
+- **使用 AutoJs4 執行並對照**: 分別用 AutoJs6 與 AutoJs4 執行同一指令碼, 在 "AutoJs4 對照結果" 中顯示兩次主控台輸出是否一致以及各自的耗時.
+- **顯示 AutoJs4 主控台視窗**: 設定中 "執行" 群組的開關, 開啟後 `console.show()` 會顯示 AutoJs4 的浮動主控台; 記錄一律傳回 AutoJs6.
+- **權限與服務**: 設定中顯示儲存空間權限, 懸浮視窗, 無障礙服務, 忽略電池最佳化與 Root 權限的狀態, 輕觸即可授予或偵測.
+
+### 在指令碼中使用
+
+指令碼使用 AutoJs4 的 API (與 Auto.js 4.1.1 Alpha2 相同). 把下面的程式碼儲存為 `.js` 檔案後選擇 "使用 AutoJs4 執行", 主控台第一行會顯示本外掛的套件名稱, 表示指令碼由 AutoJs4 執行:
+
+```js
 console.log("engine package: " + context.getPackageName());
 console.log("device: " + device.brand + " " + device.model + " (API " + device.sdkInt + ")");
 toast("Hello from AutoJs4");
 ```
 
-AutoJs6 主控台會列印帶 `[AutoJs4]` 前綴的日誌, 第一行顯示執行指令碼的外掛套件名稱, 以此確認指令碼由 AutoJs4 引擎執行.
+- AutoJs6 才有的模組與寫法在 AutoJs4 中無法使用; 兩個引擎的結果不同時, 可以用 "使用 AutoJs4 執行並對照" 比較.
+- 指令碼以本外掛的身分執行: 讀寫檔案依靠本外掛的儲存空間權限, Root 功能使用裝置上的 `su`.
+- 最多同時執行 16 個 AutoJs4 指令碼.
 
-### 相容性和範圍
+### 執行需求
 
-- 引擎: AutoJs4 4.4.0 (Auto.js 4.1.1 Alpha2 複製), Git commit [`3fb08269198ebd49a880ab3ca2621383eaa10443`](https://github.com/SuperMonster003/AutoJs4/commit/3fb08269198ebd49a880ab3ca2621383eaa10443), Rhino 1.7.7.2, OpenCV 3.4.3. AutoJs4 原始碼以 Git submodule 引入並原樣編譯; arm64-v8a 與 x86_64 的 OpenCV 程式庫以 NDK 28.2.13676358 從同一版本重新編譯, 並校驗匯出了原程式庫的全部 JNI 符號.
-- 平台: Android 7.0 (API 24) 或更高版本. 單 ABI APK 涵蓋 `arm64-v8a, armeabi-v7a, x86_64, x86`, `universal` APK 包含全部四種. 與 AutoJs4 一樣, `x86` 建置不含 OpenCV.
-- 指令碼: `.js` 檔案, `.auto` Root 錄製檔案以及含 `project.json` 的專案資料夾 (遵循 `main` 入口與 `features`). `"ui";` 指令碼在外掛處理程序中開啟 AutoJs4 自己的指令碼 Activity.
-- 權限: 儲存空間權限 (傳統外部儲存空間, `targetSdk 28`), 懸浮視窗與 AutoJs4 無障礙服務都單獨授予外掛, 與 AutoJs6 無關. Root 功能與 AutoJs4 一樣使用裝置上的 `su`.
-- 並行: 最多同時執行 16 個 AutoJs4 指令碼; 在 AutoJs6 中停止工作會停止 AutoJs4 引擎, 外掛處理程序當機會被回報為失敗的工作.
-- 設定及發行歷史頁面跟隨 AutoJs6 的語言, 暗色模式和主題色, 宿主設定不可用時回退系統外觀.
+- Android 7.0 或更新版本, AutoJs6 6.8.0 或更新版本.
+- 儲存空間權限用於讀寫指令碼使用的檔案.
+- 懸浮視窗用於 AutoJs4 的主控台視窗與懸浮介面, 無障礙服務用於尋找控制項與自動點按等操作; 都在指令碼需要時再授予.
+- x86 裝置上與 AutoJs4 原版一樣不含 OpenCV, 依賴它的影像功能 (例如找圖) 無法使用.
 
-ABI 選擇, 權限, 精確契約與本版本範圍請參閱 [專案 README](https://github.com/SuperMonster003/AutoJs6-Plugin-AutoJs4-Runtime).
+### 常見問題
+
+**提示缺少權限時的處理**
+
+本外掛的權限與 AutoJs6 的權限彼此獨立. 從外掛中心開啟本外掛的設定, 在 "權限與服務" 中授予提示的權限, 然後重新執行指令碼.
+
+**兩個引擎結果不同的含義**
+
+本外掛使用未經修改的 AutoJs4 引擎, Rhino 與 OpenCV 的版本也與 AutoJs4 相同, 所以結果的差異就是 AutoJs4 與 AutoJs6 之間的差異. 如果差異影響指令碼移轉, 可以回報到 [AutoJs6 的 issue 追蹤器](https://github.com/SuperMonster003/AutoJs6/issues).
+
+**長時間執行的指令碼被系統中斷時的處理**
+
+在本外掛設定的 "權限與服務" 中輕觸 "忽略電池最佳化", 允許本外掛不受電池最佳化限制.
+
+AutoJs4 的指令碼 API 請見 [AutoJs4 文件](https://github.com/SuperMonster003/AutoJs4-Documentation), 原始碼與更多說明請見 [專案首頁](https://github.com/SuperMonster003/AutoJs6-Plugin-AutoJs4-Runtime).
