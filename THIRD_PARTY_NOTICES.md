@@ -42,7 +42,7 @@ by each upstream project; the plugin does not modify any of them.
 | settingscompat (hyb1996) | 1.1.5 | Apache License 2.0 |
 | Material Dialogs (afollestad) | 0.9.2.3 | MIT License |
 | Material Components for Android | 1.1.0-alpha01 | Apache License 2.0 |
-| AndroidX (appcompat, annotation, core and transitive artifacts) | as resolved | Apache License 2.0 |
+| AndroidX (appcompat, annotation, core, Jetpack Compose for the release history page, and transitive artifacts) | as resolved (Compose BOM 2026.09.00) | Apache License 2.0 |
 | greenrobot EventBus | 3.0.0 | Apache License 2.0 |
 | zip4j | 1.3.2 | Apache License 2.0 |
 | RoundedImageView (makeramen) | 2.3.0 | Apache License 2.0 |

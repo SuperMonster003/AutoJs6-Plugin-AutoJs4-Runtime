@@ -15,18 +15,17 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.graphics.ColorUtils
 import io.github.supermonster003.autojs6.plugin.autojs4.runtime.R
 
-/** Refreshes the official host snapshot on resume without changing process-wide engine resources. */
+/**
+ * Refreshes the official host snapshot on resume without changing process-wide engine resources ([HostAppearanceSession],
+ * shared with the Compose release history page).
+ * zh-CN: 恢复时刷新官方宿主快照, 不改变进程级的引擎资源 ([HostAppearanceSession], 与 Compose 版发行历史页共用).
+ */
 abstract class HostAppearanceActivity : AppCompatActivity() {
-    private lateinit var systemContext: Context
-    internal lateinit var appearance: HostAppearance
-        private set
-    private var appearanceGeneration = 0
-    private var interacted = false
+    private val session = HostAppearanceSession(this)
+    internal val appearance: HostAppearance get() = session.appearance
 
     override fun attachBaseContext(newBase: Context) {
-        systemContext = newBase
-        appearance = HostAppearance.resolve(newBase)
-        super.attachBaseContext(appearance.wrap(newBase))
+        super.attachBaseContext(session.attach(newBase))
     }
 
     @Suppress("DEPRECATION")
@@ -50,7 +49,7 @@ abstract class HostAppearanceActivity : AppCompatActivity() {
 
     override fun onTitleChanged(title: CharSequence?, color: Int) {
         super.onTitleChanged(title, color)
-        if (::appearance.isInitialized) {
+        if (session.isAttached) {
             supportActionBar?.title = SpannableString(title ?: "").apply {
                 setSpan(ForegroundColorSpan(foregroundOn(appearance.primary)), 0, length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
             }
@@ -59,27 +58,16 @@ abstract class HostAppearanceActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        interacted = false
-        val generation = ++appearanceGeneration
-        val app = applicationContext
-        HostAppearance.worker.execute {
-            val host = HostAppearance.read(app)
-            runOnUiThread {
-                if (generation != appearanceGeneration || isFinishing || isDestroyed) return@runOnUiThread
-                // A missing/disabled host clears the previous snapshot instead of retaining it forever.
-                HostAppearance.cached = host
-                if (!interacted && appearance != HostAppearance.resolve(systemContext, host)) recreate()
-            }
-        }
+        session.onResume()
     }
 
     override fun onUserInteraction() {
-        interacted = true
+        session.onUserInteraction()
         super.onUserInteraction()
     }
 
     override fun onPause() {
-        appearanceGeneration++
+        session.onPause()
         super.onPause()
     }
 

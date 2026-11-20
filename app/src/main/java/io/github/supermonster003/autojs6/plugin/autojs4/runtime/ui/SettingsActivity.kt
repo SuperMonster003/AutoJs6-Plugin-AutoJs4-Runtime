@@ -97,9 +97,10 @@ class SettingsActivity : HostAppearanceActivity() {
                     identity.autoJs4Commit.take(10),
                 ),
             )
-        rows.addNavigationRow(R.string.settings_release_history_title) {
-            startActivity(Intent(this, ReleaseHistoryActivity::class.java))
-        }
+        // "About > Release history" with its summary (AUTOJS6_PLUGIN_RELEASE_HISTORY_AGENTS.md section 2).
+        // zh-CN: "关于 > 发行历史" 及其摘要 (规范第 2 节).
+        rows.addNavigationRow(R.string.settings_release_history_title) { openReleaseHistory() }
+            .setSummary(getString(R.string.settings_release_history_summary))
         rows.addNavigationRow(R.string.settings_project_page_title) {
             runCatching {
                 startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(PROJECT_URL)))

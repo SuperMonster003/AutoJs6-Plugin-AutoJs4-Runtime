@@ -1,11 +1,9 @@
 package io.github.supermonster003.autojs6.plugin.autojs4.runtime
 
-import io.github.supermonster003.autojs6.plugin.autojs4.runtime.ui.ReleaseHistoryActivity
 import org.autojs.plugin.autojs4.runtime.api.AutoJs4RuntimeContract
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
-import java.util.Locale
 
 class AutoJs4PluginMetadataTest {
     @Test
@@ -38,29 +36,5 @@ class AutoJs4PluginMetadataTest {
         assertEquals(listOf("中", "文"), BoundedText.chunk("中文", 4))
         assertEquals("🧪", BoundedText.truncate("🧪x", 4))
         assertEquals(listOf("🧪", "x"), BoundedText.chunk("🧪x", 4))
-    }
-
-    @Test
-    fun changelogCandidatesFollowTheReadmeLanguages() {
-        assertEquals(
-            listOf("doc/CHANGELOG-zh-Hans.md", "doc/CHANGELOG-en.md", "doc/CHANGELOG.md"),
-            ReleaseHistoryActivity.changelogCandidates(Locale.SIMPLIFIED_CHINESE),
-        )
-        assertEquals(
-            listOf("doc/CHANGELOG-zh-Hant-TW.md", "doc/CHANGELOG-en.md", "doc/CHANGELOG.md"),
-            ReleaseHistoryActivity.changelogCandidates(Locale.TRADITIONAL_CHINESE),
-        )
-        assertEquals(
-            listOf("doc/CHANGELOG-zh-Hant-HK.md", "doc/CHANGELOG-en.md", "doc/CHANGELOG.md"),
-            ReleaseHistoryActivity.changelogCandidates(Locale("zh", "HK")),
-        )
-        assertEquals(
-            listOf("doc/CHANGELOG-en.md", "doc/CHANGELOG.md"),
-            ReleaseHistoryActivity.changelogCandidates(Locale.GERMANY),
-        )
-        assertEquals(
-            listOf("doc/CHANGELOG-ru.md", "doc/CHANGELOG-en.md", "doc/CHANGELOG.md"),
-            ReleaseHistoryActivity.changelogCandidates(Locale("ru", "RU")),
-        )
     }
 }

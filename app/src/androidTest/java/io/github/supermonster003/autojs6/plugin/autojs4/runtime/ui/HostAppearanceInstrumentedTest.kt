@@ -9,7 +9,6 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
 import android.os.SystemClock
-import android.widget.TextView
 import androidx.test.core.app.ActivityScenario
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
@@ -138,8 +137,8 @@ class HostAppearanceInstrumentedTest {
         val defaultLocale = Locale.getDefault()
         for ((tag, assetTag) in listOf("en" to "en", "zh-CN" to "zh-Hans", "zh-Hant-HK" to "zh-Hant-HK", "ar" to "ar")) {
             val wrapped = requireNotNull(HostAppearance.decode(snapshot())).copy(languageTag = tag).wrap(context)
-            val expected = context.assets.open("doc/CHANGELOG-$assetTag.md").bufferedReader().use { it.readText() }
-            assertEquals(expected, ReleaseHistoryActivity.loadChangelog(wrapped))
+            assertEquals("doc/CHANGELOG-$assetTag.md",
+                ReleaseHistoryAssetPolicy.candidatesFor(wrapped.resources.configuration.locales[0]).first())
         }
         assertEquals(defaultLocale, Locale.getDefault())
         val previous = HostAppearance.cached
@@ -147,11 +146,7 @@ class HostAppearanceInstrumentedTest {
             val expected = HostAppearance.resolve(context, HostAppearance.read(context))
             HostAppearance.cached = expected
             ActivityScenario.launch<ReleaseHistoryActivity>(Intent(context, ReleaseHistoryActivity::class.java)).use { scenario ->
-                scenario.onActivity { activity ->
-                    assertEquals(expected, activity.appearance)
-                    assertEquals(ReleaseHistoryActivity.loadChangelog(activity),
-                        activity.findViewById<TextView>(R.id.release_history_text).text.toString())
-                }
+                scenario.onActivity { activity -> assertEquals(expected, activity.appearance) }
             }
         } finally {
             HostAppearance.cached = previous

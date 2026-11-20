@@ -9,6 +9,7 @@ plugins {
     id("org.autojs.build.signs")
     id("org.autojs.build.jvm-convention")
     id("com.android.application")
+    id("org.jetbrains.kotlin.plugin.compose")
 }
 
 val globalApplicationId = "io.github.supermonster003.autojs6.plugin.autojs4.runtime"
@@ -193,6 +194,7 @@ android {
 
     buildFeatures {
         aidl = true
+        compose = true
         resValues = true
         buildConfig = true
     }
@@ -220,9 +222,25 @@ dependencies {
         exclude(group = "com.android.support")
     }
 
+    // Jetpack Compose, only for the release history page (plugin-center P21.5); the BOM is the single
+    // version source of the Compose artifacts.
+    // zh-CN: Jetpack Compose, 只用于发行历史页 (plugin-center P21.5); Compose 各库的版本只由 BOM 决定.
+    implementation(platform(libs.compose.bom))
+    implementation(libs.compose.runtime)
+    implementation(libs.compose.ui)
+    implementation(libs.compose.foundation)
+    implementation(libs.compose.material3)
+    implementation(libs.compose.animation)
+    implementation(libs.compose.activity)
+    debugImplementation(libs.compose.ui.test.manifest)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.test.ext.junit)
     androidTestImplementation(libs.test.runner)
+    // Compose UI tests pull Espresso 3.5.0, whose idling sync reflects on InputManager.getInstance (gone on API 36).
+    androidTestImplementation(libs.test.espresso.core)
+    androidTestImplementation(platform(libs.compose.bom))
+    androidTestImplementation(libs.compose.ui.test.junit4)
 }
 
 tasks.withType<JavaCompile>().configureEach {

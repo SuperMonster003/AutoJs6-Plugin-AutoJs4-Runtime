@@ -4,7 +4,12 @@
     <string name="explorer_action_run_with_autojs4">Ejecutar con AutoJs4</string>
     <string name="log_title">Registro de AutoJs4</string>
     <string name="plugin_description">Ejecuta scripts con el motor Auto.js 4.1.1 Alpha2 integrado para comparar los resultados con AutoJs6</string>
-    <string name="release_history_load_failed">No se puede cargar el historial de versiones</string>
+    <string name="release_history_back">Atrás</string>
+    <string name="release_history_collapse_all">Contraer todo</string>
+    <string name="release_history_collapsed">Contraído</string>
+    <string name="release_history_expand_all">Expandir todo</string>
+    <string name="release_history_expanded">Expandido</string>
+    <string name="release_history_load_failed">No se pudo cargar el historial de versiones</string>
     <string name="release_history_title">Historial de versiones</string>
     <string name="settings_accessibility_summary_disabled">Desactivado, toca para abrir los ajustes de accesibilidad del sistema</string>
     <string name="settings_accessibility_summary_enabled">Activado</string>
@@ -17,6 +22,7 @@
     <string name="settings_group_running">Ejecución</string>
     <string name="settings_overlay_title">Mostrar sobre otras aplicaciones</string>
     <string name="settings_project_page_title">Página del proyecto</string>
+    <string name="settings_release_history_summary">Consultar el historial de versiones incluido en la aplicación</string>
     <string name="settings_release_history_title">Historial de versiones</string>
     <string name="settings_root_summary_available">Disponible</string>
     <string name="settings_root_summary_checking" tools:ignore="TypographyEllipsis">Comprobando...</string>

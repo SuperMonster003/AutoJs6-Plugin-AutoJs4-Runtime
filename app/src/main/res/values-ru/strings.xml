@@ -4,6 +4,11 @@
     <string name="explorer_action_run_with_autojs4">Запустить в AutoJs4</string>
     <string name="log_title">Журнал AutoJs4</string>
     <string name="plugin_description">Запускает скрипты встроенным движком Auto.js 4.1.1 Alpha2 для сравнения результатов с AutoJs6</string>
+    <string name="release_history_back">Назад</string>
+    <string name="release_history_collapse_all">Свернуть всё</string>
+    <string name="release_history_collapsed">Свёрнуто</string>
+    <string name="release_history_expand_all">Развернуть всё</string>
+    <string name="release_history_expanded">Развёрнуто</string>
     <string name="release_history_load_failed">Не удалось загрузить историю выпусков</string>
     <string name="release_history_title">История выпусков</string>
     <string name="settings_accessibility_summary_disabled">Выключена, нажмите, чтобы открыть системные настройки специальных возможностей</string>
@@ -17,6 +22,7 @@
     <string name="settings_group_running">Выполнение</string>
     <string name="settings_overlay_title">Поверх других приложений</string>
     <string name="settings_project_page_title">Страница проекта</string>
+    <string name="settings_release_history_summary">Открыть встроенную историю выпусков приложения</string>
     <string name="settings_release_history_title">История выпусков</string>
     <string name="settings_root_summary_available">Доступен</string>
     <string name="settings_root_summary_checking" tools:ignore="TypographyEllipsis">Проверка...</string>

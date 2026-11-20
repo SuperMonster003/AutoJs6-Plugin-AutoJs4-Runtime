@@ -81,10 +81,13 @@
             android:exported="false"
             android:label="@string/log_title" />
 
+        <!-- The release history page (Compose, androidx.activity.ComponentActivity): it draws its own top bar in the
+             settings page's colors; ReleaseHistoryActivity picks the light or dark theme like the settings page. -->
         <activity
             android:name=".ui.ReleaseHistoryActivity"
             android:exported="false"
-            android:label="@string/release_history_title" />
+            android:label="@string/release_history_title"
+            android:theme="@style/Theme.AutoJs4Runtime.Page" />
 
         <service
             android:name=".AutoJs4PluginInfoService"

@@ -4,6 +4,11 @@
     <string name="explorer_action_run_with_autojs4">Exécuter avec AutoJs4</string>
     <string name="log_title">Journal AutoJs4</string>
     <string name="plugin_description">Exécute des scripts avec le moteur Auto.js 4.1.1 Alpha2 embarqué pour comparer les résultats avec AutoJs6</string>
+    <string name="release_history_back">Retour</string>
+    <string name="release_history_collapse_all">Tout réduire</string>
+    <string name="release_history_collapsed">Réduit</string>
+    <string name="release_history_expand_all">Tout développer</string>
+    <string name="release_history_expanded">Développé</string>
     <string name="release_history_load_failed">Impossible de charger l\'historique des versions</string>
     <string name="release_history_title">Historique des versions</string>
     <string name="settings_accessibility_summary_disabled">Désactivé, appuyez pour ouvrir les paramètres d\'accessibilité du système</string>
@@ -12,11 +17,12 @@
     <string name="settings_battery_title">Ignorer l\'optimisation de la batterie</string>
     <string name="settings_console_window_summary">Autoriser console.show() à ouvrir la console flottante AutoJs4 dans ce processus. Les journaux sont toujours envoyés à AutoJs6</string>
     <string name="settings_console_window_title">Afficher la fenêtre de console AutoJs4</string>
-    <string name="settings_group_about">A propos</string>
+    <string name="settings_group_about">À propos</string>
     <string name="settings_group_permissions">Permissions et services</string>
     <string name="settings_group_running">Exécution</string>
     <string name="settings_overlay_title">Superposition aux autres applications</string>
     <string name="settings_project_page_title">Page du projet</string>
+    <string name="settings_release_history_summary">Consulter l\'historique des versions inclus dans l\'application</string>
     <string name="settings_release_history_title">Historique des versions</string>
     <string name="settings_root_summary_available">Disponible</string>
     <string name="settings_root_summary_checking" tools:ignore="TypographyEllipsis">Vérification...</string>

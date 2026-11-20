@@ -4,7 +4,12 @@
     <string name="explorer_action_run_with_autojs4">AutoJs4 で実行</string>
     <string name="log_title">AutoJs4 ログ</string>
     <string name="plugin_description">内蔵の Auto.js 4.1.1 Alpha2 エンジンでスクリプトを実行し, AutoJs6 の結果と比較する</string>
-    <string name="release_history_load_failed">リリース履歴を読み込めません</string>
+    <string name="release_history_back">戻る</string>
+    <string name="release_history_collapse_all">すべて折りたたむ</string>
+    <string name="release_history_collapsed">折りたたみ中</string>
+    <string name="release_history_expand_all">すべて展開する</string>
+    <string name="release_history_expanded">展開中</string>
+    <string name="release_history_load_failed">リリース履歴を読み込めませんでした</string>
     <string name="release_history_title">リリース履歴</string>
     <string name="settings_accessibility_summary_disabled">無効です. タップしてシステムのユーザー補助設定を開く</string>
     <string name="settings_accessibility_summary_enabled">有効</string>
@@ -17,6 +22,7 @@
     <string name="settings_group_running">実行</string>
     <string name="settings_overlay_title">他のアプリの上に表示</string>
     <string name="settings_project_page_title">プロジェクトページ</string>
+    <string name="settings_release_history_summary">アプリに含まれるリリース履歴を表示します</string>
     <string name="settings_release_history_title">リリース履歴</string>
     <string name="settings_root_summary_available">利用可能</string>
     <string name="settings_root_summary_checking" tools:ignore="TypographyEllipsis">確認中...</string>

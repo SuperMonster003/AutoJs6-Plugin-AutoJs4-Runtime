@@ -21,6 +21,14 @@ autojs4-android-logging-log4j = "1.0.3"
 autojs4-log4j = "1.2.17"
 autojs4-glide = "4.2.0"
 
+# Jetpack Compose, only for the release history page (plugin-center P21.5); not an AutoJs4 engine
+# dependency. The BOM does not manage activity-compose, so it carries its own version.
+# zh-CN: Jetpack Compose, 只用于发行历史页 (plugin-center P21.5), 不是 AutoJs4 引擎依赖. BOM 不管理
+# activity-compose, 所以它单独写版本.
+compose-bom = "2026.09.00"
+activity-compose = "1.12.2"
+test-espresso-core = "3.7.0"
+
 commons-compress = "1.28.0"
 foojay-resolver-convention = "1.0.0"
 junit = "4.13.2"
@@ -50,6 +58,17 @@ autojs4-gson = { module = "com.google.code.gson:gson", version.ref = "autojs4-gs
 autojs4-android-logging-log4j = { module = "de.mindpipe.android:android-logging-log4j", version.ref = "autojs4-android-logging-log4j" }
 autojs4-log4j = { module = "log4j:log4j", version.ref = "autojs4-log4j" }
 autojs4-glide = { module = "com.github.bumptech.glide:glide", version.ref = "autojs4-glide" }
+
+compose-activity = { module = "androidx.activity:activity-compose", version.ref = "activity-compose" }
+compose-animation = { module = "androidx.compose.animation:animation" }
+compose-bom = { module = "androidx.compose:compose-bom", version.ref = "compose-bom" }
+compose-foundation = { module = "androidx.compose.foundation:foundation" }
+compose-material3 = { module = "androidx.compose.material3:material3" }
+compose-runtime = { module = "androidx.compose.runtime:runtime" }
+compose-ui = { module = "androidx.compose.ui:ui" }
+compose-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4" }
+compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
+test-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "test-espresso-core" }
 
 junit = { module = "junit:junit", version.ref = "junit" }
 test-ext-junit = { module = "androidx.test.ext:junit", version.ref = "test-junit-version" }
