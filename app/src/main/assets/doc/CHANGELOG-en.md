@@ -4,6 +4,16 @@
 
 ******
 
+# v1.1.1
+
+###### 2026/11/20
+
+* `Improvement` The release history page now expands and collapses by version: a collapsed version shows its date and the number of entries per category, an expanded one names each category once; all versions can be expanded or collapsed at once, the newest one opens expanded and the subtitle shows the plugin name
+* `Improvement` Rewrote the instructions shown in Plugin Center in five parts: getting started, main features, using it in scripts, requirements and FAQ
+* `Dependency` Added Jetpack Compose BOM 2026.09.00 (release history page)
+* `Dependency` Upgraded AndroidX Core to 1.16.0 and AndroidX Lifecycle to 2.9.4 (needed by Jetpack Compose; AppCompat stays at AutoJs4's 1.0.2)
+* `Dependency` Upgraded shared build plugins version 1.9.0 -> 1.9.7
+
 # v1.1.0
 
 ###### 2026/11/08
