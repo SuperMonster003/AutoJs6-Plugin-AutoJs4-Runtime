@@ -4,6 +4,12 @@
 
 ******
 
+# v1.1.2
+
+###### 2026/11/27
+
+* `Improvement` The plugin's synopsis and instructions now say what it is for: comparing results with AutoJs6 when migrating old Auto.js 4.x scripts; most users, who only write new scripts in AutoJs6, do not need to install it
+
 # v1.1.1
 
 ###### 2026/11/20

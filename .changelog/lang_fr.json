@@ -5,6 +5,12 @@
   "changelog_label_improvement": "Amélioration",
   "changelog_label_dependency": "Dépendance",
   "$data": {
+    "v1.1.2": {
+      "released_date": "2026/11/27",
+      "improvement": [
+        "Le résumé et les instructions du plugin indiquent désormais à quoi il sert: comparer les résultats avec AutoJs6 lors de la migration d'anciens scripts Auto.js 4.x; la plupart des utilisateurs, qui écrivent seulement de nouveaux scripts dans AutoJs6, n'ont pas besoin de l'installer"
+      ]
+    },
     "v1.1.1": {
       "released_date": "2026/11/20",
       "improvement": [

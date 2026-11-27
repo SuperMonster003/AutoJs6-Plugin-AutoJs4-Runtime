@@ -5,6 +5,12 @@
   "changelog_label_improvement": "改善",
   "changelog_label_dependency": "相依項目",
   "$data": {
+    "v1.1.2": {
+      "released_date": "2026/11/27",
+      "improvement": [
+        "外掛簡介與使用說明寫明外掛的用途: 從 Auto.js 4.x 移轉舊指令碼時對照 AutoJs6 的執行結果, 只在 AutoJs6 中撰寫新指令碼的一般使用者不需要安裝"
+      ]
+    },
     "v1.1.1": {
       "released_date": "2026/11/20",
       "improvement": [

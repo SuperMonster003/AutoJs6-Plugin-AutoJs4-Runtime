@@ -5,6 +5,12 @@
   "changelog_label_improvement": "개선",
   "changelog_label_dependency": "의존성",
   "$data": {
+    "v1.1.2": {
+      "released_date": "2026/11/27",
+      "improvement": [
+        "플러그인 소개와 사용 설명에 플러그인의 용도를 명시함: Auto.js 4.x의 기존 스크립트를 옮길 때 AutoJs6 실행 결과와 비교하기 위한 것이며, AutoJs6에서 새 스크립트만 작성하는 일반 사용자는 설치할 필요 없음"
+      ]
+    },
     "v1.1.1": {
       "released_date": "2026/11/20",
       "improvement": [

@@ -134,6 +134,12 @@ Tamaño de página de 16 KB: las bibliotecas nativas de arm64-v8a y x86_64 (Open
 
 ******
 
+#### v1.1.2
+
+_2026/11/27_
+
+- `Mejora` El resumen y las instrucciones del plugin indican ahora para qué sirve: comparar los resultados con AutoJs6 al migrar scripts antiguos de Auto.js 4.x; la mayoría de los usuarios, que solo escriben scripts nuevos en AutoJs6, no necesitan instalarlo
+
 #### v1.1.1
 
 _2026/11/20_
@@ -151,12 +157,6 @@ _2026/11/08_
 - `Corrección` El icono de la aplicación era difícil de distinguir sobre fondos oscuros en algunos lanzadores y listas de aplicaciones del sistema
 - `Mejora` En el menú de archivos de AutoJs6 6.8.1 y posteriores, "Ejecutar con AutoJs4" y "Ejecutar con AutoJs4 y comparar" los proporciona ahora el complemento, dentro del menú de primer nivel "AutoJs4" (sin cambios en versiones anteriores de AutoJs6)
 - `Mejora` Las páginas de ajustes e historial de versiones siguen el idioma, modo oscuro y color del tema de AutoJs6, y usan la apariencia del sistema si los ajustes del anfitrión no están disponibles
-
-#### v1.0.1
-
-_2026/10/12_
-
-- `Mejora` Cuando un script necesita el servicio de accesibilidad y el servicio del complemento no está activado, un aviso emergente explica por qué se abren los ajustes de accesibilidad del sistema
 
 ##### Más historial de versiones
 

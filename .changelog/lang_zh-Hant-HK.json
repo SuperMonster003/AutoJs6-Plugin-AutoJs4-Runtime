@@ -5,6 +5,12 @@
   "changelog_label_improvement": "改善",
   "changelog_label_dependency": "依賴",
   "$data": {
+    "v1.1.2": {
+      "released_date": "2026/11/27",
+      "improvement": [
+        "插件簡介與使用說明寫明插件的用途: 從 Auto.js 4.x 遷移舊腳本時對照 AutoJs6 的運行結果, 只在 AutoJs6 中編寫新腳本的一般用戶不需要安裝"
+      ]
+    },
     "v1.1.1": {
       "released_date": "2026/11/20",
       "improvement": [

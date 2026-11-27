@@ -134,6 +134,12 @@ max log chunk: 64 KiB
 
 ******
 
+#### v1.1.2
+
+_2026/11/27_
+
+- `Improvement` The plugin's synopsis and instructions now say what it is for: comparing results with AutoJs6 when migrating old Auto.js 4.x scripts; most users, who only write new scripts in AutoJs6, do not need to install it
+
 #### v1.1.1
 
 _2026/11/20_
@@ -151,12 +157,6 @@ _2026/11/08_
 - `Fix` The application icon was difficult to distinguish on dark backgrounds in some launchers and system app lists
 - `Improvement` In the file menu of AutoJs6 6.8.1 and later, "Run with AutoJs4" and "Run with AutoJs4 and compare" are now provided by the plugin, under the top-level menu "AutoJs4" (unchanged in older AutoJs6 versions)
 - `Improvement` Settings and release history pages follow the language, dark mode and theme color of AutoJs6, falling back to the system appearance when host settings are unavailable
-
-#### v1.0.1
-
-_2026/10/12_
-
-- `Improvement` When a script needs the accessibility service while the plugin's service is not enabled, a toast explains why the system accessibility settings open
 
 ##### For more release history
 

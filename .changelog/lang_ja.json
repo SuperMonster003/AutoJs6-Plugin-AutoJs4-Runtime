@@ -5,6 +5,12 @@
   "changelog_label_improvement": "改善",
   "changelog_label_dependency": "依存関係",
   "$data": {
+    "v1.1.2": {
+      "released_date": "2026/11/27",
+      "improvement": [
+        "プラグインの概要と使い方の説明にプラグインの用途を明記: Auto.js 4.x の旧スクリプトを移行するときに AutoJs6 の実行結果と比較するためのもので, AutoJs6 で新しいスクリプトを書くだけの一般のユーザーはインストール不要"
+      ]
+    },
     "v1.1.1": {
       "released_date": "2026/11/20",
       "improvement": [

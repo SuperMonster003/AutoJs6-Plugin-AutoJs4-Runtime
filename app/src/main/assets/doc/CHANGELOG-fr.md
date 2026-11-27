@@ -4,6 +4,12 @@
 
 ******
 
+# v1.1.2
+
+###### 2026/11/27
+
+* `Amélioration` Le résumé et les instructions du plugin indiquent désormais à quoi il sert: comparer les résultats avec AutoJs6 lors de la migration d'anciens scripts Auto.js 4.x; la plupart des utilisateurs, qui écrivent seulement de nouveaux scripts dans AutoJs6, n'ont pas besoin de l'installer
+
 # v1.1.1
 
 ###### 2026/11/20

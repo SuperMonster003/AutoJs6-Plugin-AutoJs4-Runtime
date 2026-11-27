@@ -134,6 +134,12 @@ Pages de 16 KB : les bibliothèques natives arm64-v8a et x86_64 (OpenCV 3.4.3 re
 
 ******
 
+#### v1.1.2
+
+_2026/11/27_
+
+- `Amélioration` Le résumé et les instructions du plugin indiquent désormais à quoi il sert: comparer les résultats avec AutoJs6 lors de la migration d'anciens scripts Auto.js 4.x; la plupart des utilisateurs, qui écrivent seulement de nouveaux scripts dans AutoJs6, n'ont pas besoin de l'installer
+
 #### v1.1.1
 
 _2026/11/20_
@@ -151,12 +157,6 @@ _2026/11/08_
 - `Correction` Icône de l'application difficile à distinguer sur les fonds sombres de certains lanceurs et listes d'applications système
 - `Amélioration` Dans le menu de fichier d'AutoJs6 6.8.1 et versions ultérieures, "Exécuter avec AutoJs4" et "Exécuter avec AutoJs4 et comparer" sont désormais fournis par le plugin, dans le menu de premier niveau "AutoJs4" (inchangé dans les versions antérieures d'AutoJs6)
 - `Amélioration` Les pages de paramètres et d'historique des versions suivent la langue, le mode sombre et la couleur du thème AutoJs6, avec repli sur l'apparence du système si les paramètres de l'hôte sont indisponibles
-
-#### v1.0.1
-
-_2026/10/12_
-
-- `Amélioration` Lorsqu'un script a besoin du service d'accessibilité alors que le service du plugin n'est pas activé, un message toast explique pourquoi les paramètres d'accessibilité du système s'ouvrent
 
 ##### Historique supplémentaire
 
