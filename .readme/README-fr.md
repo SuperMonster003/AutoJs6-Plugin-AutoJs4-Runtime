@@ -8,7 +8,7 @@
     </picture>
   </p>
 
-  <p>Exécute des scripts avec le moteur Auto.js 4.1.1 Alpha2 embarqué pour comparer les résultats avec AutoJs6</p>
+  <p>Pour migrer d'anciens scripts Auto.js 4.x: les exécute avec le moteur Auto.js 4 embarqué pour comparer les résultats avec AutoJs6; inutile pour la plupart des utilisateurs</p>
 
   <p>
     <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-AutoJs4-Runtime/releases"><img alt="GitHub release" src="https://img.shields.io/github/v/release/SuperMonster003/AutoJs6-Plugin-AutoJs4-Runtime?label=Release"/></a>
@@ -42,7 +42,7 @@ Le README.md actuel prend en charge les langues suivantes:
 
 ******
 
-AutoJs4 Runtime embarque le moteur d'[AutoJs4](https://github.com/SuperMonster003/AutoJs4), le clone de Auto.js 4.1.1 Alpha2 qui sert de référence comportementale à AutoJs6. Une fois installé, l'entrée "Exécuter avec AutoJs4" du gestionnaire de fichiers d'AutoJs6 exécute les fichiers `.js`, les enregistrements `.auto` et les dossiers de projet avec le moteur Rhino 1.7.7.2 d'origine dans le propre processus du plugin, tandis que la sortie console revient dans AutoJs6. On peut ainsi vérifier sur un seul appareil si un script se comporte différemment sur AutoJs4 et sur AutoJs6, sans installer AutoJs4.
+AutoJs4 Runtime embarque le moteur d'[AutoJs4](https://github.com/SuperMonster003/AutoJs4), le clone de Auto.js 4.1.1 Alpha2 qui sert de référence comportementale à AutoJs6. Une fois installé, l'entrée "Exécuter avec AutoJs4" du gestionnaire de fichiers d'AutoJs6 exécute les fichiers `.js`, les enregistrements `.auto` et les dossiers de projet avec le moteur Rhino 1.7.7.2 d'origine dans le propre processus du plugin, tandis que la sortie console revient dans AutoJs6. On peut ainsi vérifier sur un seul appareil si un script se comporte différemment sur AutoJs4 et sur AutoJs6, sans installer AutoJs4. Le plugin s'adresse surtout aux utilisateurs qui migrent d'anciens scripts Auto.js 4.x et veulent comparer les résultats; la plupart des utilisateurs, qui écrivent seulement de nouveaux scripts dans AutoJs6, n'ont pas besoin de l'installer.
 
 ******
 

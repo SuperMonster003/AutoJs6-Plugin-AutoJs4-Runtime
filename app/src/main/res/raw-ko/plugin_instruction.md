@@ -1,4 +1,4 @@
-AutoJs4 Runtime은 Auto.js 4.1.1 Alpha2 복제본인 AutoJs4의 엔진을 수정 없이 내장하고 있어, AutoJs4를 따로 설치하지 않아도 AutoJs6에서 이 엔진으로 스크립트를 실행할 수 있습니다. 콘솔 출력은 AutoJs6으로 전달되므로 같은 기기에서 스크립트가 AutoJs4와 AutoJs6에서 어떻게 동작하는지 비교할 수 있습니다.
+AutoJs4 Runtime은 Auto.js 4.1.1 Alpha2 복제본인 AutoJs4의 엔진을 수정 없이 내장하고 있어, AutoJs4를 따로 설치하지 않아도 AutoJs6에서 이 엔진으로 스크립트를 실행할 수 있습니다. 콘솔 출력은 AutoJs6으로 전달되므로 같은 기기에서 스크립트가 AutoJs4와 AutoJs6에서 어떻게 동작하는지 비교할 수 있습니다. 이 플러그인은 주로 Auto.js 4.x의 기존 스크립트를 옮기는 사용자가 실행 결과를 비교하기 위한 것으로, AutoJs6에서 새 스크립트만 작성하는 일반 사용자는 설치할 필요가 없습니다.
 
 ### 시작하기
 

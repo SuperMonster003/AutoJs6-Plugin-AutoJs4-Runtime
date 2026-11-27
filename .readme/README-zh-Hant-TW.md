@@ -8,7 +8,7 @@
     </picture>
   </p>
 
-  <p>使用內嵌的 Auto.js 4.1.1 Alpha2 引擎執行指令碼, 用於對照 AutoJs6 的執行結果</p>
+  <p>從 Auto.js 4.x 移轉舊指令碼時使用: 以內嵌的 Auto.js 4 引擎執行指令碼, 對照 AutoJs6 的結果; 一般使用者不需要安裝</p>
 
   <p>
     <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-AutoJs4-Runtime/releases"><img alt="GitHub release" src="https://img.shields.io/github/v/release/SuperMonster003/AutoJs6-Plugin-AutoJs4-Runtime?label=Release"/></a>
@@ -42,7 +42,7 @@
 
 ******
 
-AutoJs4 Runtime 內嵌了 [AutoJs4](https://github.com/SuperMonster003/AutoJs4) 的引擎, 即作為 AutoJs6 行為基準的 Auto.js 4.1.1 Alpha2 複製專案. 安裝後, AutoJs6 檔案管理器中的 "使用 AutoJs4 執行" 會在本外掛自己的處理程序裡用原版 Rhino 1.7.7.2 引擎執行 `.js` 檔案, `.auto` 錄製檔案與專案資料夾, 主控台輸出回傳到 AutoJs6. 這樣無需另外安裝 AutoJs4, 就能在同一部裝置上檢查指令碼在 AutoJs4 與 AutoJs6 上的表現是否不同.
+AutoJs4 Runtime 內嵌了 [AutoJs4](https://github.com/SuperMonster003/AutoJs4) 的引擎, 即作為 AutoJs6 行為基準的 Auto.js 4.1.1 Alpha2 複製專案. 安裝後, AutoJs6 檔案管理器中的 "使用 AutoJs4 執行" 會在本外掛自己的處理程序裡用原版 Rhino 1.7.7.2 引擎執行 `.js` 檔案, `.auto` 錄製檔案與專案資料夾, 主控台輸出回傳到 AutoJs6. 這樣無需另外安裝 AutoJs4, 就能在同一部裝置上檢查指令碼在 AutoJs4 與 AutoJs6 上的表現是否不同. 本外掛主要供從 Auto.js 4.x 移轉舊指令碼的使用者對照執行結果, 只在 AutoJs6 中撰寫新指令碼的一般使用者不需要安裝.
 
 ******
 

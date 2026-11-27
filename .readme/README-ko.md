@@ -8,7 +8,7 @@
     </picture>
   </p>
 
-  <p>내장된 Auto.js 4.1.1 Alpha2 엔진으로 스크립트를 실행하여 AutoJs6 결과와 비교</p>
+  <p>Auto.js 4.x의 기존 스크립트를 옮길 때 사용: 내장된 Auto.js 4 엔진으로 스크립트를 실행하여 AutoJs6 결과와 비교; 일반 사용자는 설치할 필요 없음</p>
 
   <p>
     <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-AutoJs4-Runtime/releases"><img alt="GitHub release" src="https://img.shields.io/github/v/release/SuperMonster003/AutoJs6-Plugin-AutoJs4-Runtime?label=Release"/></a>
@@ -42,7 +42,7 @@
 
 ******
 
-AutoJs4 Runtime은 AutoJs6의 동작 기준인 Auto.js 4.1.1 Alpha2 복제본 [AutoJs4](https://github.com/SuperMonster003/AutoJs4)의 엔진을 내장합니다. 설치하면 AutoJs6 파일 관리자의 "AutoJs4로 실행" 항목이 `.js` 파일, `.auto` 기록 파일, 프로젝트 폴더를 이 플러그인 자체 프로세스에서 원본 Rhino 1.7.7.2 엔진으로 실행하고 콘솔 출력을 AutoJs6로 돌려보냅니다. AutoJs4를 따로 설치하지 않고도 한 기기에서 스크립트가 AutoJs4와 AutoJs6에서 다르게 동작하는지 확인할 수 있습니다.
+AutoJs4 Runtime은 AutoJs6의 동작 기준인 Auto.js 4.1.1 Alpha2 복제본 [AutoJs4](https://github.com/SuperMonster003/AutoJs4)의 엔진을 내장합니다. 설치하면 AutoJs6 파일 관리자의 "AutoJs4로 실행" 항목이 `.js` 파일, `.auto` 기록 파일, 프로젝트 폴더를 이 플러그인 자체 프로세스에서 원본 Rhino 1.7.7.2 엔진으로 실행하고 콘솔 출력을 AutoJs6로 돌려보냅니다. AutoJs4를 따로 설치하지 않고도 한 기기에서 스크립트가 AutoJs4와 AutoJs6에서 다르게 동작하는지 확인할 수 있습니다. 이 플러그인은 주로 Auto.js 4.x의 기존 스크립트를 옮기는 사용자가 실행 결과를 비교하기 위한 것으로, AutoJs6에서 새 스크립트만 작성하는 일반 사용자는 설치할 필요가 없습니다.
 
 ******
 

@@ -8,7 +8,7 @@
     </picture>
   </p>
 
-  <p>Runs scripts with the embedded Auto.js 4.1.1 Alpha2 engine to compare results with AutoJs6</p>
+  <p>For migrating old Auto.js 4.x scripts: runs them with the embedded Auto.js 4 engine to compare results with AutoJs6; most users do not need it</p>
 
   <p>
     <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-AutoJs4-Runtime/releases"><img alt="GitHub release" src="https://img.shields.io/github/v/release/SuperMonster003/AutoJs6-Plugin-AutoJs4-Runtime?label=Release"/></a>
@@ -42,7 +42,7 @@ The current README.md supports the following languages:
 
 ******
 
-AutoJs4 Runtime embeds the engine of [AutoJs4](https://github.com/SuperMonster003/AutoJs4), the clone of Auto.js 4.1.1 Alpha2 that serves as the behavioral baseline of AutoJs6. After installing it, the "Run with AutoJs4" entry in the AutoJs6 file manager runs `.js` files, `.auto` recordings and project folders with the original Rhino 1.7.7.2 engine inside this plugin's own process, while the console output flows back into AutoJs6. This makes it possible to check on one device whether a script behaves differently on AutoJs4 and on AutoJs6 without installing AutoJs4 itself.
+AutoJs4 Runtime embeds the engine of [AutoJs4](https://github.com/SuperMonster003/AutoJs4), the clone of Auto.js 4.1.1 Alpha2 that serves as the behavioral baseline of AutoJs6. After installing it, the "Run with AutoJs4" entry in the AutoJs6 file manager runs `.js` files, `.auto` recordings and project folders with the original Rhino 1.7.7.2 engine inside this plugin's own process, while the console output flows back into AutoJs6. This makes it possible to check on one device whether a script behaves differently on AutoJs4 and on AutoJs6 without installing AutoJs4 itself. The plugin is mainly meant for users who migrate old Auto.js 4.x scripts and want to compare the results; most users, who only write new scripts in AutoJs6, do not need to install it.
 
 ******
 

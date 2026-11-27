@@ -1,7 +1,7 @@
 {
   "$name": "Español",
   "text_current_lowercase": "actual",
-  "text_plugin_synopsis": "Ejecuta scripts con el motor Auto.js 4.1.1 Alpha2 integrado para comparar los resultados con AutoJs6",
+  "text_plugin_synopsis": "Para migrar scripts antiguos de Auto.js 4.x: los ejecuta con el motor Auto.js 4 integrado para comparar los resultados con AutoJs6; la mayoría de los usuarios no lo necesita",
   "h3_languages": "Idiomas",
   "p_languages_all_supported": "El README.md actual admite los siguientes idiomas",
   "h3_introduction": "Introducción",
@@ -19,7 +19,7 @@
   "h3_links": "Enlaces",
   "text_link_autojs6": "Proyecto AutoJs6",
   "text_link_third_party_notices": "Avisos de terceros",
-  "p_introduction": "AutoJs4 Runtime integra el motor de [AutoJs4]({{ autojs4_url }}), el clon de {{ autojs4_baseline }} que sirve como referencia de comportamiento de AutoJs6. Tras instalarlo, la entrada \"Ejecutar con AutoJs4\" del gestor de archivos de AutoJs6 ejecuta archivos `.js`, grabaciones `.auto` y carpetas de proyecto con el motor Rhino {{ rhino_version }} original dentro del propio proceso del complemento, mientras la salida de la consola vuelve a AutoJs6. Así se puede comprobar en un solo dispositivo si un script se comporta de forma distinta en AutoJs4 y en AutoJs6 sin instalar AutoJs4.",
+  "p_introduction": "AutoJs4 Runtime integra el motor de [AutoJs4]({{ autojs4_url }}), el clon de {{ autojs4_baseline }} que sirve como referencia de comportamiento de AutoJs6. Tras instalarlo, la entrada \"Ejecutar con AutoJs4\" del gestor de archivos de AutoJs6 ejecuta archivos `.js`, grabaciones `.auto` y carpetas de proyecto con el motor Rhino {{ rhino_version }} original dentro del propio proceso del complemento, mientras la salida de la consola vuelve a AutoJs6. Así se puede comprobar en un solo dispositivo si un script se comporta de forma distinta en AutoJs4 y en AutoJs6 sin instalar AutoJs4. El complemento está pensado sobre todo para quienes migran scripts antiguos de Auto.js 4.x y quieren comparar los resultados; la mayoría de los usuarios, que solo escriben scripts nuevos en AutoJs6, no necesita instalarlo.",
   "usage_steps": [
     "Usa AutoJs6 build {{ required_host_version_code }} ({{ required_host_version_name }}) o posterior en Android {{ min_android_version }} (API {{ android_min_sdk }}) o posterior.",
     "Instala el APK de release que corresponda a la ABI del dispositivo (`arm64-v8a` para la mayoría de los teléfonos actuales, `armeabi-v7a` para dispositivos de 32 bits, `x86_64` o `x86` para emuladores) o el APK `universal`, más grande.",
@@ -54,7 +54,7 @@
   "text_link_protocol": "Protocolo V1 de AutoJs4 Runtime",
   "text_link_roadmap": "Roadmap de AutoJs4 Runtime",
   "p_icon_artwork": "El icono conserva el [PNG proporcionado por el mantenedor]({{ icon_source_url }}) (una variante para el tema claro y otra para el oscuro) y su composición original. Ajústelo con Icon Studio y compruebe la receta y los recursos generados con `python .python/generate_icon_studio.py --check`.",
-  "instruction_p_what": "AutoJs4 Runtime incorpora el motor sin modificar de AutoJs4 (un clon de {{ autojs4_baseline }}), de modo que AutoJs6 puede ejecutar scripts con él sin instalar AutoJs4 por separado. La salida de la consola se devuelve a AutoJs6, lo que facilita comparar cómo se comporta un script en AutoJs4 y en AutoJs6 en el mismo dispositivo.",
+  "instruction_p_what": "AutoJs4 Runtime incorpora el motor sin modificar de AutoJs4 (un clon de {{ autojs4_baseline }}), de modo que AutoJs6 puede ejecutar scripts con él sin instalar AutoJs4 por separado. La salida de la consola se devuelve a AutoJs6, lo que facilita comparar cómo se comporta un script en AutoJs4 y en AutoJs6 en el mismo dispositivo. El complemento está pensado sobre todo para quienes migran scripts antiguos de Auto.js 4.x y quieren comparar los resultados; la mayoría de los usuarios, que solo escriben scripts nuevos en AutoJs6, no necesita instalarlo.",
   "instruction_h3_start": "Primeros pasos",
   "instruction_start_steps": [
     "Compruebe que este plugin está activado en el centro de plugins de AutoJs6.",

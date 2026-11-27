@@ -8,7 +8,7 @@
     </picture>
   </p>
 
-  <p>Ejecuta scripts con el motor Auto.js 4.1.1 Alpha2 integrado para comparar los resultados con AutoJs6</p>
+  <p>Para migrar scripts antiguos de Auto.js 4.x: los ejecuta con el motor Auto.js 4 integrado para comparar los resultados con AutoJs6; la mayoría de los usuarios no lo necesita</p>
 
   <p>
     <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-AutoJs4-Runtime/releases"><img alt="GitHub release" src="https://img.shields.io/github/v/release/SuperMonster003/AutoJs6-Plugin-AutoJs4-Runtime?label=Release"/></a>
@@ -42,7 +42,7 @@ El README.md actual admite los siguientes idiomas:
 
 ******
 
-AutoJs4 Runtime integra el motor de [AutoJs4](https://github.com/SuperMonster003/AutoJs4), el clon de Auto.js 4.1.1 Alpha2 que sirve como referencia de comportamiento de AutoJs6. Tras instalarlo, la entrada "Ejecutar con AutoJs4" del gestor de archivos de AutoJs6 ejecuta archivos `.js`, grabaciones `.auto` y carpetas de proyecto con el motor Rhino 1.7.7.2 original dentro del propio proceso del complemento, mientras la salida de la consola vuelve a AutoJs6. Así se puede comprobar en un solo dispositivo si un script se comporta de forma distinta en AutoJs4 y en AutoJs6 sin instalar AutoJs4.
+AutoJs4 Runtime integra el motor de [AutoJs4](https://github.com/SuperMonster003/AutoJs4), el clon de Auto.js 4.1.1 Alpha2 que sirve como referencia de comportamiento de AutoJs6. Tras instalarlo, la entrada "Ejecutar con AutoJs4" del gestor de archivos de AutoJs6 ejecuta archivos `.js`, grabaciones `.auto` y carpetas de proyecto con el motor Rhino 1.7.7.2 original dentro del propio proceso del complemento, mientras la salida de la consola vuelve a AutoJs6. Así se puede comprobar en un solo dispositivo si un script se comporta de forma distinta en AutoJs4 y en AutoJs6 sin instalar AutoJs4. El complemento está pensado sobre todo para quienes migran scripts antiguos de Auto.js 4.x y quieren comparar los resultados; la mayoría de los usuarios, que solo escriben scripts nuevos en AutoJs6, no necesita instalarlo.
 
 ******
 

@@ -1,4 +1,4 @@
-AutoJs4 Runtime 內嵌了 AutoJs4 (Auto.js 4.1.1 Alpha2 的克隆專案) 未經修改的引擎, 讓 AutoJs6 無需另外安裝 AutoJs4 就能用它執行腳本. 控制台輸出回傳到 AutoJs6, 方便在同一部裝置上比較腳本在 AutoJs4 與 AutoJs6 上的表現.
+AutoJs4 Runtime 內嵌了 AutoJs4 (Auto.js 4.1.1 Alpha2 的克隆專案) 未經修改的引擎, 讓 AutoJs6 無需另外安裝 AutoJs4 就能用它執行腳本. 控制台輸出回傳到 AutoJs6, 方便在同一部裝置上比較腳本在 AutoJs4 與 AutoJs6 上的表現. 本插件主要供從 Auto.js 4.x 遷移舊腳本的用戶對照執行結果, 只在 AutoJs6 中編寫新腳本的一般用戶不需要安裝.
 
 ### 開始使用
 

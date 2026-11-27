@@ -1,7 +1,7 @@
 {
   "$name": "العربية",
   "text_current_lowercase": "الحالية",
-  "text_plugin_synopsis": "يشغّل السكربتات بمحرك Auto.js 4.1.1 Alpha2 المضمّن لمقارنة النتائج مع AutoJs6",
+  "text_plugin_synopsis": "لنقل سكربتات Auto.js 4.x القديمة: يشغّلها بمحرك Auto.js 4 المضمّن لمقارنة النتائج مع AutoJs6; لا يحتاجه معظم المستخدمين",
   "h3_languages": "اللغات",
   "p_languages_all_supported": "يدعم README.md الحالي اللغات التالية",
   "h3_introduction": "مقدمة",
@@ -19,7 +19,7 @@
   "h3_links": "الروابط",
   "text_link_autojs6": "مشروع AutoJs6",
   "text_link_third_party_notices": "إشعارات الطرف الثالث",
-  "p_introduction": "تضمّن إضافة AutoJs4 Runtime محرك [AutoJs4]({{ autojs4_url }}), وهو نسخة مستنسخة من {{ autojs4_baseline }} تُستخدم كمرجع سلوكي لـ AutoJs6. بعد التثبيت, يشغّل الخيار \"تشغيل باستخدام AutoJs4\" في مدير ملفات AutoJs6 ملفات `.js` وتسجيلات `.auto` ومجلدات المشاريع بمحرك Rhino {{ rhino_version }} الأصلي داخل عملية الإضافة الخاصة, بينما تعود مخرجات وحدة التحكم إلى AutoJs6. بذلك يمكن التحقق على جهاز واحد مما إذا كان سلوك السكربت يختلف بين AutoJs4 و AutoJs6 دون تثبيت AutoJs4 نفسه.",
+  "p_introduction": "تضمّن إضافة AutoJs4 Runtime محرك [AutoJs4]({{ autojs4_url }}), وهو نسخة مستنسخة من {{ autojs4_baseline }} تُستخدم كمرجع سلوكي لـ AutoJs6. بعد التثبيت, يشغّل الخيار \"تشغيل باستخدام AutoJs4\" في مدير ملفات AutoJs6 ملفات `.js` وتسجيلات `.auto` ومجلدات المشاريع بمحرك Rhino {{ rhino_version }} الأصلي داخل عملية الإضافة الخاصة, بينما تعود مخرجات وحدة التحكم إلى AutoJs6. بذلك يمكن التحقق على جهاز واحد مما إذا كان سلوك السكربت يختلف بين AutoJs4 و AutoJs6 دون تثبيت AutoJs4 نفسه. الإضافة موجهة أساسا لمن ينقلون سكربتات Auto.js 4.x القديمة ويريدون مقارنة النتائج, ولا يحتاج معظم المستخدمين الذين يكتبون سكربتات جديدة في AutoJs6 فقط إلى تثبيتها.",
   "usage_steps": [
     "استخدم AutoJs6 build {{ required_host_version_code }} ({{ required_host_version_name }}) أو أحدث على Android {{ min_android_version }} (API {{ android_min_sdk }}) أو أحدث.",
     "ثبّت ملف APK الإصدار المطابق لمعمارية الجهاز (`arm64-v8a` لمعظم الهواتف الحديثة, و `armeabi-v7a` لأجهزة 32 بت, و `x86_64` أو `x86` للمحاكيات), أو ملف APK `universal` الأكبر حجما.",
@@ -54,7 +54,7 @@
   "text_link_protocol": "AutoJs4 Runtime protocol V1",
   "text_link_roadmap": "AutoJs4 Runtime roadmap",
   "p_icon_artwork": "تحتفظ الأيقونة بملفات [PNG التي قدمها مسؤول المشروع]({{ icon_source_url }}) (نسخة للسمة الفاتحة وأخرى للسمة الداكنة) وتكوينها الأصلي. يمكن تعديلها باستخدام Icon Studio والتحقق من تطابق الوصفة والموارد المولدة بالأمر `python .python/generate_icon_studio.py --check`.",
-  "instruction_p_what": "تتضمن إضافة AutoJs4 Runtime محرك AutoJs4 (نسخة مستنسخة من {{ autojs4_baseline }}) دون أي تعديل, فيستطيع AutoJs6 تشغيل السكربتات به دون تثبيت AutoJs4 بشكل منفصل. تعاد مخرجات وحدة التحكم إلى AutoJs6, مما يسهل مقارنة سلوك السكربت في AutoJs4 وفي AutoJs6 على الجهاز نفسه.",
+  "instruction_p_what": "تتضمن إضافة AutoJs4 Runtime محرك AutoJs4 (نسخة مستنسخة من {{ autojs4_baseline }}) دون أي تعديل, فيستطيع AutoJs6 تشغيل السكربتات به دون تثبيت AutoJs4 بشكل منفصل. تعاد مخرجات وحدة التحكم إلى AutoJs6, مما يسهل مقارنة سلوك السكربت في AutoJs4 وفي AutoJs6 على الجهاز نفسه. الإضافة موجهة أساسا لمن ينقلون سكربتات Auto.js 4.x القديمة ويريدون مقارنة النتائج, ولا يحتاج معظم المستخدمين الذين يكتبون سكربتات جديدة في AutoJs6 فقط إلى تثبيتها.",
   "instruction_h3_start": "البدء",
   "instruction_start_steps": [
     "تأكد من تفعيل هذه الإضافة في مركز الإضافات في AutoJs6.",

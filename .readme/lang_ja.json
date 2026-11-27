@@ -1,7 +1,7 @@
 {
   "$name": "日本語",
   "text_current_lowercase": "現在",
-  "text_plugin_synopsis": "内蔵の Auto.js 4.1.1 Alpha2 エンジンでスクリプトを実行し, AutoJs6 の結果と比較する",
+  "text_plugin_synopsis": "Auto.js 4.x の旧スクリプトを移行するときに使用: 内蔵の Auto.js 4 エンジンでスクリプトを実行し, AutoJs6 の結果と比較; 一般のユーザーはインストール不要",
   "h3_languages": "言語",
   "p_languages_all_supported": "現在の README.md は次の言語に対応しています",
   "h3_introduction": "概要",
@@ -19,7 +19,7 @@
   "h3_links": "リンク",
   "text_link_autojs6": "AutoJs6 プロジェクト",
   "text_link_third_party_notices": "サードパーティ通知",
-  "p_introduction": "AutoJs4 Runtime は, AutoJs6 の動作基準となる {{ autojs4_baseline }} のクローンである [AutoJs4]({{ autojs4_url }}) のエンジンを内蔵しています. インストール後, AutoJs6 のファイルマネージャーにある \"AutoJs4 で実行\" が `.js` ファイル, `.auto` 記録ファイル, プロジェクトフォルダーをこのプラグイン自身のプロセスでオリジナルの Rhino {{ rhino_version }} エンジンにより実行し, コンソール出力を AutoJs6 に返します. AutoJs4 本体をインストールしなくても, 同じ端末でスクリプトの挙動が AutoJs4 と AutoJs6 で異なるかを確認できます.",
+  "p_introduction": "AutoJs4 Runtime は, AutoJs6 の動作基準となる {{ autojs4_baseline }} のクローンである [AutoJs4]({{ autojs4_url }}) のエンジンを内蔵しています. インストール後, AutoJs6 のファイルマネージャーにある \"AutoJs4 で実行\" が `.js` ファイル, `.auto` 記録ファイル, プロジェクトフォルダーをこのプラグイン自身のプロセスでオリジナルの Rhino {{ rhino_version }} エンジンにより実行し, コンソール出力を AutoJs6 に返します. AutoJs4 本体をインストールしなくても, 同じ端末でスクリプトの挙動が AutoJs4 と AutoJs6 で異なるかを確認できます. このプラグインは主に Auto.js 4.x の旧スクリプトを移行するユーザーが実行結果を比較するためのもので, AutoJs6 で新しいスクリプトを書くだけの一般のユーザーはインストールする必要はありません.",
   "usage_steps": [
     "Android {{ min_android_version }} (API {{ android_min_sdk }}) 以降で AutoJs6 build {{ required_host_version_code }} ({{ required_host_version_name }}) 以降を使用します.",
     "端末の ABI に合う release APK (多くの現行端末は `arm64-v8a`, 32 ビット端末は `armeabi-v7a`, エミュレーターは `x86_64` または `x86`) か, サイズの大きい `universal` APK をインストールします.",
@@ -54,7 +54,7 @@
   "text_link_protocol": "AutoJs4 Runtime protocol V1",
   "text_link_roadmap": "AutoJs4 Runtime roadmap",
   "p_icon_artwork": "アイコンは管理者提供の [PNG 原稿]({{ icon_source_url }}) (ライトテーマ用とダークテーマ用の 2 枚) と元の構図を保持しています. Icon Studio で調整し, `python .python/generate_icon_studio.py --check` でレシピと生成リソースの一致を確認してください.",
-  "instruction_p_what": "AutoJs4 Runtime は AutoJs4 ({{ autojs4_baseline }} のクローン) の未改変のエンジンを内蔵しており, AutoJs6 は AutoJs4 を別途インストールしなくてもこのエンジンでスクリプトを実行できます. コンソール出力は AutoJs6 に送り返されるため, 同じデバイスでスクリプトの AutoJs4 と AutoJs6 での動作を比較できます.",
+  "instruction_p_what": "AutoJs4 Runtime は AutoJs4 ({{ autojs4_baseline }} のクローン) の未改変のエンジンを内蔵しており, AutoJs6 は AutoJs4 を別途インストールしなくてもこのエンジンでスクリプトを実行できます. コンソール出力は AutoJs6 に送り返されるため, 同じデバイスでスクリプトの AutoJs4 と AutoJs6 での動作を比較できます. このプラグインは主に Auto.js 4.x の旧スクリプトを移行するユーザーが実行結果を比較するためのもので, AutoJs6 で新しいスクリプトを書くだけの一般のユーザーはインストールする必要はありません.",
   "instruction_h3_start": "はじめに",
   "instruction_start_steps": [
     "AutoJs6 のプラグインセンターでこのプラグインが有効になっていることを確認します.",

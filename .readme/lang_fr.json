@@ -1,7 +1,7 @@
 {
   "$name": "Français",
   "text_current_lowercase": "actuel",
-  "text_plugin_synopsis": "Exécute des scripts avec le moteur Auto.js 4.1.1 Alpha2 embarqué pour comparer les résultats avec AutoJs6",
+  "text_plugin_synopsis": "Pour migrer d'anciens scripts Auto.js 4.x: les exécute avec le moteur Auto.js 4 embarqué pour comparer les résultats avec AutoJs6; inutile pour la plupart des utilisateurs",
   "h3_languages": "Langues",
   "p_languages_all_supported": "Le README.md actuel prend en charge les langues suivantes",
   "h3_introduction": "Introduction",
@@ -19,7 +19,7 @@
   "h3_links": "Liens",
   "text_link_autojs6": "Projet AutoJs6",
   "text_link_third_party_notices": "Avis tiers",
-  "p_introduction": "AutoJs4 Runtime embarque le moteur d'[AutoJs4]({{ autojs4_url }}), le clone de {{ autojs4_baseline }} qui sert de référence comportementale à AutoJs6. Une fois installé, l'entrée \"Exécuter avec AutoJs4\" du gestionnaire de fichiers d'AutoJs6 exécute les fichiers `.js`, les enregistrements `.auto` et les dossiers de projet avec le moteur Rhino {{ rhino_version }} d'origine dans le propre processus du plugin, tandis que la sortie console revient dans AutoJs6. On peut ainsi vérifier sur un seul appareil si un script se comporte différemment sur AutoJs4 et sur AutoJs6, sans installer AutoJs4.",
+  "p_introduction": "AutoJs4 Runtime embarque le moteur d'[AutoJs4]({{ autojs4_url }}), le clone de {{ autojs4_baseline }} qui sert de référence comportementale à AutoJs6. Une fois installé, l'entrée \"Exécuter avec AutoJs4\" du gestionnaire de fichiers d'AutoJs6 exécute les fichiers `.js`, les enregistrements `.auto` et les dossiers de projet avec le moteur Rhino {{ rhino_version }} d'origine dans le propre processus du plugin, tandis que la sortie console revient dans AutoJs6. On peut ainsi vérifier sur un seul appareil si un script se comporte différemment sur AutoJs4 et sur AutoJs6, sans installer AutoJs4. Le plugin s'adresse surtout aux utilisateurs qui migrent d'anciens scripts Auto.js 4.x et veulent comparer les résultats; la plupart des utilisateurs, qui écrivent seulement de nouveaux scripts dans AutoJs6, n'ont pas besoin de l'installer.",
   "usage_steps": [
     "Utilisez AutoJs6 build {{ required_host_version_code }} ({{ required_host_version_name }}) ou ultérieur sur Android {{ min_android_version }} (API {{ android_min_sdk }}) ou ultérieur.",
     "Installez l'APK de release correspondant à l'ABI de l'appareil (`arm64-v8a` pour la plupart des téléphones actuels, `armeabi-v7a` pour les appareils 32 bits, `x86_64` ou `x86` pour les émulateurs), ou l'APK `universal` plus volumineux.",
@@ -54,7 +54,7 @@
   "text_link_protocol": "Protocole V1 d'AutoJs4 Runtime",
   "text_link_roadmap": "Roadmap d'AutoJs4 Runtime",
   "p_icon_artwork": "L'icône conserve le [PNG fourni par le responsable du projet]({{ icon_source_url }}) (une variante pour le thème clair et une pour le thème sombre) et sa composition d'origine. Ajustez-la dans Icon Studio et vérifiez la recette et les ressources générées avec `python .python/generate_icon_studio.py --check`.",
-  "instruction_p_what": "AutoJs4 Runtime intègre le moteur non modifié d'AutoJs4 (un clone de {{ autojs4_baseline }}), ce qui permet à AutoJs6 d'exécuter des scripts avec ce moteur sans installer AutoJs4 séparément. La sortie de la console est renvoyée à AutoJs6, ce qui facilite la comparaison du comportement d'un script sous AutoJs4 et sous AutoJs6 sur le même appareil.",
+  "instruction_p_what": "AutoJs4 Runtime intègre le moteur non modifié d'AutoJs4 (un clone de {{ autojs4_baseline }}), ce qui permet à AutoJs6 d'exécuter des scripts avec ce moteur sans installer AutoJs4 séparément. La sortie de la console est renvoyée à AutoJs6, ce qui facilite la comparaison du comportement d'un script sous AutoJs4 et sous AutoJs6 sur le même appareil. Le plugin s'adresse surtout aux utilisateurs qui migrent d'anciens scripts Auto.js 4.x et veulent comparer les résultats; la plupart des utilisateurs, qui écrivent seulement de nouveaux scripts dans AutoJs6, n'ont pas besoin de l'installer.",
   "instruction_h3_start": "Prise en main",
   "instruction_start_steps": [
     "Vérifiez que ce plugin est activé dans le centre des plugins d'AutoJs6.",

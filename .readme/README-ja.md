@@ -8,7 +8,7 @@
     </picture>
   </p>
 
-  <p>内蔵の Auto.js 4.1.1 Alpha2 エンジンでスクリプトを実行し, AutoJs6 の結果と比較する</p>
+  <p>Auto.js 4.x の旧スクリプトを移行するときに使用: 内蔵の Auto.js 4 エンジンでスクリプトを実行し, AutoJs6 の結果と比較; 一般のユーザーはインストール不要</p>
 
   <p>
     <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-AutoJs4-Runtime/releases"><img alt="GitHub release" src="https://img.shields.io/github/v/release/SuperMonster003/AutoJs6-Plugin-AutoJs4-Runtime?label=Release"/></a>
@@ -42,7 +42,7 @@
 
 ******
 
-AutoJs4 Runtime は, AutoJs6 の動作基準となる Auto.js 4.1.1 Alpha2 のクローンである [AutoJs4](https://github.com/SuperMonster003/AutoJs4) のエンジンを内蔵しています. インストール後, AutoJs6 のファイルマネージャーにある "AutoJs4 で実行" が `.js` ファイル, `.auto` 記録ファイル, プロジェクトフォルダーをこのプラグイン自身のプロセスでオリジナルの Rhino 1.7.7.2 エンジンにより実行し, コンソール出力を AutoJs6 に返します. AutoJs4 本体をインストールしなくても, 同じ端末でスクリプトの挙動が AutoJs4 と AutoJs6 で異なるかを確認できます.
+AutoJs4 Runtime は, AutoJs6 の動作基準となる Auto.js 4.1.1 Alpha2 のクローンである [AutoJs4](https://github.com/SuperMonster003/AutoJs4) のエンジンを内蔵しています. インストール後, AutoJs6 のファイルマネージャーにある "AutoJs4 で実行" が `.js` ファイル, `.auto` 記録ファイル, プロジェクトフォルダーをこのプラグイン自身のプロセスでオリジナルの Rhino 1.7.7.2 エンジンにより実行し, コンソール出力を AutoJs6 に返します. AutoJs4 本体をインストールしなくても, 同じ端末でスクリプトの挙動が AutoJs4 と AutoJs6 で異なるかを確認できます. このプラグインは主に Auto.js 4.x の旧スクリプトを移行するユーザーが実行結果を比較するためのもので, AutoJs6 で新しいスクリプトを書くだけの一般のユーザーはインストールする必要はありません.
 
 ******
 

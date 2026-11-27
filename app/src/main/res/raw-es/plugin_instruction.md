@@ -1,4 +1,4 @@
-AutoJs4 Runtime incorpora el motor sin modificar de AutoJs4 (un clon de Auto.js 4.1.1 Alpha2), de modo que AutoJs6 puede ejecutar scripts con él sin instalar AutoJs4 por separado. La salida de la consola se devuelve a AutoJs6, lo que facilita comparar cómo se comporta un script en AutoJs4 y en AutoJs6 en el mismo dispositivo.
+AutoJs4 Runtime incorpora el motor sin modificar de AutoJs4 (un clon de Auto.js 4.1.1 Alpha2), de modo que AutoJs6 puede ejecutar scripts con él sin instalar AutoJs4 por separado. La salida de la consola se devuelve a AutoJs6, lo que facilita comparar cómo se comporta un script en AutoJs4 y en AutoJs6 en el mismo dispositivo. El complemento está pensado sobre todo para quienes migran scripts antiguos de Auto.js 4.x y quieren comparar los resultados; la mayoría de los usuarios, que solo escriben scripts nuevos en AutoJs6, no necesita instalarlo.
 
 ### Primeros pasos
 

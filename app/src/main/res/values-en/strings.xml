@@ -3,7 +3,7 @@
     <string name="explorer_action_compare_with_autojs4">Run with AutoJs4 and compare</string>
     <string name="explorer_action_run_with_autojs4">Run with AutoJs4</string>
     <string name="log_title">AutoJs4 log</string>
-    <string name="plugin_description">Runs scripts with the embedded Auto.js 4.1.1 Alpha2 engine to compare results with AutoJs6</string>
+    <string name="plugin_description">For migrating old Auto.js 4.x scripts: runs them with the embedded Auto.js 4 engine to compare results with AutoJs6; most users do not need it</string>
     <string name="release_history_back">Back</string>
     <string name="release_history_collapse_all">Collapse all</string>
     <string name="release_history_collapsed">Collapsed</string>

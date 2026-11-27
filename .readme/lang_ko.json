@@ -1,7 +1,7 @@
 {
   "$name": "한국어",
   "text_current_lowercase": "현재",
-  "text_plugin_synopsis": "내장된 Auto.js 4.1.1 Alpha2 엔진으로 스크립트를 실행하여 AutoJs6 결과와 비교",
+  "text_plugin_synopsis": "Auto.js 4.x의 기존 스크립트를 옮길 때 사용: 내장된 Auto.js 4 엔진으로 스크립트를 실행하여 AutoJs6 결과와 비교; 일반 사용자는 설치할 필요 없음",
   "h3_languages": "언어",
   "p_languages_all_supported": "현재 README.md는 다음 언어를 지원합니다",
   "h3_introduction": "소개",
@@ -19,7 +19,7 @@
   "h3_links": "링크",
   "text_link_autojs6": "AutoJs6 프로젝트",
   "text_link_third_party_notices": "제3자 고지",
-  "p_introduction": "AutoJs4 Runtime은 AutoJs6의 동작 기준인 {{ autojs4_baseline }} 복제본 [AutoJs4]({{ autojs4_url }})의 엔진을 내장합니다. 설치하면 AutoJs6 파일 관리자의 \"AutoJs4로 실행\" 항목이 `.js` 파일, `.auto` 기록 파일, 프로젝트 폴더를 이 플러그인 자체 프로세스에서 원본 Rhino {{ rhino_version }} 엔진으로 실행하고 콘솔 출력을 AutoJs6로 돌려보냅니다. AutoJs4를 따로 설치하지 않고도 한 기기에서 스크립트가 AutoJs4와 AutoJs6에서 다르게 동작하는지 확인할 수 있습니다.",
+  "p_introduction": "AutoJs4 Runtime은 AutoJs6의 동작 기준인 {{ autojs4_baseline }} 복제본 [AutoJs4]({{ autojs4_url }})의 엔진을 내장합니다. 설치하면 AutoJs6 파일 관리자의 \"AutoJs4로 실행\" 항목이 `.js` 파일, `.auto` 기록 파일, 프로젝트 폴더를 이 플러그인 자체 프로세스에서 원본 Rhino {{ rhino_version }} 엔진으로 실행하고 콘솔 출력을 AutoJs6로 돌려보냅니다. AutoJs4를 따로 설치하지 않고도 한 기기에서 스크립트가 AutoJs4와 AutoJs6에서 다르게 동작하는지 확인할 수 있습니다. 이 플러그인은 주로 Auto.js 4.x의 기존 스크립트를 옮기는 사용자가 실행 결과를 비교하기 위한 것으로, AutoJs6에서 새 스크립트만 작성하는 일반 사용자는 설치할 필요가 없습니다.",
   "usage_steps": [
     "Android {{ min_android_version }} (API {{ android_min_sdk }}) 이상에서 AutoJs6 build {{ required_host_version_code }} ({{ required_host_version_name }}) 이상을 사용합니다.",
     "기기 ABI에 맞는 release APK (대부분의 최신 휴대폰은 `arm64-v8a`, 32비트 기기는 `armeabi-v7a`, 에뮬레이터는 `x86_64` 또는 `x86`) 또는 용량이 더 큰 `universal` APK를 설치합니다.",
@@ -54,7 +54,7 @@
   "text_link_protocol": "AutoJs4 Runtime protocol V1",
   "text_link_roadmap": "AutoJs4 Runtime roadmap",
   "p_icon_artwork": "아이콘은 관리자가 제공한 [PNG 원본]({{ icon_source_url }}) (라이트 테마용과 다크 테마용 각 1장)과 원래 구도를 유지합니다. Icon Studio로 조정하고 `python .python/generate_icon_studio.py --check`로 레시피와 생성 리소스의 일치 여부를 확인하세요.",
-  "instruction_p_what": "AutoJs4 Runtime은 {{ autojs4_baseline }} 복제본인 AutoJs4의 엔진을 수정 없이 내장하고 있어, AutoJs4를 따로 설치하지 않아도 AutoJs6에서 이 엔진으로 스크립트를 실행할 수 있습니다. 콘솔 출력은 AutoJs6으로 전달되므로 같은 기기에서 스크립트가 AutoJs4와 AutoJs6에서 어떻게 동작하는지 비교할 수 있습니다.",
+  "instruction_p_what": "AutoJs4 Runtime은 {{ autojs4_baseline }} 복제본인 AutoJs4의 엔진을 수정 없이 내장하고 있어, AutoJs4를 따로 설치하지 않아도 AutoJs6에서 이 엔진으로 스크립트를 실행할 수 있습니다. 콘솔 출력은 AutoJs6으로 전달되므로 같은 기기에서 스크립트가 AutoJs4와 AutoJs6에서 어떻게 동작하는지 비교할 수 있습니다. 이 플러그인은 주로 Auto.js 4.x의 기존 스크립트를 옮기는 사용자가 실행 결과를 비교하기 위한 것으로, AutoJs6에서 새 스크립트만 작성하는 일반 사용자는 설치할 필요가 없습니다.",
   "instruction_h3_start": "시작하기",
   "instruction_start_steps": [
     "AutoJs6 플러그인 센터에서 이 플러그인이 사용 설정되어 있는지 확인합니다.",

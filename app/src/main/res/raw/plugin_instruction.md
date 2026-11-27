@@ -1,4 +1,4 @@
-AutoJs4 Runtime embeds the unmodified engine of AutoJs4 (a clone of Auto.js 4.1.1 Alpha2), so AutoJs6 can run scripts with it without installing AutoJs4 separately. Console output is sent back to AutoJs6, which makes it easy to compare how a script behaves on AutoJs4 and on AutoJs6 on the same device.
+AutoJs4 Runtime embeds the unmodified engine of AutoJs4 (a clone of Auto.js 4.1.1 Alpha2), so AutoJs6 can run scripts with it without installing AutoJs4 separately. Console output is sent back to AutoJs6, which makes it easy to compare how a script behaves on AutoJs4 and on AutoJs6 on the same device. The plugin is mainly meant for users who migrate old Auto.js 4.x scripts and want to compare the results; most users, who only write new scripts in AutoJs6, do not need to install it.
 
 ### Getting started
 

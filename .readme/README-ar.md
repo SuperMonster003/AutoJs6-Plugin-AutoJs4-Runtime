@@ -8,7 +8,7 @@
     </picture>
   </p>
 
-  <p>يشغّل السكربتات بمحرك Auto.js 4.1.1 Alpha2 المضمّن لمقارنة النتائج مع AutoJs6</p>
+  <p>لنقل سكربتات Auto.js 4.x القديمة: يشغّلها بمحرك Auto.js 4 المضمّن لمقارنة النتائج مع AutoJs6; لا يحتاجه معظم المستخدمين</p>
 
   <p>
     <a href="https://github.com/SuperMonster003/AutoJs6-Plugin-AutoJs4-Runtime/releases"><img alt="GitHub release" src="https://img.shields.io/github/v/release/SuperMonster003/AutoJs6-Plugin-AutoJs4-Runtime?label=Release"/></a>
@@ -42,7 +42,7 @@
 
 ******
 
-تضمّن إضافة AutoJs4 Runtime محرك [AutoJs4](https://github.com/SuperMonster003/AutoJs4), وهو نسخة مستنسخة من Auto.js 4.1.1 Alpha2 تُستخدم كمرجع سلوكي لـ AutoJs6. بعد التثبيت, يشغّل الخيار "تشغيل باستخدام AutoJs4" في مدير ملفات AutoJs6 ملفات `.js` وتسجيلات `.auto` ومجلدات المشاريع بمحرك Rhino 1.7.7.2 الأصلي داخل عملية الإضافة الخاصة, بينما تعود مخرجات وحدة التحكم إلى AutoJs6. بذلك يمكن التحقق على جهاز واحد مما إذا كان سلوك السكربت يختلف بين AutoJs4 و AutoJs6 دون تثبيت AutoJs4 نفسه.
+تضمّن إضافة AutoJs4 Runtime محرك [AutoJs4](https://github.com/SuperMonster003/AutoJs4), وهو نسخة مستنسخة من Auto.js 4.1.1 Alpha2 تُستخدم كمرجع سلوكي لـ AutoJs6. بعد التثبيت, يشغّل الخيار "تشغيل باستخدام AutoJs4" في مدير ملفات AutoJs6 ملفات `.js` وتسجيلات `.auto` ومجلدات المشاريع بمحرك Rhino 1.7.7.2 الأصلي داخل عملية الإضافة الخاصة, بينما تعود مخرجات وحدة التحكم إلى AutoJs6. بذلك يمكن التحقق على جهاز واحد مما إذا كان سلوك السكربت يختلف بين AutoJs4 و AutoJs6 دون تثبيت AutoJs4 نفسه. الإضافة موجهة أساسا لمن ينقلون سكربتات Auto.js 4.x القديمة ويريدون مقارنة النتائج, ولا يحتاج معظم المستخدمين الذين يكتبون سكربتات جديدة في AutoJs6 فقط إلى تثبيتها.
 
 ******
 

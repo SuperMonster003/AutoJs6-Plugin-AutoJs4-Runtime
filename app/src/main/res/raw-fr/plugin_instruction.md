@@ -1,4 +1,4 @@
-AutoJs4 Runtime intègre le moteur non modifié d'AutoJs4 (un clone de Auto.js 4.1.1 Alpha2), ce qui permet à AutoJs6 d'exécuter des scripts avec ce moteur sans installer AutoJs4 séparément. La sortie de la console est renvoyée à AutoJs6, ce qui facilite la comparaison du comportement d'un script sous AutoJs4 et sous AutoJs6 sur le même appareil.
+AutoJs4 Runtime intègre le moteur non modifié d'AutoJs4 (un clone de Auto.js 4.1.1 Alpha2), ce qui permet à AutoJs6 d'exécuter des scripts avec ce moteur sans installer AutoJs4 séparément. La sortie de la console est renvoyée à AutoJs6, ce qui facilite la comparaison du comportement d'un script sous AutoJs4 et sous AutoJs6 sur le même appareil. Le plugin s'adresse surtout aux utilisateurs qui migrent d'anciens scripts Auto.js 4.x et veulent comparer les résultats; la plupart des utilisateurs, qui écrivent seulement de nouveaux scripts dans AutoJs6, n'ont pas besoin de l'installer.
 
 ### Prise en main
 

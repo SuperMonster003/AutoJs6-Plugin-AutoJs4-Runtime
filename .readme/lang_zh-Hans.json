@@ -1,7 +1,7 @@
 {
   "$name": "简体中文",
   "text_current_lowercase": "当前",
-  "text_plugin_synopsis": "使用内嵌的 Auto.js 4.1.1 Alpha2 引擎运行脚本, 用于对照 AutoJs6 的运行结果",
+  "text_plugin_synopsis": "从 Auto.js 4.x 迁移旧脚本时使用: 以内嵌的 Auto.js 4 引擎运行脚本, 对照 AutoJs6 的结果; 一般用户不需要安装",
   "h3_languages": "语言",
   "p_languages_all_supported": "当前 README.md 支持以下语言",
   "h3_introduction": "简介",
@@ -19,7 +19,7 @@
   "h3_links": "链接",
   "text_link_autojs6": "AutoJs6 项目",
   "text_link_third_party_notices": "第三方声明",
-  "p_introduction": "AutoJs4 Runtime 内嵌了 [AutoJs4]({{ autojs4_url }}) 的引擎, 即作为 AutoJs6 行为基准的 {{ autojs4_baseline }} 克隆项目. 安装后, AutoJs6 文件管理器中的 \"使用 AutoJs4 运行\" 会在本插件自己的进程里用原版 Rhino {{ rhino_version }} 引擎运行 `.js` 文件, `.auto` 录制文件与项目文件夹, 控制台输出回传到 AutoJs6. 这样无需另外安装 AutoJs4, 就能在同一台设备上检查脚本在 AutoJs4 与 AutoJs6 上的表现是否不同.",
+  "p_introduction": "AutoJs4 Runtime 内嵌了 [AutoJs4]({{ autojs4_url }}) 的引擎, 即作为 AutoJs6 行为基准的 {{ autojs4_baseline }} 克隆项目. 安装后, AutoJs6 文件管理器中的 \"使用 AutoJs4 运行\" 会在本插件自己的进程里用原版 Rhino {{ rhino_version }} 引擎运行 `.js` 文件, `.auto` 录制文件与项目文件夹, 控制台输出回传到 AutoJs6. 这样无需另外安装 AutoJs4, 就能在同一台设备上检查脚本在 AutoJs4 与 AutoJs6 上的表现是否不同. 本插件主要给从 Auto.js 4.x 迁移旧脚本的用户对照运行结果用, 只在 AutoJs6 中编写新脚本的一般用户不需要安装.",
   "usage_steps": [
     "在 Android {{ min_android_version }} (API {{ android_min_sdk }}) 或更高版本上使用 AutoJs6 build {{ required_host_version_code }} ({{ required_host_version_name }}) 或更高版本.",
     "安装与设备 ABI 对应的发布 APK (多数现代手机为 `arm64-v8a`, 32 位设备为 `armeabi-v7a`, 模拟器为 `x86_64` 或 `x86`), 或安装体积更大的 `universal` APK.",
@@ -54,7 +54,7 @@
   "text_link_protocol": "AutoJs4 Runtime 协议 V1",
   "text_link_roadmap": "AutoJs4 Runtime roadmap",
   "p_icon_artwork": "图标保留维护者提供的 [PNG 原稿]({{ icon_source_url }}) (亮色与暗色主题各一张) 及原始构图. 可通过 Icon Studio 调整, 使用 `python .python/generate_icon_studio.py --check` 复核配方与生成资源的一致性.",
-  "instruction_p_what": "AutoJs4 Runtime 内嵌了 AutoJs4 ({{ autojs4_baseline }} 的克隆项目) 未经修改的引擎, AutoJs6 无需另外安装 AutoJs4 就能用它运行脚本. 控制台输出回传 AutoJs6, 便于在同一台设备上对照脚本在两者上的表现.",
+  "instruction_p_what": "AutoJs4 Runtime 内嵌了 AutoJs4 ({{ autojs4_baseline }} 的克隆项目) 未经修改的引擎, AutoJs6 无需另外安装 AutoJs4 就能用它运行脚本. 控制台输出回传 AutoJs6, 便于在同一台设备上对照脚本在两者上的表现. 本插件主要给从 Auto.js 4.x 迁移旧脚本的用户对照运行结果用, 只在 AutoJs6 中编写新脚本的一般用户不需要安装.",
   "instruction_h3_start": "开始使用",
   "instruction_start_steps": [
     "确认 AutoJs6 插件中心里本插件已启用.",

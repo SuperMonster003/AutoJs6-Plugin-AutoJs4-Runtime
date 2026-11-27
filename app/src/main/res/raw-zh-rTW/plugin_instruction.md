@@ -1,4 +1,4 @@
-AutoJs4 Runtime 內嵌了 AutoJs4 (Auto.js 4.1.1 Alpha2 的複製專案) 未經修改的引擎, 讓 AutoJs6 不必另外安裝 AutoJs4 就能用它執行指令碼. 主控台輸出會傳回 AutoJs6, 方便在同一台裝置上比較指令碼在 AutoJs4 與 AutoJs6 上的表現.
+AutoJs4 Runtime 內嵌了 AutoJs4 (Auto.js 4.1.1 Alpha2 的複製專案) 未經修改的引擎, 讓 AutoJs6 不必另外安裝 AutoJs4 就能用它執行指令碼. 主控台輸出會傳回 AutoJs6, 方便在同一台裝置上比較指令碼在 AutoJs4 與 AutoJs6 上的表現. 本外掛主要供從 Auto.js 4.x 移轉舊指令碼的使用者對照執行結果, 只在 AutoJs6 中撰寫新指令碼的一般使用者不需要安裝.
 
 ### 開始使用
 
